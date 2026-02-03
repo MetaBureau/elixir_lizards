@@ -99,6 +99,7 @@ defmodule ElixirLizardsWeb.Router do
 
       live_dashboard "/dashboard", metrics: ElixirLizardsWeb.Telemetry
       forward "/mailbox", Plug.Swoosh.MailboxPreview
+      live "/components", ElixirLizardsWeb.ComponentDemoLive
     end
   end
 

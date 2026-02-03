@@ -4,6 +4,28 @@ This is a web application written using the Phoenix web framework.
 
 - Use `mix precommit` alias when you are done with all changes and fix any pending issues
 - Use the already included and available `:req` (`Req`) library for HTTP requests, **avoid** `:httpoison`, `:tesla`, and `:httpc`. Req is included by default and is the preferred HTTP client for Phoenix apps
+- See `docs/COMPONENT_DEVELOPMENT.md` for detailed DaisyUI component patterns and learnings
+
+### Component development guidelines
+
+- **Never** pipe JS commands into assigns - use `JS.exec` with data attributes instead:
+
+      # WRONG - causes ArgumentError
+      phx-click={hide_modal(@id) |> @on_cancel}
+      
+      # CORRECT - store and execute pattern
+      data-cancel={JS.exec(@on_cancel, "phx-remove")}
+      phx-click={hide_modal(@id) |> JS.exec("data-cancel", to: "##{@id}")}
+
+- **Never** use `when` guards in HEEx class lists - use `&&` expressions:
+
+      # WRONG
+      class={["rounded-full" when @shape == "circle"]}
+      
+      # CORRECT
+      class={[@shape == "circle" && "rounded-full"]}
+
+- Use `/dev/components` to preview and test all UI components during development
 
 ### Phoenix v1.8 guidelines
 

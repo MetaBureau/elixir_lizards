@@ -445,6 +445,576 @@ defmodule ElixirLizardsWeb.CoreComponents do
     """
   end
 
+  @doc """
+  Renders a modal dialog.
+
+  ## Examples
+
+      <.modal id="confirm-modal" on_cancel={JS.navigate(~p"/")}>
+        <:title>Confirm Action</:title>
+        <p>Are you sure you want to proceed?</p>
+        <:actions>
+          <.button phx-click="confirm">Yes</.button>
+        </:actions>
+      </.modal>
+
+  To show the modal, use `show_modal/1`. To hide it, use `hide_modal/1`.
+
+      <.button phx-click={show_modal("confirm-modal")}>Open</.button>
+  """
+  attr :id, :string, required: true
+  attr :on_cancel, JS, default: %JS{}
+  attr :class, :any, default: nil
+
+  slot :inner_block, required: true
+  slot :title
+  slot :subtitle
+  slot :actions
+
+  def modal(assigns) do
+    ~H"""
+    <dialog
+      id={@id}
+      class="modal"
+      phx-mounted={JS.set_attribute({"open", "true"}, to: "##{@id}")}
+      data-cancel={JS.exec(@on_cancel, "phx-remove")}
+    >
+      <div class={["modal-box", @class]}>
+        <form method="dialog">
+          <button
+            type="button"
+            class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+            aria-label={gettext("close")}
+            phx-click={hide_modal(@id) |> JS.exec("data-cancel", to: "##{@id}")}
+          >
+            <.icon name="hero-x-mark" class="size-5" />
+          </button>
+        </form>
+        <h3 :if={@title != []} class="font-bold text-lg">
+          {render_slot(@title)}
+        </h3>
+        <p :if={@subtitle != []} class="text-sm text-base-content/70">
+          {render_slot(@subtitle)}
+        </p>
+        <div class="py-4">
+          {render_slot(@inner_block)}
+        </div>
+        <div :if={@actions != []} class="modal-action">
+          {render_slot(@actions)}
+        </div>
+      </div>
+      <form method="dialog" class="modal-backdrop">
+        <button type="button" phx-click={hide_modal(@id) |> JS.exec("data-cancel", to: "##{@id}")}>
+          close
+        </button>
+      </form>
+    </dialog>
+    """
+  end
+
+  @doc """
+  Shows a modal by ID.
+
+  ## Examples
+
+      <.button phx-click={show_modal("my-modal")}>Open Modal</.button>
+  """
+  def show_modal(js \\ %JS{}, id) when is_binary(id) do
+    js
+    |> JS.set_attribute({"open", "true"}, to: "##{id}")
+    |> JS.focus_first(to: "##{id} .modal-box")
+  end
+
+  @doc """
+  Hides a modal by ID.
+
+  ## Examples
+
+      <.button phx-click={hide_modal("my-modal")}>Close</.button>
+  """
+  def hide_modal(js \\ %JS{}, id) when is_binary(id) do
+    js
+    |> JS.remove_attribute("open", to: "##{id}")
+  end
+
+  @doc """
+  Renders a card component.
+
+  ## Examples
+
+      <.card>
+        <:title>Card Title</:title>
+        <:body>This is the card content.</:body>
+      </.card>
+
+      <.card variant="bordered">
+        <:figure><img src="/images/photo.jpg" alt="Photo" /></:figure>
+        <:title>Photo Card</:title>
+        <:body>A card with an image.</:body>
+        <:actions><.button>View</.button></:actions>
+      </.card>
+  """
+  attr :class, :any, default: nil
+  attr :variant, :string, default: nil, values: [nil, "bordered", "compact"]
+
+  slot :figure, doc: "optional image or media at the top of the card"
+  slot :title, doc: "the card title"
+  slot :body, doc: "the main card content"
+  slot :actions, doc: "action buttons at the bottom of the card"
+
+  def card(assigns) do
+    ~H"""
+    <div class={[
+      "card bg-base-100",
+      @variant == "bordered" && "card-border border-base-300",
+      @variant == "compact" && "card-compact",
+      @class
+    ]}>
+      <figure :if={@figure != []}>
+        {render_slot(@figure)}
+      </figure>
+      <div class="card-body">
+        <h2 :if={@title != []} class="card-title">
+          {render_slot(@title)}
+        </h2>
+        <div :if={@body != []}>
+          {render_slot(@body)}
+        </div>
+        <div :if={@actions != []} class="card-actions justify-end">
+          {render_slot(@actions)}
+        </div>
+      </div>
+    </div>
+    """
+  end
+
+  @doc """
+  Renders a badge component.
+
+  ## Examples
+
+      <.badge>Default</.badge>
+      <.badge variant="primary">Primary</.badge>
+      <.badge variant="success">Active</.badge>
+      <.badge variant="error" size="lg">Critical</.badge>
+      <.badge outline>Outlined</.badge>
+  """
+  attr :variant, :string,
+    default: nil,
+    values: [
+      nil,
+      "primary",
+      "secondary",
+      "accent",
+      "info",
+      "success",
+      "warning",
+      "error",
+      "ghost"
+    ]
+
+  attr :size, :string, default: nil, values: [nil, "xs", "sm", "md", "lg"]
+  attr :outline, :boolean, default: false
+  attr :class, :any, default: nil
+  attr :rest, :global
+
+  slot :inner_block, required: true
+
+  def badge(assigns) do
+    ~H"""
+    <span
+      class={[
+        "badge",
+        @variant && "badge-#{@variant}",
+        @size && "badge-#{@size}",
+        @outline && "badge-outline",
+        @class
+      ]}
+      {@rest}
+    >
+      {render_slot(@inner_block)}
+    </span>
+    """
+  end
+
+  @doc """
+  Renders a dropdown menu.
+
+  ## Examples
+
+      <.dropdown>
+        <:trigger>
+          <.button>Options</.button>
+        </:trigger>
+        <:item>Profile</:item>
+        <:item>Settings</:item>
+        <:item navigate={~p"/logout"}>Logout</:item>
+      </.dropdown>
+
+      <.dropdown position="end">
+        <:trigger><.button>Menu</.button></:trigger>
+        <:item phx-click="action">Action</:item>
+      </.dropdown>
+  """
+  attr :class, :any, default: nil
+  attr :position, :string, default: nil, values: [nil, "end", "top", "left", "right"]
+  attr :hover, :boolean, default: false, doc: "open on hover instead of click"
+
+  slot :trigger, required: true, doc: "the element that triggers the dropdown"
+
+  slot :item, doc: "menu items" do
+    attr :navigate, :string
+    attr :patch, :string
+    attr :href, :string
+  end
+
+  def dropdown(assigns) do
+    ~H"""
+    <div class={[
+      "dropdown",
+      @position && "dropdown-#{@position}",
+      @hover && "dropdown-hover",
+      @class
+    ]}>
+      <div tabindex="0" role="button">
+        {render_slot(@trigger)}
+      </div>
+      <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-lg">
+        <li :for={item <- @item}>
+          <.link
+            :if={item[:navigate] || item[:patch] || item[:href]}
+            navigate={item[:navigate]}
+            patch={item[:patch]}
+            href={item[:href]}
+          >
+            {render_slot(item)}
+          </.link>
+          <a :if={!item[:navigate] && !item[:patch] && !item[:href]}>
+            {render_slot(item)}
+          </a>
+        </li>
+      </ul>
+    </div>
+    """
+  end
+
+  @doc """
+  Renders an avatar component.
+
+  ## Examples
+
+      <.avatar src="/images/user.jpg" alt="John Doe" />
+      <.avatar placeholder="JD" />
+      <.avatar src="/images/user.jpg" size="lg" status="online" />
+      <.avatar src="/images/user.jpg" shape="squircle" />
+  """
+  attr :src, :string, default: nil, doc: "the image source URL"
+  attr :alt, :string, default: "", doc: "alt text for the image"
+  attr :placeholder, :string, default: nil, doc: "text to show when no image (e.g., initials)"
+  attr :size, :string, default: "md", values: ["xs", "sm", "md", "lg", "xl"]
+  attr :shape, :string, default: "circle", values: ["circle", "squircle", "hexagon", "triangle"]
+  attr :status, :string, default: nil, values: [nil, "online", "offline"]
+  attr :class, :any, default: nil
+  attr :rest, :global
+
+  def avatar(assigns) do
+    size_classes = %{
+      "xs" => "w-8",
+      "sm" => "w-12",
+      "md" => "w-16",
+      "lg" => "w-20",
+      "xl" => "w-24"
+    }
+
+    placeholder_text_sizes = %{
+      "xs" => "text-xs",
+      "sm" => "text-sm",
+      "md" => "text-base",
+      "lg" => "text-xl",
+      "xl" => "text-2xl"
+    }
+
+    assigns =
+      assigns
+      |> assign(:size_class, Map.get(size_classes, assigns.size, "w-16"))
+      |> assign(:text_size, Map.get(placeholder_text_sizes, assigns.size, "text-base"))
+
+    ~H"""
+    <div class={["avatar", @status, @class]} {@rest}>
+      <div class={[
+        @size_class,
+        @shape == "circle" && "rounded-full",
+        @shape == "squircle" && "mask mask-squircle",
+        @shape == "hexagon" && "mask mask-hexagon",
+        @shape == "triangle" && "mask mask-triangle"
+      ]}>
+        <img :if={@src} src={@src} alt={@alt} />
+        <div
+          :if={!@src && @placeholder}
+          class={[
+            "bg-neutral text-neutral-content flex items-center justify-center w-full h-full",
+            @text_size
+          ]}
+        >
+          <span>{@placeholder}</span>
+        </div>
+        <div
+          :if={!@src && !@placeholder}
+          class="bg-neutral text-neutral-content flex items-center justify-center w-full h-full"
+        >
+          <.icon name="hero-user" class={@size_class} />
+        </div>
+      </div>
+    </div>
+    """
+  end
+
+  @doc """
+  Renders a group of stat components.
+
+  ## Examples
+
+      <.stat_group>
+        <.stat title="Total Users" value="31,245" />
+        <.stat title="Revenue" value="$12,500" description="+12% from last month" />
+      </.stat_group>
+  """
+  attr :class, :any, default: nil
+
+  slot :inner_block, required: true
+
+  def stat_group(assigns) do
+    ~H"""
+    <div class={["stats shadow", @class]}>
+      {render_slot(@inner_block)}
+    </div>
+    """
+  end
+
+  @doc """
+  Renders a single stat component.
+
+  ## Examples
+
+      <.stat title="Downloads" value="31K" />
+      <.stat title="Revenue" value="$12,500" description="+12%" icon="hero-currency-dollar" />
+      <.stat title="Tasks" value="86%" description="Completed" variant="info" />
+  """
+  attr :title, :string, required: true
+  attr :value, :string, required: true
+  attr :description, :string, default: nil
+  attr :icon, :string, default: nil
+
+  attr :variant, :string,
+    default: nil,
+    values: [nil, "primary", "secondary", "accent", "info", "success", "warning", "error"]
+
+  attr :class, :any, default: nil
+
+  def stat(assigns) do
+    ~H"""
+    <div class={["stat", @class]}>
+      <div :if={@icon} class={["stat-figure", @variant && "text-#{@variant}"]}>
+        <.icon name={@icon} class="size-8" />
+      </div>
+      <div class="stat-title">{@title}</div>
+      <div class={["stat-value", @variant && "text-#{@variant}"]}>{@value}</div>
+      <div :if={@description} class="stat-desc">{@description}</div>
+    </div>
+    """
+  end
+
+  @doc """
+  Renders an empty state placeholder for collections.
+
+  ## Examples
+
+      <.empty_state title="No documents">
+        <:description>Get started by creating your first document.</:description>
+        <:action><.button>Create Document</.button></:action>
+      </.empty_state>
+
+      <.empty_state icon="hero-inbox" title="No messages">
+        <:description>Your inbox is empty.</:description>
+      </.empty_state>
+  """
+  attr :icon, :string, default: "hero-folder-open"
+  attr :title, :string, required: true
+  attr :class, :any, default: nil
+
+  slot :description
+  slot :action
+
+  def empty_state(assigns) do
+    ~H"""
+    <div class={["flex flex-col items-center justify-center py-12 px-4 text-center", @class]}>
+      <div class="rounded-full bg-base-200 p-4 mb-4">
+        <.icon name={@icon} class="size-12 text-base-content/50" />
+      </div>
+      <h3 class="text-lg font-semibold text-base-content mb-2">{@title}</h3>
+      <p :if={@description != []} class="text-sm text-base-content/70 mb-4 max-w-sm">
+        {render_slot(@description)}
+      </p>
+      <div :if={@action != []}>
+        {render_slot(@action)}
+      </div>
+    </div>
+    """
+  end
+
+  @doc """
+  Renders a tabs component.
+
+  ## Examples
+
+      <.tabs>
+        <:tab active>All Users</:tab>
+        <:tab>Active</:tab>
+        <:tab>Inactive</:tab>
+      </.tabs>
+
+      <.tabs variant="boxed">
+        <:tab patch={~p"/users?tab=all"} active={@tab == "all"}>All</:tab>
+        <:tab patch={~p"/users?tab=active"} active={@tab == "active"}>Active</:tab>
+      </.tabs>
+  """
+  attr :variant, :string, default: nil, values: [nil, "boxed", "bordered", "lifted"]
+  attr :size, :string, default: nil, values: [nil, "xs", "sm", "md", "lg"]
+  attr :class, :any, default: nil
+
+  slot :tab, required: true do
+    attr :active, :boolean
+    attr :disabled, :boolean
+    attr :navigate, :string
+    attr :patch, :string
+    attr :href, :string
+  end
+
+  def tabs(assigns) do
+    ~H"""
+    <div
+      role="tablist"
+      class={[
+        "tabs",
+        @variant && "tabs-#{@variant}",
+        @size && "tabs-#{@size}",
+        @class
+      ]}
+    >
+      <%= for tab <- @tab do %>
+        <.link
+          :if={tab[:navigate] || tab[:patch] || tab[:href]}
+          navigate={tab[:navigate]}
+          patch={tab[:patch]}
+          href={tab[:href]}
+          role="tab"
+          class={[
+            "tab",
+            tab[:active] && "tab-active",
+            tab[:disabled] && "tab-disabled"
+          ]}
+        >
+          {render_slot(tab)}
+        </.link>
+        <a
+          :if={!tab[:navigate] && !tab[:patch] && !tab[:href]}
+          role="tab"
+          class={[
+            "tab",
+            tab[:active] && "tab-active",
+            tab[:disabled] && "tab-disabled"
+          ]}
+        >
+          {render_slot(tab)}
+        </a>
+      <% end %>
+    </div>
+    """
+  end
+
+  @doc """
+  Renders a breadcrumb navigation component.
+
+  ## Examples
+
+      <.breadcrumb>
+        <:crumb navigate={~p"/"}>Home</:crumb>
+        <:crumb navigate={~p"/users"}>Users</:crumb>
+        <:crumb>Edit User</:crumb>
+      </.breadcrumb>
+  """
+  attr :class, :any, default: nil
+
+  slot :crumb, required: true do
+    attr :navigate, :string
+    attr :patch, :string
+    attr :href, :string
+  end
+
+  def breadcrumb(assigns) do
+    ~H"""
+    <div class={["breadcrumbs text-sm", @class]}>
+      <ul>
+        <li :for={crumb <- @crumb}>
+          <.link
+            :if={crumb[:navigate] || crumb[:patch] || crumb[:href]}
+            navigate={crumb[:navigate]}
+            patch={crumb[:patch]}
+            href={crumb[:href]}
+          >
+            {render_slot(crumb)}
+          </.link>
+          <span :if={!crumb[:navigate] && !crumb[:patch] && !crumb[:href]}>
+            {render_slot(crumb)}
+          </span>
+        </li>
+      </ul>
+    </div>
+    """
+  end
+
+  @doc """
+  Renders a tooltip component.
+
+  ## Examples
+
+      <.tooltip content="More information here">
+        <.icon name="hero-question-mark-circle" />
+      </.tooltip>
+
+      <.tooltip content="Click to save" position="bottom">
+        <.button>Save</.button>
+      </.tooltip>
+  """
+  attr :content, :string, required: true
+  attr :position, :string, default: nil, values: [nil, "top", "bottom", "left", "right"]
+
+  attr :variant, :string,
+    default: nil,
+    values: [nil, "primary", "secondary", "accent", "info", "success", "warning", "error"]
+
+  attr :open, :boolean, default: false, doc: "force the tooltip to be open"
+  attr :class, :any, default: nil
+
+  slot :inner_block, required: true
+
+  def tooltip(assigns) do
+    ~H"""
+    <div
+      class={[
+        "tooltip",
+        @position && "tooltip-#{@position}",
+        @variant && "tooltip-#{@variant}",
+        @open && "tooltip-open",
+        @class
+      ]}
+      data-tip={@content}
+    >
+      {render_slot(@inner_block)}
+    </div>
+    """
+  end
+
   ## JS Commands
 
   def show(js \\ %JS{}, selector) do
