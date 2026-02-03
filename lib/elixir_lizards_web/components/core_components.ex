@@ -89,8 +89,8 @@ defmodule ElixirLizardsWeb.CoreComponents do
       <.button navigate={~p"/"}>Home</.button>
   """
   attr :rest, :global, include: ~w(href navigate patch method download name value disabled)
-  attr :class, :any
-  attr :variant, :string, values: ~w(primary)
+  attr :class, :any, default: nil
+  attr :variant, :string, default: nil, values: [nil, "primary"]
   slot :inner_block, required: true
 
   def button(%{rest: rest} = assigns) do
@@ -659,6 +659,7 @@ defmodule ElixirLizardsWeb.CoreComponents do
   attr :class, :any, default: nil
   attr :position, :string, default: nil, values: [nil, "end", "top", "left", "right"]
   attr :hover, :boolean, default: false, doc: "open on hover instead of click"
+  attr :rest, :global
 
   slot :trigger, required: true, doc: "the element that triggers the dropdown"
 
@@ -670,12 +671,15 @@ defmodule ElixirLizardsWeb.CoreComponents do
 
   def dropdown(assigns) do
     ~H"""
-    <div class={[
-      "dropdown",
-      @position && "dropdown-#{@position}",
-      @hover && "dropdown-hover",
-      @class
-    ]}>
+    <div
+      class={[
+        "dropdown",
+        @position && "dropdown-#{@position}",
+        @hover && "dropdown-hover",
+        @class
+      ]}
+      {@rest}
+    >
       <div tabindex="0" role="button">
         {render_slot(@trigger)}
       </div>
@@ -689,9 +693,9 @@ defmodule ElixirLizardsWeb.CoreComponents do
           >
             {render_slot(item)}
           </.link>
-          <a :if={!item[:navigate] && !item[:patch] && !item[:href]}>
+          <span :if={!item[:navigate] && !item[:patch] && !item[:href]} role="menuitem">
             {render_slot(item)}
-          </a>
+          </span>
         </li>
       </ul>
     </div>
@@ -734,10 +738,19 @@ defmodule ElixirLizardsWeb.CoreComponents do
       "xl" => "text-2xl"
     }
 
+    icon_sizes = %{
+      "xs" => "size-4",
+      "sm" => "size-6",
+      "md" => "size-8",
+      "lg" => "size-10",
+      "xl" => "size-12"
+    }
+
     assigns =
       assigns
       |> assign(:size_class, Map.get(size_classes, assigns.size, "w-16"))
       |> assign(:text_size, Map.get(placeholder_text_sizes, assigns.size, "text-base"))
+      |> assign(:icon_size, Map.get(icon_sizes, assigns.size, "size-8"))
 
     ~H"""
     <div class={["avatar", @status, @class]} {@rest}>
@@ -762,7 +775,7 @@ defmodule ElixirLizardsWeb.CoreComponents do
           :if={!@src && !@placeholder}
           class="bg-neutral text-neutral-content flex items-center justify-center w-full h-full"
         >
-          <.icon name="hero-user" class={@size_class} />
+          <.icon name="hero-user" class={@icon_size} />
         </div>
       </div>
     </div>
@@ -801,7 +814,7 @@ defmodule ElixirLizardsWeb.CoreComponents do
       <.stat title="Tasks" value="86%" description="Completed" variant="info" />
   """
   attr :title, :string, required: true
-  attr :value, :string, required: true
+  attr :value, :any, required: true, doc: "the stat value (string or number)"
   attr :description, :string, default: nil
   attr :icon, :string, default: nil
 
@@ -901,33 +914,33 @@ defmodule ElixirLizardsWeb.CoreComponents do
         @class
       ]}
     >
-      <%= for tab <- @tab do %>
-        <.link
-          :if={tab[:navigate] || tab[:patch] || tab[:href]}
-          navigate={tab[:navigate]}
-          patch={tab[:patch]}
-          href={tab[:href]}
-          role="tab"
-          class={[
-            "tab",
-            tab[:active] && "tab-active",
-            tab[:disabled] && "tab-disabled"
-          ]}
-        >
-          {render_slot(tab)}
-        </.link>
-        <a
-          :if={!tab[:navigate] && !tab[:patch] && !tab[:href]}
-          role="tab"
-          class={[
-            "tab",
-            tab[:active] && "tab-active",
-            tab[:disabled] && "tab-disabled"
-          ]}
-        >
-          {render_slot(tab)}
-        </a>
-      <% end %>
+      <.link
+        :for={tab <- @tab}
+        :if={tab[:navigate] || tab[:patch] || tab[:href]}
+        navigate={tab[:navigate]}
+        patch={tab[:patch]}
+        href={tab[:href]}
+        role="tab"
+        class={[
+          "tab",
+          tab[:active] && "tab-active",
+          tab[:disabled] && "tab-disabled"
+        ]}
+      >
+        {render_slot(tab)}
+      </.link>
+      <span
+        :for={tab <- @tab}
+        :if={!tab[:navigate] && !tab[:patch] && !tab[:href]}
+        role="tab"
+        class={[
+          "tab",
+          tab[:active] && "tab-active",
+          tab[:disabled] && "tab-disabled"
+        ]}
+      >
+        {render_slot(tab)}
+      </span>
     </div>
     """
   end
