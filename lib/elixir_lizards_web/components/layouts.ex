@@ -35,40 +35,77 @@ defmodule ElixirLizardsWeb.Layouts do
 
   def app(assigns) do
     ~H"""
-    <header class="navbar px-4 sm:px-6 lg:px-8">
-      <div class="flex-1">
-        <a href="/" class="flex-1 flex w-fit items-center gap-2">
+    <header class="navbar px-4 sm:px-6 lg:px-8 bg-base-100/80 backdrop-blur-lg sticky top-0 z-50 border-b border-base-200">
+      <div class="navbar-start">
+        <a href="/" class="flex items-center gap-2">
           <img src={~p"/images/logo.svg"} width="36" />
-          <span class="text-sm font-semibold">v{Application.spec(:phoenix, :vsn)}</span>
+          <span class="font-bold hidden sm:inline">Elixir Lizards</span>
         </a>
       </div>
-      <div class="flex-none">
-        <ul class="flex flex-column px-1 space-x-4 items-center">
+      <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1 gap-1">
+          <li><a href="/demo/features" class="rounded-lg">Features</a></li>
+          <li><a href="/demo/pricing" class="rounded-lg">Pricing</a></li>
+          <li><a href="/demo/team" class="rounded-lg">Team</a></li>
+          <li><a href="/demo/contact" class="rounded-lg">Contact</a></li>
           <li>
-            <a href="https://phoenixframework.org/" class="btn btn-ghost">Website</a>
-          </li>
-          <li>
-            <a href="https://github.com/phoenixframework/phoenix" class="btn btn-ghost">GitHub</a>
-          </li>
-          <li>
-            <.theme_toggle />
-          </li>
-          <li>
-            <a href="https://hexdocs.pm/phoenix/overview.html" class="btn btn-primary">
-              Get Started <span aria-hidden="true">&rarr;</span>
-            </a>
+            <details class="dropdown">
+              <summary class="rounded-lg">Resources</summary>
+              <ul class="menu dropdown-content bg-base-100 rounded-box z-10 w-52 p-2 shadow-lg border border-base-200">
+                <li><a href="/demo">All Demo Pages</a></li>
+                <li><a href="/demo/dashboard">Dashboard</a></li>
+                <li><a href="/dev/components">Component Library</a></li>
+                <li><a href="/admin">Admin Panel</a></li>
+              </ul>
+            </details>
           </li>
         </ul>
       </div>
+      <div class="navbar-end gap-2">
+        <.theme_toggle />
+        <a href="/sign-in" class="btn btn-ghost hidden sm:flex">Sign In</a>
+        <a href="/demo" class="btn btn-primary btn-sm sm:btn-md">Get Started</a>
+        <%!-- Mobile menu --%>
+        <div class="dropdown dropdown-end lg:hidden">
+          <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+            </svg>
+          </div>
+          <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-lg border border-base-200">
+            <li><a href="/demo">All Demos</a></li>
+            <li><a href="/demo/features">Features</a></li>
+            <li><a href="/demo/pricing">Pricing</a></li>
+            <li><a href="/demo/team">Team</a></li>
+            <li><a href="/demo/contact">Contact</a></li>
+            <li><a href="/demo/dashboard">Dashboard</a></li>
+            <li class="border-t border-base-200 mt-2 pt-2"><a href="/dev/components">Components</a></li>
+            <li><a href="/sign-in">Sign In</a></li>
+          </ul>
+        </div>
+      </div>
     </header>
 
-    <main class="px-4 py-20 sm:px-6 lg:px-8">
-      <div class="mx-auto max-w-2xl space-y-4">
+    <main class="px-4 py-10 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-6xl space-y-6">
         {render_slot(@inner_block)}
       </div>
     </main>
 
     <.flash_group flash={@flash} />
+
+    <footer class="footer footer-center p-6 bg-base-200 text-base-content mt-auto">
+      <nav class="grid grid-flow-col gap-4 text-sm">
+        <a href="/demo/features" class="link link-hover">Features</a>
+        <a href="/demo/pricing" class="link link-hover">Pricing</a>
+        <a href="/demo/team" class="link link-hover">Team</a>
+        <a href="/demo/contact" class="link link-hover">Contact</a>
+        <a href="/dev/components" class="link link-hover">Components</a>
+      </nav>
+      <aside class="text-xs text-base-content/60">
+        Built with Phoenix, Ash Framework, and DaisyUI
+      </aside>
+    </footer>
     """
   end
 

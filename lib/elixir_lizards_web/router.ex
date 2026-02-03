@@ -42,6 +42,15 @@ defmodule ElixirLizardsWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+
+    # Demo pages showcasing DaisyUI components
+    live "/demo", Demo.DemoIndexLive
+    live "/demo/dashboard", Demo.DashboardLive
+    live "/demo/features", Demo.FeaturesLive
+    live "/demo/pricing", Demo.PricingLive
+    live "/demo/team", Demo.TeamLive
+    live "/demo/contact", Demo.ContactLive
+
     auth_routes AuthController, ElixirLizards.Accounts.User, path: "/auth"
     sign_out_route AuthController
 
