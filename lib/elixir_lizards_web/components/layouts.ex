@@ -48,6 +48,7 @@ defmodule ElixirLizardsWeb.Layouts do
           <li><a href="/demo/pricing" class="rounded-lg">Pricing</a></li>
           <li><a href="/demo/team" class="rounded-lg">Team</a></li>
           <li><a href="/demo/contact" class="rounded-lg">Contact</a></li>
+          <li><a href="/demo/mapbox" class="rounded-lg">Map</a></li>
           <li>
             <details class="dropdown">
               <summary class="rounded-lg">Resources</summary>
@@ -68,18 +69,35 @@ defmodule ElixirLizardsWeb.Layouts do
         <%!-- Mobile menu --%>
         <div class="dropdown dropdown-end lg:hidden">
           <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
             </svg>
           </div>
-          <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-lg border border-base-200">
+          <ul
+            tabindex="0"
+            class="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-lg border border-base-200"
+          >
             <li><a href="/demo">All Demos</a></li>
             <li><a href="/demo/features">Features</a></li>
             <li><a href="/demo/pricing">Pricing</a></li>
             <li><a href="/demo/team">Team</a></li>
             <li><a href="/demo/contact">Contact</a></li>
+            <li><a href="/demo/mapbox">Map</a></li>
             <li><a href="/demo/dashboard">Dashboard</a></li>
-            <li class="border-t border-base-200 mt-2 pt-2"><a href="/dev/components">Components</a></li>
+            <li class="border-t border-base-200 mt-2 pt-2">
+              <a href="/dev/components">Components</a>
+            </li>
             <li><a href="/sign-in">Sign In</a></li>
           </ul>
         </div>
@@ -100,6 +118,7 @@ defmodule ElixirLizardsWeb.Layouts do
         <a href="/demo/pricing" class="link link-hover">Pricing</a>
         <a href="/demo/team" class="link link-hover">Team</a>
         <a href="/demo/contact" class="link link-hover">Contact</a>
+        <a href="/demo/mapbox" class="link link-hover">Map</a>
         <a href="/dev/components" class="link link-hover">Components</a>
       </nav>
       <aside class="text-xs text-base-content/60">
