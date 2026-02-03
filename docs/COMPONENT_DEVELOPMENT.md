@@ -303,6 +303,102 @@ Check if slots are provided before rendering:
 
 ---
 
+## HEEx Heredoc Indentation Rules
+
+### Problem: Code Samples in Templates
+
+Content inside `~H"""..."""` must be indented at least as much as the closing `"""`. This causes issues with code samples that need minimal indentation:
+
+```elixir
+# WRONG - "outdented heredoc line" warning
+def render(assigns) do
+  ~H"""
+    <div class="mockup-code">
+      <pre><code><.badge>Default</.badge>
+<.badge variant="success">Active</.badge></code></pre>
+    </div>
+  """
+end
+```
+
+### Problem: ~p Sigil Validates at Compile Time
+
+Even inside display strings, `~p"/users"` will warn if the route doesn't exist:
+
+```elixir
+# Causes warning even though this is just a documentation example
+<pre><code><:tab patch={~p"/users?tab=all"}>All</:tab></code></pre>
+```
+
+### Solution: Module Attributes for Code Examples
+
+Store code samples as module attributes to avoid heredoc indentation constraints:
+
+```elixir
+@code_example """
+<.badge>Default</.badge>
+<.badge variant="success">Active</.badge>
+<.badge variant="error" size="lg" outline>Critical</.badge>
+"""
+
+@impl true
+def mount(_params, _session, socket) do
+  {:ok,
+   socket
+   |> assign(:page_title, "Badge Component")
+   |> assign(:code_example, @code_example)}
+end
+
+@impl true
+def render(assigns) do
+  ~H"""
+  <div class="mockup-code">
+    <pre><code>{@code_example}</code></pre>
+  </div>
+  """
+end
+```
+
+Module-level heredocs don't have the same indentation rules as HEEx heredocs.
+
+---
+
+## LiveView File Organization
+
+### Pattern: Index + Subdirectory
+
+For related LiveViews, use an index module with a subdirectory for children:
+
+```
+lib/my_app_web/live/
+├── component_demo_live.ex          # Index/listing page
+└── component_demo/                 # Subdirectory for related modules
+    ├── modal_demo.ex
+    ├── card_demo.ex
+    └── badge_demo.ex
+```
+
+### Router Configuration
+
+Reference child modules with their full path:
+
+```elixir
+scope "/dev" do
+  pipe_through :browser
+
+  live "/components", MyAppWeb.ComponentDemoLive
+  live "/components/modal", MyAppWeb.ComponentDemo.ModalDemo
+  live "/components/card", MyAppWeb.ComponentDemo.CardDemo
+end
+```
+
+### Module Naming Convention
+
+- Index: `MyAppWeb.ComponentDemoLive` (singular, ends in `Live`)
+- Children: `MyAppWeb.ComponentDemo.ModalDemo` (namespace matches parent without `Live`, child ends in `Demo` or appropriate suffix)
+
+---
+
 ## Development Workflow
 
 1. **Run `mix precommit` frequently** - catches warnings-as-errors before they accumulate
@@ -328,3 +424,17 @@ Components implemented in `core_components.ex`:
 | `tabs` | `tabs`, `tab`, `tabs-{variant}` | boxed, bordered, lifted variants |
 | `breadcrumb` | `breadcrumbs` | navigation support |
 | `tooltip` | `tooltip`, `tooltip-{position}` | positioning, color variants |
+
+### Component Demo Routes (dev only)
+
+- `/dev/components` - Index with links to all component demos
+- `/dev/components/modal` - Modal demo
+- `/dev/components/card` - Card demo
+- `/dev/components/badge` - Badge demo
+- `/dev/components/dropdown` - Dropdown demo
+- `/dev/components/avatar` - Avatar demo
+- `/dev/components/stat` - Stat demo
+- `/dev/components/empty-state` - Empty state demo
+- `/dev/components/tabs` - Tabs demo
+- `/dev/components/breadcrumb` - Breadcrumb demo
+- `/dev/components/tooltip` - Tooltip demo
