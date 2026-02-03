@@ -50,6 +50,7 @@ defmodule ElixirLizardsWeb.Router do
     live "/demo/pricing", Demo.PricingLive
     live "/demo/team", Demo.TeamLive
     live "/demo/contact", Demo.ContactLive
+    live "/demo/mapbox", Demo.MapboxLive
 
     auth_routes AuthController, ElixirLizards.Accounts.User, path: "/auth"
     sign_out_route AuthController

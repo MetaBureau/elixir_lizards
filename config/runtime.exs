@@ -23,6 +23,10 @@ end
 config :elixir_lizards, ElixirLizardsWeb.Endpoint,
   http: [port: String.to_integer(System.get_env("PORT", "4000"))]
 
+# Mapbox GL JS access token (optional in dev, get yours at https://account.mapbox.com)
+config :elixir_lizards,
+  mapbox_access_token: System.get_env("MAPBOX_ACCESS_TOKEN")
+
 if config_env() == :prod do
   database_url =
     System.get_env("DATABASE_URL") ||
