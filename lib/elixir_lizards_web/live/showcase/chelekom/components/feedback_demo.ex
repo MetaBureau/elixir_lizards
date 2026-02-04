@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.ChelekomDemo.FeedbackDemo do
+defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.FeedbackDemo do
   @moduledoc """
   Feedback components demo: Alert, Progress, Spinner, Skeleton, Flash
   """

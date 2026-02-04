@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.ChelekomDemo.GeneralDemo do
+defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.GeneralDemo do
   @moduledoc """
   General components demo: Button, Badge, Card, Divider, Accordion, Tabs, Table, Rating
   """

@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.ComponentDemo.BreadcrumbDemo do
+defmodule ElixirLizardsWeb.Showcase.DaisyUI.Components.BreadcrumbDemo do
   @moduledoc """
   Demo for the breadcrumb component.
   """

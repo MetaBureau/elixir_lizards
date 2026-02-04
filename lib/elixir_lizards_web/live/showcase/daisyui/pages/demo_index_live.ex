@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Demo.DemoIndexLive do
+defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.DemoIndexLive do
   @moduledoc """
   Index page for all demo pages showcasing different DaisyUI components and patterns.
   """

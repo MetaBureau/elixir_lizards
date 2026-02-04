@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Demo.MapboxLive do
+defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.MapboxLive do
   @moduledoc """
   Demo page showcasing Mapbox GL JS integration with Phoenix LiveView.
   Demonstrates map initialization, markers, and server-pushed events.

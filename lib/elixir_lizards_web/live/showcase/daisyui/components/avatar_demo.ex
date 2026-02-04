@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.ComponentDemo.AvatarDemo do
+defmodule ElixirLizardsWeb.Showcase.DaisyUI.Components.AvatarDemo do
   @moduledoc """
   Demo for the avatar component.
   """

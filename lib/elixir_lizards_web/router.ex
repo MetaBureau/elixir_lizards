@@ -44,13 +44,13 @@ defmodule ElixirLizardsWeb.Router do
     get "/", PageController, :home
 
     # Demo pages showcasing DaisyUI components
-    live "/demo", Demo.DemoIndexLive
-    live "/demo/dashboard", Demo.DashboardLive
-    live "/demo/features", Demo.FeaturesLive
-    live "/demo/pricing", Demo.PricingLive
-    live "/demo/team", Demo.TeamLive
-    live "/demo/contact", Demo.ContactLive
-    live "/demo/mapbox", Demo.MapboxLive
+    live "/demo", Showcase.DaisyUI.Pages.DemoIndexLive
+    live "/demo/dashboard", Showcase.DaisyUI.Pages.DashboardLive
+    live "/demo/features", Showcase.DaisyUI.Pages.FeaturesLive
+    live "/demo/pricing", Showcase.DaisyUI.Pages.PricingLive
+    live "/demo/team", Showcase.DaisyUI.Pages.TeamLive
+    live "/demo/contact", Showcase.DaisyUI.Pages.ContactLive
+    live "/demo/mapbox", Showcase.DaisyUI.Pages.MapboxLive
 
     auth_routes AuthController, ElixirLizards.Accounts.User, path: "/auth"
     sign_out_route AuthController
@@ -111,23 +111,23 @@ defmodule ElixirLizardsWeb.Router do
       forward "/mailbox", Plug.Swoosh.MailboxPreview
 
       # Component library index
-      live "/components", ElixirLizardsWeb.ComponentIndexLive
+      live "/components", ElixirLizardsWeb.Showcase.ComponentIndexLive
 
       # DaisyUI component demos
-      live "/components/daisyui", ElixirLizardsWeb.ComponentDemoLive
-      live "/components/daisyui/modal", ElixirLizardsWeb.ComponentDemo.ModalDemo
-      live "/components/daisyui/card", ElixirLizardsWeb.ComponentDemo.CardDemo
-      live "/components/daisyui/badge", ElixirLizardsWeb.ComponentDemo.BadgeDemo
-      live "/components/daisyui/dropdown", ElixirLizardsWeb.ComponentDemo.DropdownDemo
-      live "/components/daisyui/avatar", ElixirLizardsWeb.ComponentDemo.AvatarDemo
-      live "/components/daisyui/stat", ElixirLizardsWeb.ComponentDemo.StatDemo
-      live "/components/daisyui/empty-state", ElixirLizardsWeb.ComponentDemo.EmptyStateDemo
-      live "/components/daisyui/tabs", ElixirLizardsWeb.ComponentDemo.TabsDemo
-      live "/components/daisyui/breadcrumb", ElixirLizardsWeb.ComponentDemo.BreadcrumbDemo
-      live "/components/daisyui/tooltip", ElixirLizardsWeb.ComponentDemo.TooltipDemo
+      live "/components/daisyui", ElixirLizardsWeb.Showcase.DaisyUI.ComponentDemoLive
+      live "/components/daisyui/modal", ElixirLizardsWeb.Showcase.DaisyUI.Components.ModalDemo
+      live "/components/daisyui/card", ElixirLizardsWeb.Showcase.DaisyUI.Components.CardDemo
+      live "/components/daisyui/badge", ElixirLizardsWeb.Showcase.DaisyUI.Components.BadgeDemo
+      live "/components/daisyui/dropdown", ElixirLizardsWeb.Showcase.DaisyUI.Components.DropdownDemo
+      live "/components/daisyui/avatar", ElixirLizardsWeb.Showcase.DaisyUI.Components.AvatarDemo
+      live "/components/daisyui/stat", ElixirLizardsWeb.Showcase.DaisyUI.Components.StatDemo
+      live "/components/daisyui/empty-state", ElixirLizardsWeb.Showcase.DaisyUI.Components.EmptyStateDemo
+      live "/components/daisyui/tabs", ElixirLizardsWeb.Showcase.DaisyUI.Components.TabsDemo
+      live "/components/daisyui/breadcrumb", ElixirLizardsWeb.Showcase.DaisyUI.Components.BreadcrumbDemo
+      live "/components/daisyui/tooltip", ElixirLizardsWeb.Showcase.DaisyUI.Components.TooltipDemo
 
       # Mishka Chelekom component demos
-      live "/components/chelekom", ElixirLizardsWeb.ChelekomDemoLive
+      live "/components/chelekom", ElixirLizardsWeb.Showcase.Chelekom.ComponentDemoLive
     end
   end
 

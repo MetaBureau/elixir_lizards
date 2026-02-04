@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.ComponentDemo.ModalDemo do
+defmodule ElixirLizardsWeb.Showcase.DaisyUI.Components.ModalDemo do
   @moduledoc """
   Demo for the modal component.
   """

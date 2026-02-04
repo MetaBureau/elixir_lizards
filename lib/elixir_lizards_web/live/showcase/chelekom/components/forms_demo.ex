@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.ChelekomDemo.FormsDemo do
+defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.FormsDemo do
   @moduledoc """
   Forms components demo: TextField
   """

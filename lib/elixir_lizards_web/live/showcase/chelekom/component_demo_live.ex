@@ -1,11 +1,11 @@
-defmodule ElixirLizardsWeb.ChelekomDemoLive do
+defmodule ElixirLizardsWeb.Showcase.Chelekom.ComponentDemoLive do
   @moduledoc """
   Mishka Chelekom component library showcase.
   Components are organized by category.
   """
   use ElixirLizardsWeb, :live_view
 
-  alias ElixirLizardsWeb.ChelekomDemo.{
+  alias ElixirLizardsWeb.Showcase.Chelekom.Components.{
     FeedbackDemo,
     FormsDemo,
     GeneralDemo,

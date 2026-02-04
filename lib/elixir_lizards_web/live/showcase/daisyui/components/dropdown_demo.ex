@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.ComponentDemo.DropdownDemo do
+defmodule ElixirLizardsWeb.Showcase.DaisyUI.Components.DropdownDemo do
   @moduledoc """
   Demo for the dropdown component.
   """

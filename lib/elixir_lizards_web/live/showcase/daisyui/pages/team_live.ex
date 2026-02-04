@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Demo.TeamLive do
+defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.TeamLive do
   @moduledoc """
   Team demo page showcasing avatars, member cards, and team organization.
   """

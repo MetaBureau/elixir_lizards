@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.ComponentDemo.TabsDemo do
+defmodule ElixirLizardsWeb.Showcase.DaisyUI.Components.TabsDemo do
   @moduledoc """
   Demo for the tabs component.
   """

@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.ChelekomDemo.OverlaysDemo do
+defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.OverlaysDemo do
   @moduledoc """
   Overlays components demo: Modal, Drawer, Tooltip
   """

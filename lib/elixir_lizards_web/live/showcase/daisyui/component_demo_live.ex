@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.ComponentDemoLive do
+defmodule ElixirLizardsWeb.Showcase.DaisyUI.ComponentDemoLive do
   @moduledoc """
   Index page for the component library demo.
   """

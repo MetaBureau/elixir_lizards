@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.ChelekomDemo.NavigationDemo do
+defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.NavigationDemo do
   @moduledoc """
   Navigation components demo: Breadcrumb, Dropdown, MegaMenu, Menu, Navbar, Pagination, Sidebar, Footer, ScrollArea
   """

@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Demo.PricingLive do
+defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.PricingLive do
   @moduledoc """
   Pricing demo page showcasing pricing cards, comparison tables, and FAQ.
   """

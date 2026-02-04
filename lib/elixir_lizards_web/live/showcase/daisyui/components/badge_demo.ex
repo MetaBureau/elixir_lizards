@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.ComponentDemo.BadgeDemo do
+defmodule ElixirLizardsWeb.Showcase.DaisyUI.Components.BadgeDemo do
   @moduledoc """
   Demo for the badge component.
   """

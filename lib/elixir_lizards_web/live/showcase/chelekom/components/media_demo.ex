@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.ChelekomDemo.MediaDemo do
+defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.MediaDemo do
   @moduledoc """
   Media components demo: Avatar
   """

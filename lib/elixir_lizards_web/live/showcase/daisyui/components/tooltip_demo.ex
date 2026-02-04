@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.ComponentDemo.TooltipDemo do
+defmodule ElixirLizardsWeb.Showcase.DaisyUI.Components.TooltipDemo do
   @moduledoc """
   Demo for the tooltip component.
   """

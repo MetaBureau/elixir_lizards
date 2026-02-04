@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.ComponentDemo.EmptyStateDemo do
+defmodule ElixirLizardsWeb.Showcase.DaisyUI.Components.EmptyStateDemo do
   @moduledoc """
   Demo for the empty_state component.
   """

@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Demo.ContactLive do
+defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.ContactLive do
   @moduledoc """
   Contact demo page showcasing forms, inputs, and validation patterns.
   """

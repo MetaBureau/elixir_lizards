@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.ComponentDemo.CardDemo do
+defmodule ElixirLizardsWeb.Showcase.DaisyUI.Components.CardDemo do
   @moduledoc """
   Demo for the card component.
   """

@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Demo.FeaturesLive do
+defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.FeaturesLive do
   @moduledoc """
   Features demo page showcasing hero sections, feature cards, and testimonials.
   """

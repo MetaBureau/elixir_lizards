@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Demo.DashboardLive do
+defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.DashboardLive do
   @moduledoc """
   Dashboard demo page showcasing stats, cards, tables and activity feeds.
   """

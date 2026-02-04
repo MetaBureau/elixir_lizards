@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.ComponentDemo.StatDemo do
+defmodule ElixirLizardsWeb.Showcase.DaisyUI.Components.StatDemo do
   @moduledoc """
   Demo for the stat and stat_group components.
   """
