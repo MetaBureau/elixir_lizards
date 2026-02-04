@@ -489,6 +489,224 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
         </ElixirLizardsWeb.Components.Modal.modal>
       </section>
 
+    <!-- Dropdown Components -->
+      <section class="space-y-6">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-2">Dropdown Components</h2>
+          <p class="text-base-content/70 max-w-2xl mx-auto">
+            Expandable menus for actions and navigation options
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-6 justify-center">
+          <ElixirLizardsWeb.Components.Dropdown.dropdown id="demo-dropdown-1" position="bottom" clickable rounded="medium">
+            <:trigger>
+              <ElixirLizardsWeb.Components.Button.button>
+                Click Me <.icon name="hero-chevron-down" class="size-4 ml-1" />
+              </ElixirLizardsWeb.Components.Button.button>
+            </:trigger>
+            <:content>
+              <div class="py-1 min-w-32">
+                <div class="px-3 py-2 hover:bg-base-200 cursor-pointer">Dashboard</div>
+                <div class="px-3 py-2 hover:bg-base-200 cursor-pointer">Settings</div>
+                <div class="px-3 py-2 hover:bg-base-200 cursor-pointer">Profile</div>
+                <div class="px-3 py-2 hover:bg-base-200 cursor-pointer text-error">Sign Out</div>
+              </div>
+            </:content>
+          </ElixirLizardsWeb.Components.Dropdown.dropdown>
+
+          <ElixirLizardsWeb.Components.Dropdown.dropdown id="demo-dropdown-2" position="bottom" clickable rounded="medium">
+            <:trigger>
+              <ElixirLizardsWeb.Components.Button.button variant="outline">
+                Options <.icon name="hero-chevron-down" class="size-4 ml-1" />
+              </ElixirLizardsWeb.Components.Button.button>
+            </:trigger>
+            <:content>
+              <div class="py-1 min-w-32">
+                <div class="px-3 py-2 hover:bg-base-200 cursor-pointer">Edit</div>
+                <div class="px-3 py-2 hover:bg-base-200 cursor-pointer">Duplicate</div>
+                <div class="px-3 py-2 hover:bg-base-200 cursor-pointer">Archive</div>
+              </div>
+            </:content>
+          </ElixirLizardsWeb.Components.Dropdown.dropdown>
+        </div>
+      </section>
+
+    <!-- Breadcrumb Components -->
+      <section class="space-y-6">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-2">Breadcrumb Components</h2>
+          <p class="text-base-content/70 max-w-2xl mx-auto">
+            Navigation trails showing the current page location
+          </p>
+        </div>
+
+        <div class="space-y-4 flex flex-col items-center">
+          <ElixirLizardsWeb.Components.Breadcrumb.breadcrumb>
+            <:item icon="hero-home" link="/">Home</:item>
+            <:item link="/dev">Development</:item>
+            <:item>Chelekom</:item>
+          </ElixirLizardsWeb.Components.Breadcrumb.breadcrumb>
+
+          <ElixirLizardsWeb.Components.Breadcrumb.breadcrumb color="primary" size="medium">
+            <:item icon="hero-folder">Projects</:item>
+            <:item icon="hero-document">Documentation</:item>
+            <:item icon="hero-code-bracket">Components</:item>
+          </ElixirLizardsWeb.Components.Breadcrumb.breadcrumb>
+        </div>
+      </section>
+
+    <!-- Pagination Components -->
+      <section class="space-y-6">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-2">Pagination Components</h2>
+          <p class="text-base-content/70 max-w-2xl mx-auto">
+            Navigate through pages of content
+          </p>
+        </div>
+
+        <div class="space-y-6 flex flex-col items-center">
+          <ElixirLizardsWeb.Components.Pagination.pagination total={10} active={3} siblings={1} />
+          <ElixirLizardsWeb.Components.Pagination.pagination total={20} active={7} siblings={2} variant="outline" show_edges />
+        </div>
+      </section>
+
+    <!-- Rating Components -->
+      <section class="space-y-6">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-2">Rating Components</h2>
+          <p class="text-base-content/70 max-w-2xl mx-auto">
+            Star ratings for reviews and feedback
+          </p>
+        </div>
+
+        <div class="space-y-4 flex flex-col items-center">
+          <div class="flex items-center gap-4">
+            <span class="text-sm">3/5:</span>
+            <ElixirLizardsWeb.Components.Rating.rating select={3} count={5} size="medium" />
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-sm">4.5/5:</span>
+            <ElixirLizardsWeb.Components.Rating.rating select={4.5} count={5} size="large" color="warning" />
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-sm">Interactive:</span>
+            <ElixirLizardsWeb.Components.Rating.rating select={0} count={5} size="large" color="primary" interactive />
+          </div>
+        </div>
+      </section>
+
+    <!-- Text Field Components -->
+      <section class="space-y-6">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-2">Text Field Components</h2>
+          <p class="text-base-content/70 max-w-2xl mx-auto">
+            Form inputs with labels, descriptions, and validation states
+          </p>
+        </div>
+
+        <div class="max-w-md mx-auto space-y-4">
+          <ElixirLizardsWeb.Components.TextField.text_field
+            name="demo_name"
+            value=""
+            label="Your Name"
+            placeholder="Enter your name"
+            floating="outer"
+          />
+          <ElixirLizardsWeb.Components.TextField.text_field
+            name="demo_email"
+            value=""
+            label="Email Address"
+            placeholder="you@example.com"
+            description="We'll never share your email"
+            floating="outer"
+          />
+          <ElixirLizardsWeb.Components.TextField.text_field
+            name="demo_error"
+            value="invalid"
+            label="With Error"
+            color="danger"
+            floating="outer"
+          >
+            <:end_section>
+              <.icon name="hero-exclamation-circle" class="size-5 text-error" />
+            </:end_section>
+          </ElixirLizardsWeb.Components.TextField.text_field>
+        </div>
+      </section>
+
+    <!-- Skeleton Components -->
+      <section class="space-y-6">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-2">Skeleton Components</h2>
+          <p class="text-base-content/70 max-w-2xl mx-auto">
+            Loading placeholders for content that is being fetched
+          </p>
+        </div>
+
+        <div class="max-w-md mx-auto space-y-4">
+          <div class="flex items-center gap-4">
+            <ElixirLizardsWeb.Components.Skeleton.skeleton width="w-12" height="h-12" rounded="full" animated />
+            <div class="flex-1 space-y-2">
+              <ElixirLizardsWeb.Components.Skeleton.skeleton width="w-3/4" height="small" animated />
+              <ElixirLizardsWeb.Components.Skeleton.skeleton width="w-1/2" height="extra_small" animated />
+            </div>
+          </div>
+          <ElixirLizardsWeb.Components.Skeleton.skeleton width="full" height="medium" animated />
+          <ElixirLizardsWeb.Components.Skeleton.skeleton width="full" height="extra_large" animated />
+        </div>
+      </section>
+
+    <!-- Divider Components -->
+      <section class="space-y-6">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-2">Divider Components</h2>
+          <p class="text-base-content/70 max-w-2xl mx-auto">
+            Visual separators for content sections
+          </p>
+        </div>
+
+        <div class="max-w-xl mx-auto space-y-8">
+          <ElixirLizardsWeb.Components.Divider.divider />
+          <ElixirLizardsWeb.Components.Divider.divider type="dashed" color="primary" />
+          <ElixirLizardsWeb.Components.Divider.divider type="dotted" color="secondary">
+            <:text>OR</:text>
+          </ElixirLizardsWeb.Components.Divider.divider>
+          <ElixirLizardsWeb.Components.Divider.divider color="success">
+            <:icon name="hero-sparkles" class="px-2 bg-base-100" />
+          </ElixirLizardsWeb.Components.Divider.divider>
+        </div>
+      </section>
+
+    <!-- Drawer Components -->
+      <section class="space-y-6">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-2">Drawer Components</h2>
+          <p class="text-base-content/70 max-w-2xl mx-auto">
+            Sliding panels for navigation and additional content
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-4 justify-center">
+          <ElixirLizardsWeb.Components.Button.button phx-click={ElixirLizardsWeb.Components.Drawer.show_drawer("demo-drawer-left", "left")}>
+            Open Left Drawer
+          </ElixirLizardsWeb.Components.Button.button>
+          <ElixirLizardsWeb.Components.Button.button variant="outline" phx-click={ElixirLizardsWeb.Components.Drawer.show_drawer("demo-drawer-right", "right")}>
+            Open Right Drawer
+          </ElixirLizardsWeb.Components.Button.button>
+        </div>
+
+        <ElixirLizardsWeb.Components.Drawer.drawer id="demo-drawer-left" title="Left Drawer" position="left">
+          <p class="mb-4">This drawer slides in from the left side of the screen.</p>
+          <p class="text-sm text-base-content/70">Click outside or the X button to close.</p>
+        </ElixirLizardsWeb.Components.Drawer.drawer>
+
+        <ElixirLizardsWeb.Components.Drawer.drawer id="demo-drawer-right" title="Right Drawer" position="right">
+          <p class="mb-4">This drawer slides in from the right side of the screen.</p>
+          <p class="text-sm text-base-content/70">Great for settings panels or navigation menus.</p>
+        </ElixirLizardsWeb.Components.Drawer.drawer>
+      </section>
+
     <!-- Flash Group -->
       <section class="space-y-6">
         <div class="text-center">
@@ -512,60 +730,100 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
     <!-- Installation Summary -->
       <section class="space-y-6">
         <div class="text-center">
-          <h2 class="text-3xl font-bold mb-2">12 Components Installed</h2>
+          <h2 class="text-3xl font-bold mb-2">22 Components Installed</h2>
           <p class="text-base-content/70 max-w-2xl mx-auto">
             Mishka Chelekom components are ready to use in your application
           </p>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 max-w-3xl mx-auto">
-          <div class="flex items-center gap-2 p-3 rounded-lg bg-base-200">
-            <.icon name="hero-check-circle" class="size-5 text-success" />
-            <span class="text-sm font-medium">Alert</span>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 max-w-4xl mx-auto text-sm">
+          <div class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <.icon name="hero-check" class="size-4 text-success" />
+            <span>Accordion</span>
           </div>
-          <div class="flex items-center gap-2 p-3 rounded-lg bg-base-200">
-            <.icon name="hero-check-circle" class="size-5 text-success" />
-            <span class="text-sm font-medium">Badge</span>
+          <div class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <.icon name="hero-check" class="size-4 text-success" />
+            <span>Alert</span>
           </div>
-          <div class="flex items-center gap-2 p-3 rounded-lg bg-base-200">
-            <.icon name="hero-check-circle" class="size-5 text-success" />
-            <span class="text-sm font-medium">Button</span>
+          <div class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <.icon name="hero-check" class="size-4 text-success" />
+            <span>Avatar</span>
           </div>
-          <div class="flex items-center gap-2 p-3 rounded-lg bg-base-200">
-            <.icon name="hero-check-circle" class="size-5 text-success" />
-            <span class="text-sm font-medium">Card</span>
+          <div class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <.icon name="hero-check" class="size-4 text-success" />
+            <span>Badge</span>
           </div>
-          <div class="flex items-center gap-2 p-3 rounded-lg bg-base-200">
-            <.icon name="hero-check-circle" class="size-5 text-success" />
-            <span class="text-sm font-medium">Avatar</span>
+          <div class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <.icon name="hero-check" class="size-4 text-success" />
+            <span>Breadcrumb</span>
           </div>
-          <div class="flex items-center gap-2 p-3 rounded-lg bg-base-200">
-            <.icon name="hero-check-circle" class="size-5 text-success" />
-            <span class="text-sm font-medium">Progress</span>
+          <div class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <.icon name="hero-check" class="size-4 text-success" />
+            <span>Button</span>
           </div>
-          <div class="flex items-center gap-2 p-3 rounded-lg bg-base-200">
-            <.icon name="hero-check-circle" class="size-5 text-success" />
-            <span class="text-sm font-medium">Spinner</span>
+          <div class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <.icon name="hero-check" class="size-4 text-success" />
+            <span>Card</span>
           </div>
-          <div class="flex items-center gap-2 p-3 rounded-lg bg-base-200">
-            <.icon name="hero-check-circle" class="size-5 text-success" />
-            <span class="text-sm font-medium">Tabs</span>
+          <div class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <.icon name="hero-check" class="size-4 text-success" />
+            <span>Divider</span>
           </div>
-          <div class="flex items-center gap-2 p-3 rounded-lg bg-base-200">
-            <.icon name="hero-check-circle" class="size-5 text-success" />
-            <span class="text-sm font-medium">Accordion</span>
+          <div class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <.icon name="hero-check" class="size-4 text-success" />
+            <span>Drawer</span>
           </div>
-          <div class="flex items-center gap-2 p-3 rounded-lg bg-base-200">
-            <.icon name="hero-check-circle" class="size-5 text-success" />
-            <span class="text-sm font-medium">Tooltip</span>
+          <div class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <.icon name="hero-check" class="size-4 text-success" />
+            <span>Dropdown</span>
           </div>
-          <div class="flex items-center gap-2 p-3 rounded-lg bg-base-200">
-            <.icon name="hero-check-circle" class="size-5 text-success" />
-            <span class="text-sm font-medium">Table</span>
+          <div class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <.icon name="hero-check" class="size-4 text-success" />
+            <span>Menu</span>
           </div>
-          <div class="flex items-center gap-2 p-3 rounded-lg bg-base-200">
-            <.icon name="hero-check-circle" class="size-5 text-success" />
-            <span class="text-sm font-medium">Modal</span>
+          <div class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <.icon name="hero-check" class="size-4 text-success" />
+            <span>Modal</span>
+          </div>
+          <div class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <.icon name="hero-check" class="size-4 text-success" />
+            <span>Navbar</span>
+          </div>
+          <div class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <.icon name="hero-check" class="size-4 text-success" />
+            <span>Pagination</span>
+          </div>
+          <div class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <.icon name="hero-check" class="size-4 text-success" />
+            <span>Progress</span>
+          </div>
+          <div class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <.icon name="hero-check" class="size-4 text-success" />
+            <span>Rating</span>
+          </div>
+          <div class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <.icon name="hero-check" class="size-4 text-success" />
+            <span>Skeleton</span>
+          </div>
+          <div class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <.icon name="hero-check" class="size-4 text-success" />
+            <span>Spinner</span>
+          </div>
+          <div class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <.icon name="hero-check" class="size-4 text-success" />
+            <span>Table</span>
+          </div>
+          <div class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <.icon name="hero-check" class="size-4 text-success" />
+            <span>Tabs</span>
+          </div>
+          <div class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <.icon name="hero-check" class="size-4 text-success" />
+            <span>TextField</span>
+          </div>
+          <div class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <.icon name="hero-check" class="size-4 text-success" />
+            <span>Tooltip</span>
           </div>
         </div>
 
