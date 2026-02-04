@@ -197,7 +197,7 @@ defmodule ElixirLizardsWeb.Components.Chelekom.DateTimeField do
             class={[
               "disabled:opacity-80 block w-full z-[2] focus:ring-0 placeholder:text-transparent pb-1 pt-2.5 px-2",
               "text-[16px] sm:font-inherit appearance-none bg-transparent border-0 focus:outline-none peer",
-              "[&::-webkit-calendar-picker-indicator]:hidden",
+              "[&::-webkit-calendar-picker-indicator]:cursor-pointer",
               @input_class
             ]}
             placeholder=" "
@@ -277,7 +277,7 @@ defmodule ElixirLizardsWeb.Components.Chelekom.DateTimeField do
           class={[
             "flex-1 py-1 px-2 text-sm disabled:opacity-80 block w-full appearance-none",
             "bg-transparent border-0 focus:outline-none focus:ring-0",
-            "[&::-webkit-calendar-picker-indicator]:hidden",
+            "[&::-webkit-calendar-picker-indicator]:cursor-pointer",
             @input_class
           ]}
           {@rest}

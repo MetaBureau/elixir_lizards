@@ -18,6 +18,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.FileFieldDemo do
           <h3 class="text-sm font-semibold text-base-content/60">Primary Color</h3>
           <FileField.file_field
             name="document"
+            value=""
             label="Upload Document"
             color="primary"
           />
@@ -27,6 +28,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.FileFieldDemo do
           <h3 class="text-sm font-semibold text-base-content/60">Success Color</h3>
           <FileField.file_field
             name="avatar"
+            value=""
             label="Profile Picture"
             color="success"
           />
@@ -36,6 +38,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.FileFieldDemo do
           <h3 class="text-sm font-semibold text-base-content/60">Info Color</h3>
           <FileField.file_field
             name="images"
+            value=""
             label="Upload Images"
             color="info"
           />

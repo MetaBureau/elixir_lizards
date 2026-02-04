@@ -9,61 +9,87 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.DateTimeFieldDemo do
       <div class="text-center">
         <h2 class="text-3xl font-bold mb-2">Date Time Field</h2>
         <p class="text-base-content/70 max-w-2xl mx-auto">
-          Date and time inputs with variants
+          Date and time inputs with different type variants
         </p>
       </div>
 
-      <div class="max-w-2xl mx-auto space-y-8">
+      <div class="max-w-md mx-auto space-y-8">
         <div class="space-y-2">
-          <h3 class="text-sm font-semibold text-base-content/60">Date Input</h3>
+          <h3 class="text-sm font-semibold text-base-content/60">Raw HTML5 Date (for comparison)</h3>
+          <input type="date" name="raw_date" class="border p-2 rounded" />
+        </div>
+
+        <div class="space-y-2">
+          <h3 class="text-sm font-semibold text-base-content/60">Date</h3>
           <DateTimeField.date_time_field
-            name="start_date"
+            id="date_input"
+            name="date_field"
             value=""
-            label="Start Date"
             type="date"
-            floating="outer"
-            variant="outline"
-            color="primary"
+            label="Select a date"
+            space="large"
+            color="misc"
+            description="This is description"
+            size="small"
           />
         </div>
 
         <div class="space-y-2">
-          <h3 class="text-sm font-semibold text-base-content/60">DateTime Input</h3>
+          <h3 class="text-sm font-semibold text-base-content/60">DateTime Local</h3>
           <DateTimeField.date_time_field
-            name="appointment"
+            id="datetime_input"
+            name="datetime_field"
             value=""
-            label="Appointment"
             type="datetime-local"
-            description="Select date and time"
+            label="Select date and time"
+            space="small"
+            color="primary"
+            description="This is description"
             floating="outer"
-            variant="outline"
-            color="natural"
           />
         </div>
 
         <div class="space-y-2">
-          <h3 class="text-sm font-semibold text-base-content/60">Time Input</h3>
+          <h3 class="text-sm font-semibold text-base-content/60">Time</h3>
           <DateTimeField.date_time_field
-            name="meeting_time"
+            id="time_input"
+            name="time_field"
             value=""
-            label="Meeting Time"
             type="time"
+            label="Select a time"
+            space="small"
+            color="danger"
             floating="outer"
-            variant="shadow"
-            color="secondary"
           />
         </div>
 
         <div class="space-y-2">
-          <h3 class="text-sm font-semibold text-base-content/60">Month Input</h3>
+          <h3 class="text-sm font-semibold text-base-content/60">Week</h3>
           <DateTimeField.date_time_field
-            name="birth_month"
+            id="week_input"
+            name="week_field"
             value=""
-            label="Birth Month"
+            type="week"
+            label="Select a week"
+            space="large"
+            color="secondary"
+            description="This is description"
+            size="medium"
+          />
+        </div>
+
+        <div class="space-y-2">
+          <h3 class="text-sm font-semibold text-base-content/60">Month</h3>
+          <DateTimeField.date_time_field
+            id="month_input"
+            name="month_field"
+            value=""
             type="month"
-            floating="outer"
-            variant="outline"
-            color="info"
+            label="Select a month"
+            space="large"
+            color="dawn"
+            description="This is description"
+            size="large"
           />
         </div>
       </div>
