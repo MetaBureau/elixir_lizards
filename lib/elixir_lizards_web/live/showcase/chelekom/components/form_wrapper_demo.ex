@@ -14,7 +14,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.FormWrapperDemo do
       </div>
 
       <div class="max-w-lg mx-auto">
-        <FormWrapper.form_wrapper>
+        <FormWrapper.form_wrapper for={%{}} phx-submit="demo_submit">
           <div class="space-y-4">
             <TextField.text_field
               name="username"
@@ -30,12 +30,12 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.FormWrapperDemo do
               placeholder="you@example.com"
               floating="outer"
             />
-            <div class="pt-4">
-              <Button.button variant="default" color="primary" class="w-full">
-                Submit
-              </Button.button>
-            </div>
           </div>
+          <:actions>
+            <Button.button variant="default" color="primary" type="submit">
+              Submit
+            </Button.button>
+          </:actions>
         </FormWrapper.form_wrapper>
       </div>
     </div>
