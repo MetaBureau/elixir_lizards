@@ -1,17 +1,19 @@
 defmodule ElixirLizardsWeb.Showcase.Chelekom.Categories.Media do
   @moduledoc """
-  Media components: Avatar, Carousel
+  Media components: Avatar, Carousel, Image
   """
   use ElixirLizardsWeb, :live_component
 
   alias ElixirLizardsWeb.Showcase.Chelekom.Components.{
     AvatarDemo,
-    CarouselDemo
+    CarouselDemo,
+    ImageDemo
   }
 
   @components [
     %{name: "Avatar", module: AvatarDemo},
-    %{name: "Carousel", module: CarouselDemo}
+    %{name: "Carousel", module: CarouselDemo},
+    %{name: "Image", module: ImageDemo}
   ]
 
   def components, do: @components
