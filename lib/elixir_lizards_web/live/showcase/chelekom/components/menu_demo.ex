@@ -4,6 +4,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.MenuDemo do
   alias ElixirLizardsWeb.Components.Chelekom.Menu
 
   def render(assigns) do
+    # Simple flat menu items (no nested sub_items)
     menu_items = [
       %{
         id: "dashboard",
@@ -33,54 +34,17 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.MenuDemo do
         icon: "hero-users"
       },
       %{
-        id: "settings-menu",
-        href: "#",
+        id: "settings",
+        navigate: "#",
         title: "Settings",
-        padding: "pl-5 space-y-3 mt-3",
         size: "extra_small",
-        rounded: "large",
         color: "misc",
         variant: "unbordered",
-        icon: "hero-cog-6-tooth",
+        rounded: "large",
+        class: "w-full",
+        display: "flex",
         icon_class: "size-5",
-        sub_items: [
-          %{
-            navigate: "#",
-            title: "General",
-            size: "extra_small",
-            color: "misc",
-            variant: "unbordered",
-            rounded: "large",
-            class: "w-full",
-            display: "flex",
-            icon_class: "size-5",
-            icon: "hero-adjustments-horizontal"
-          },
-          %{
-            navigate: "#",
-            title: "Security",
-            size: "extra_small",
-            color: "misc",
-            variant: "unbordered",
-            rounded: "large",
-            class: "w-full",
-            display: "flex",
-            icon_class: "size-5",
-            icon: "hero-shield-check"
-          },
-          %{
-            navigate: "#",
-            title: "Notifications",
-            size: "extra_small",
-            color: "misc",
-            variant: "unbordered",
-            rounded: "large",
-            class: "w-full",
-            display: "flex",
-            icon_class: "size-5",
-            icon: "hero-bell"
-          }
-        ]
+        icon: "hero-cog-6-tooth"
       },
       %{
         id: "reports",
@@ -113,7 +77,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.MenuDemo do
         <div class="space-y-4">
           <h3 class="text-lg font-semibold">Data-driven Menu</h3>
           <p class="text-sm text-base-content/70">
-            Menu built from a list of maps with nested sub_items
+            Menu built from a list of maps with icons and styling options
           </p>
           <div class="max-w-xs bg-base-200 rounded-lg p-2">
             <Menu.menu menu_items={@menu_items} space="small" padding="small" />
