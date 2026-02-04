@@ -19,9 +19,12 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.RadioCardDemo do
           color="primary"
           cols="3"
         >
-          <:radio value="standard" title="Standard" description="5-7 business days" />
-          <:radio value="express" title="Express" description="2-3 business days" checked />
-          <:radio value="overnight" title="Overnight" description="Next business day" />
+          <:radio value="standard" title="Standard" description="5-7 business days">
+          </:radio>
+          <:radio value="express" title="Express" description="2-3 business days" checked>
+          </:radio>
+          <:radio value="overnight" title="Overnight" description="Next business day">
+          </:radio>
         </RadioCard.radio_card>
       </div>
     </div>

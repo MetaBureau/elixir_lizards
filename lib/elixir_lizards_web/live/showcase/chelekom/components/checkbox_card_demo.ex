@@ -19,9 +19,12 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.CheckboxCardDemo do
           color="primary"
           cols="3"
         >
-          <:checkbox value="analytics" title="Analytics" description="Track user behavior" />
-          <:checkbox value="notifications" title="Notifications" description="Push and email alerts" checked />
-          <:checkbox value="integrations" title="Integrations" description="Third-party connections" />
+          <:checkbox value="analytics" title="Analytics" description="Track user behavior">
+          </:checkbox>
+          <:checkbox value="notifications" title="Notifications" description="Push and email alerts" checked>
+          </:checkbox>
+          <:checkbox value="integrations" title="Integrations" description="Third-party connections">
+          </:checkbox>
         </CheckboxCard.checkbox_card>
       </div>
     </div>
