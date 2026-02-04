@@ -1,24 +1,62 @@
 defmodule ElixirLizardsWeb.Showcase.Chelekom.ComponentDemoLive do
   @moduledoc """
   Mishka Chelekom component library showcase.
-  Components are organized by category.
+  Each component has its own demo file.
   """
   use ElixirLizardsWeb, :live_view
 
   alias ElixirLizardsWeb.Showcase.Chelekom.Components.{
-    FeedbackDemo,
-    FormsDemo,
-    GeneralDemo,
-    MediaDemo,
-    NavigationDemo,
-    OverlaysDemo
+    AccordionDemo,
+    AlertDemo,
+    AvatarDemo,
+    BadgeDemo,
+    BreadcrumbDemo,
+    ButtonDemo,
+    CardDemo,
+    DividerDemo,
+    DrawerDemo,
+    DropdownDemo,
+    FooterDemo,
+    MegaMenuDemo,
+    ModalDemo,
+    PaginationDemo,
+    ProgressDemo,
+    RatingDemo,
+    ScrollAreaDemo,
+    SidebarDemo,
+    SkeletonDemo,
+    SpinnerDemo,
+    TableDemo,
+    TabsDemo,
+    TextFieldDemo,
+    TooltipDemo
   }
 
   @components [
-    "Accordion", "Alert", "Avatar", "Badge", "Breadcrumb", "Button", "Card",
-    "Divider", "Drawer", "Dropdown", "Footer", "MegaMenu", "Menu", "Modal",
-    "Navbar", "Pagination", "Progress", "Rating", "ScrollArea", "Sidebar",
-    "Skeleton", "Spinner", "Table", "Tabs", "TextField", "Tooltip"
+    %{name: "Accordion", module: AccordionDemo, category: "general"},
+    %{name: "Alert", module: AlertDemo, category: "feedback"},
+    %{name: "Avatar", module: AvatarDemo, category: "media"},
+    %{name: "Badge", module: BadgeDemo, category: "general"},
+    %{name: "Breadcrumb", module: BreadcrumbDemo, category: "navigation"},
+    %{name: "Button", module: ButtonDemo, category: "general"},
+    %{name: "Card", module: CardDemo, category: "general"},
+    %{name: "Divider", module: DividerDemo, category: "general"},
+    %{name: "Drawer", module: DrawerDemo, category: "overlays"},
+    %{name: "Dropdown", module: DropdownDemo, category: "navigation"},
+    %{name: "Footer", module: FooterDemo, category: "navigation"},
+    %{name: "MegaMenu", module: MegaMenuDemo, category: "navigation"},
+    %{name: "Modal", module: ModalDemo, category: "overlays"},
+    %{name: "Pagination", module: PaginationDemo, category: "navigation"},
+    %{name: "Progress", module: ProgressDemo, category: "feedback"},
+    %{name: "Rating", module: RatingDemo, category: "general"},
+    %{name: "ScrollArea", module: ScrollAreaDemo, category: "navigation"},
+    %{name: "Sidebar", module: SidebarDemo, category: "navigation"},
+    %{name: "Skeleton", module: SkeletonDemo, category: "feedback"},
+    %{name: "Spinner", module: SpinnerDemo, category: "feedback"},
+    %{name: "Table", module: TableDemo, category: "general"},
+    %{name: "Tabs", module: TabsDemo, category: "general"},
+    %{name: "TextField", module: TextFieldDemo, category: "forms"},
+    %{name: "Tooltip", module: TooltipDemo, category: "overlays"}
   ]
 
   @impl true
@@ -33,6 +71,11 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.ComponentDemoLive do
   @impl true
   def handle_event("select_category", %{"category" => category}, socket) do
     {:noreply, assign(socket, :active_category, category)}
+  end
+
+  defp filtered_components(components, "all"), do: components
+  defp filtered_components(components, category) do
+    Enum.filter(components, &(&1.category == category))
   end
 
   @impl true
@@ -70,64 +113,11 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.ComponentDemoLive do
       </div>
 
       <div class="space-y-16">
-        <!-- General Components -->
-        <section :if={@active_category in ["all", "general"]} id="general">
-          <div class="text-center mb-8">
-            <.badge variant="primary" class="mb-2">General</.badge>
-            <h2 class="text-2xl font-bold">General Components</h2>
-            <p class="text-base-content/70">Button, Badge, Card, Divider, Accordion, Tabs, Table, Rating</p>
-          </div>
-          <.live_component module={GeneralDemo} id="general-demo" />
-        </section>
-
-        <!-- Navigation Components -->
-        <section :if={@active_category in ["all", "navigation"]} id="navigation">
-          <div class="text-center mb-8">
-            <.badge variant="secondary" class="mb-2">Navigation</.badge>
-            <h2 class="text-2xl font-bold">Navigation Components</h2>
-            <p class="text-base-content/70">Breadcrumb, Dropdown, MegaMenu, Pagination, Sidebar, ScrollArea, Footer</p>
-          </div>
-          <.live_component module={NavigationDemo} id="navigation-demo" />
-        </section>
-
-        <!-- Feedback Components -->
-        <section :if={@active_category in ["all", "feedback"]} id="feedback">
-          <div class="text-center mb-8">
-            <.badge variant="success" class="mb-2">Feedback</.badge>
-            <h2 class="text-2xl font-bold">Feedback Components</h2>
-            <p class="text-base-content/70">Alert, Progress, Spinner, Skeleton, Flash</p>
-          </div>
-          <.live_component module={FeedbackDemo} id="feedback-demo" />
-        </section>
-
-        <!-- Overlays Components -->
-        <section :if={@active_category in ["all", "overlays"]} id="overlays">
-          <div class="text-center mb-8">
-            <.badge variant="warning" class="mb-2">Overlays</.badge>
-            <h2 class="text-2xl font-bold">Overlay Components</h2>
-            <p class="text-base-content/70">Modal, Drawer, Tooltip</p>
-          </div>
-          <.live_component module={OverlaysDemo} id="overlays-demo" />
-        </section>
-
-        <!-- Forms Components -->
-        <section :if={@active_category in ["all", "forms"]} id="forms">
-          <div class="text-center mb-8">
-            <.badge variant="info" class="mb-2">Forms</.badge>
-            <h2 class="text-2xl font-bold">Form Components</h2>
-            <p class="text-base-content/70">TextField</p>
-          </div>
-          <.live_component module={FormsDemo} id="forms-demo" />
-        </section>
-
-        <!-- Media Components -->
-        <section :if={@active_category in ["all", "media"]} id="media">
-          <div class="text-center mb-8">
-            <.badge variant="error" class="mb-2">Media</.badge>
-            <h2 class="text-2xl font-bold">Media Components</h2>
-            <p class="text-base-content/70">Avatar</p>
-          </div>
-          <.live_component module={MediaDemo} id="media-demo" />
+        <section :for={component <- filtered_components(@components, @active_category)}>
+          <.live_component
+            module={component.module}
+            id={"#{String.downcase(component.name)}-demo"}
+          />
         </section>
 
         <!-- Installation Summary -->
@@ -142,7 +132,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.ComponentDemoLive do
           <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 max-w-4xl mx-auto text-sm">
             <div :for={component <- @components} class="flex items-center gap-2 p-2 rounded bg-base-200">
               <.icon name="hero-check" class="size-4 text-success" />
-              <span>{component}</span>
+              <span>{component.name}</span>
             </div>
           </div>
 
