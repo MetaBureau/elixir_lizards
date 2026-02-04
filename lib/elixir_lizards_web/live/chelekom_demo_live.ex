@@ -718,6 +718,65 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
         </ElixirLizardsWeb.Components.Chelekom.Drawer.drawer>
       </section>
 
+    <!-- Mega Menu Components -->
+      <section class="space-y-6">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-2">Mega Menu Components</h2>
+          <p class="text-base-content/70 max-w-2xl mx-auto">
+            Multi-level navigation menus for complex site structures
+          </p>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+          <div class="relative">
+            <ElixirLizardsWeb.Components.Chelekom.MegaMenu.mega_menu
+              id="demo-mega-menu"
+              rounded="medium"
+              padding="medium"
+              clickable
+            >
+              <:trigger>
+                <ElixirLizardsWeb.Components.Chelekom.Button.button>
+                  Open Mega Menu <.icon name="hero-chevron-down" class="size-4 ml-1" />
+                </ElixirLizardsWeb.Components.Chelekom.Button.button>
+              </:trigger>
+
+              <div class="bg-base-100 rounded-lg shadow-xl border border-base-300 p-6">
+                <div class="grid md:grid-cols-3 gap-6">
+                  <div>
+                    <h3 class="font-semibold mb-3 text-primary">Products</h3>
+                    <ul class="space-y-2">
+                      <li><a href="#" class="hover:text-primary transition-colors">Analytics</a></li>
+                      <li><a href="#" class="hover:text-primary transition-colors">Automation</a></li>
+                      <li><a href="#" class="hover:text-primary transition-colors">Integrations</a></li>
+                      <li><a href="#" class="hover:text-primary transition-colors">Security</a></li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold mb-3 text-secondary">Resources</h3>
+                    <ul class="space-y-2">
+                      <li><a href="#" class="hover:text-secondary transition-colors">Documentation</a></li>
+                      <li><a href="#" class="hover:text-secondary transition-colors">Guides</a></li>
+                      <li><a href="#" class="hover:text-secondary transition-colors">API Reference</a></li>
+                      <li><a href="#" class="hover:text-secondary transition-colors">Community</a></li>
+                    </ul>
+                  </div>
+                  <div class="bg-base-200 rounded-lg p-4">
+                    <h3 class="font-semibold mb-2">Featured</h3>
+                    <p class="text-sm text-base-content/70 mb-3">
+                      Check out our latest product updates and new features.
+                    </p>
+                    <ElixirLizardsWeb.Components.Chelekom.Button.button size="small" variant="primary">
+                      Learn More
+                    </ElixirLizardsWeb.Components.Chelekom.Button.button>
+                  </div>
+                </div>
+              </div>
+            </ElixirLizardsWeb.Components.Chelekom.MegaMenu.mega_menu>
+          </div>
+        </div>
+      </section>
+
     <!-- Flash Group -->
       <section class="space-y-6">
         <div class="text-center">
@@ -741,7 +800,7 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
     <!-- Installation Summary -->
       <section class="space-y-6">
         <div class="text-center">
-          <h2 class="text-3xl font-bold mb-2">22 Components Installed</h2>
+          <h2 class="text-3xl font-bold mb-2">23 Components Installed</h2>
           <p class="text-base-content/70 max-w-2xl mx-auto">
             Mishka Chelekom components are ready to use in your application
           </p>
@@ -787,6 +846,10 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
           <div class="flex items-center gap-2 p-2 rounded bg-base-200">
             <.icon name="hero-check" class="size-4 text-success" />
             <span>Dropdown</span>
+          </div>
+          <div class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <.icon name="hero-check" class="size-4 text-success" />
+            <span>MegaMenu</span>
           </div>
           <div class="flex items-center gap-2 p-2 rounded bg-base-200">
             <.icon name="hero-check" class="size-4 text-success" />
