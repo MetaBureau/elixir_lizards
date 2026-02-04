@@ -17,7 +17,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.ComboboxDemo do
         <div class="space-y-4">
           <h3 class="text-lg font-semibold">Basic Combobox</h3>
           <div class="max-w-md">
-            <Combobox.combobox placeholder="Select an option" label="Choose a fruit">
+            <Combobox.combobox name="fruit" placeholder="Select an option" label="Choose a fruit">
               <:option value="apple">Apple</:option>
               <:option value="banana">Banana</:option>
               <:option value="cherry">Cherry</:option>
@@ -31,6 +31,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.ComboboxDemo do
           <h3 class="text-lg font-semibold">Searchable Combobox</h3>
           <div class="max-w-md">
             <Combobox.combobox
+              name="country"
               searchable
               placeholder="Search countries..."
               label="Select a country"
@@ -52,6 +53,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.ComboboxDemo do
           <h3 class="text-lg font-semibold">Multiple Selection</h3>
           <div class="max-w-md">
             <Combobox.combobox
+              name="technologies[]"
               multiple
               searchable
               placeholder="Select technologies..."
@@ -72,6 +74,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.ComboboxDemo do
           <h3 class="text-lg font-semibold">Grouped Options</h3>
           <div class="max-w-md">
             <Combobox.combobox
+              name="language"
               searchable
               placeholder="Select a programming language..."
               label="Programming Language"
@@ -93,6 +96,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.ComboboxDemo do
           <h3 class="text-lg font-semibold">With Description</h3>
           <div class="max-w-md">
             <Combobox.combobox
+              name="role"
               placeholder="Select your role..."
               label="User Role"
               description="This determines your permissions in the system"
@@ -108,22 +112,42 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.ComboboxDemo do
         <div class="space-y-4">
           <h3 class="text-lg font-semibold">Color Variants</h3>
           <div class="grid md:grid-cols-2 gap-4">
-            <Combobox.combobox color="primary" placeholder="Primary color" label="Primary">
+            <Combobox.combobox
+              name="primary_opt"
+              color="primary"
+              placeholder="Primary color"
+              label="Primary"
+            >
               <:option value="1">Option 1</:option>
               <:option value="2">Option 2</:option>
             </Combobox.combobox>
 
-            <Combobox.combobox color="secondary" placeholder="Secondary color" label="Secondary">
+            <Combobox.combobox
+              name="secondary_opt"
+              color="secondary"
+              placeholder="Secondary color"
+              label="Secondary"
+            >
               <:option value="1">Option 1</:option>
               <:option value="2">Option 2</:option>
             </Combobox.combobox>
 
-            <Combobox.combobox color="success" placeholder="Success color" label="Success">
+            <Combobox.combobox
+              name="success_opt"
+              color="success"
+              placeholder="Success color"
+              label="Success"
+            >
               <:option value="1">Option 1</:option>
               <:option value="2">Option 2</:option>
             </Combobox.combobox>
 
-            <Combobox.combobox color="danger" placeholder="Danger color" label="Danger">
+            <Combobox.combobox
+              name="danger_opt"
+              color="danger"
+              placeholder="Danger color"
+              label="Danger"
+            >
               <:option value="1">Option 1</:option>
               <:option value="2">Option 2</:option>
             </Combobox.combobox>
@@ -133,7 +157,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.ComboboxDemo do
         <div class="space-y-4">
           <h3 class="text-lg font-semibold">With Disabled Option</h3>
           <div class="max-w-md">
-            <Combobox.combobox placeholder="Select a plan..." label="Subscription Plan">
+            <Combobox.combobox name="plan" placeholder="Select a plan..." label="Subscription Plan">
               <:option value="free">Free</:option>
               <:option value="basic">Basic</:option>
               <:option value="pro" disabled>Pro (Coming Soon)</:option>
@@ -145,6 +169,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.ComboboxDemo do
         <div class="p-4 bg-base-200 rounded-lg">
           <h3 class="text-lg font-semibold mb-2">Usage Example</h3>
           <pre class="text-sm overflow-x-auto"><code>&lt;Combobox.combobox
+    name="my_select"
     searchable
     multiple
     placeholder="Select items..."
@@ -157,7 +182,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.ComboboxDemo do
     &lt;/Combobox.combobox&gt;
 
     &lt;!-- With grouped options --&gt;
-    &lt;Combobox.combobox searchable placeholder="Select..."&gt;
+    &lt;Combobox.combobox name="grouped" searchable placeholder="Select..."&gt;
     &lt;:option group="Group A" value="a1"&gt;A1&lt;/:option&gt;
     &lt;:option group="Group A" value="a2"&gt;A2&lt;/:option&gt;
     &lt;:option group="Group B" value="b1"&gt;B1&lt;/:option&gt;
