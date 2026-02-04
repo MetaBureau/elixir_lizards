@@ -16,28 +16,28 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TooltipDemo do
       <div class="flex flex-wrap gap-6 justify-center">
         <Tooltip.tooltip position="top" color="natural">
           <:trigger>
-            <Button.button variant="outline">Top Tooltip</Button.button>
+            <Button.button variant="outline" color="primary">Top Tooltip</Button.button>
           </:trigger>
           <:content>Tooltip on top</:content>
         </Tooltip.tooltip>
 
         <Tooltip.tooltip position="bottom" color="primary">
           <:trigger>
-            <Button.button variant="outline">Bottom Tooltip</Button.button>
+            <Button.button variant="outline" color="primary">Bottom Tooltip</Button.button>
           </:trigger>
           <:content>Tooltip on bottom</:content>
         </Tooltip.tooltip>
 
         <Tooltip.tooltip position="left" color="success">
           <:trigger>
-            <Button.button variant="outline">Left Tooltip</Button.button>
+            <Button.button variant="outline" color="primary">Left Tooltip</Button.button>
           </:trigger>
           <:content>Tooltip on left</:content>
         </Tooltip.tooltip>
 
         <Tooltip.tooltip position="right" color="warning">
           <:trigger>
-            <Button.button variant="outline">Right Tooltip</Button.button>
+            <Button.button variant="outline" color="primary">Right Tooltip</Button.button>
           </:trigger>
           <:content>Tooltip on right</:content>
         </Tooltip.tooltip>

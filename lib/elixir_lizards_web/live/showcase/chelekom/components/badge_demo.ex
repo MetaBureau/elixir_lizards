@@ -14,13 +14,14 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.BadgeDemo do
       </div>
 
       <div class="flex flex-wrap gap-3 justify-center">
-        <Badge.badge>Default</Badge.badge>
-        <Badge.badge variant="primary">Primary</Badge.badge>
-        <Badge.badge variant="secondary">Secondary</Badge.badge>
-        <Badge.badge color="success">Success</Badge.badge>
-        <Badge.badge color="warning">Warning</Badge.badge>
-        <Badge.badge color="error">Error</Badge.badge>
-        <Badge.badge variant="outline">Outline</Badge.badge>
+        <Badge.badge variant="default" color="natural">Default</Badge.badge>
+        <Badge.badge variant="default" color="primary">Primary</Badge.badge>
+        <Badge.badge variant="default" color="secondary">Secondary</Badge.badge>
+        <Badge.badge variant="default" color="success">Success</Badge.badge>
+        <Badge.badge variant="default" color="warning">Warning</Badge.badge>
+        <Badge.badge variant="default" color="danger">Danger</Badge.badge>
+        <Badge.badge variant="default" color="info">Info</Badge.badge>
+        <Badge.badge variant="outline" color="primary">Outline</Badge.badge>
       </div>
     </div>
     """

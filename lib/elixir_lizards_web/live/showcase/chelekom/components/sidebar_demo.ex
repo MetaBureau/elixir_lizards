@@ -14,10 +14,10 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.SidebarDemo do
       </div>
 
       <div class="flex flex-wrap gap-4 justify-center">
-        <Button.button phx-click={Sidebar.show_sidebar("chelekom-sidebar-left", "left")}>
+        <Button.button variant="default" color="primary" phx-click={Sidebar.show_sidebar("chelekom-sidebar-left", "left")}>
           Open Left Sidebar
         </Button.button>
-        <Button.button variant="outline" phx-click={Sidebar.show_sidebar("chelekom-sidebar-right", "right")}>
+        <Button.button variant="outline" color="primary" phx-click={Sidebar.show_sidebar("chelekom-sidebar-right", "right")}>
           Open Right Sidebar
         </Button.button>
       </div>
@@ -37,8 +37,8 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.SidebarDemo do
         <div class="p-4">
           <h3 class="font-semibold text-lg mb-4">Quick Actions</h3>
           <div class="space-y-3">
-            <Button.button class="w-full" size="small">New Project</Button.button>
-            <Button.button class="w-full" size="small" variant="outline">Import Data</Button.button>
+            <Button.button variant="default" color="primary" class="w-full" size="small">New Project</Button.button>
+            <Button.button variant="outline" color="primary" class="w-full" size="small">Import Data</Button.button>
           </div>
         </div>
       </Sidebar.sidebar>

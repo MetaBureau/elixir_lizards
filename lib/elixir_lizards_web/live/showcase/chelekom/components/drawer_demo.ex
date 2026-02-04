@@ -14,10 +14,10 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.DrawerDemo do
       </div>
 
       <div class="flex flex-wrap gap-4 justify-center">
-        <Button.button phx-click={Drawer.show_drawer("chelekom-drawer-left", "left")}>
+        <Button.button variant="default" color="primary" phx-click={Drawer.show_drawer("chelekom-drawer-left", "left")}>
           Open Left Drawer
         </Button.button>
-        <Button.button variant="outline" phx-click={Drawer.show_drawer("chelekom-drawer-right", "right")}>
+        <Button.button variant="outline" color="primary" phx-click={Drawer.show_drawer("chelekom-drawer-right", "right")}>
           Open Right Drawer
         </Button.button>
       </div>

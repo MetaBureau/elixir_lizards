@@ -15,7 +15,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.PaginationDemo do
 
       <div class="space-y-6 flex flex-col items-center">
         <Pagination.pagination total={10} active={3} siblings={1} />
-        <Pagination.pagination total={20} active={7} siblings={2} variant="outline" show_edges />
+        <Pagination.pagination total={20} active={7} siblings={2} variant="outline" color="primary" show_edges />
       </div>
     </div>
     """

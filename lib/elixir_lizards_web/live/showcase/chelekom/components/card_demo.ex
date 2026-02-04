@@ -27,8 +27,8 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.CardDemo do
             Cards can include footer sections for actions.
           </Card.card_content>
           <Card.card_footer class="flex gap-2">
-            <Button.button size="small">Action</Button.button>
-            <Button.button size="small" variant="outline">Cancel</Button.button>
+            <Button.button variant="default" color="primary" size="small">Action</Button.button>
+            <Button.button variant="outline" color="primary" size="small">Cancel</Button.button>
           </Card.card_footer>
         </Card.card>
 

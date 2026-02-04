@@ -17,7 +17,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.MegaMenuDemo do
         <div class="relative">
           <MegaMenu.mega_menu id="chelekom-mega-menu" rounded="medium" padding="medium" clickable>
             <:trigger>
-              <Button.button>
+              <Button.button variant="default" color="primary">
                 Open Mega Menu <.icon name="hero-chevron-down" class="size-4 ml-1" />
               </Button.button>
             </:trigger>
@@ -43,7 +43,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.MegaMenuDemo do
                 <div class="bg-base-200 rounded-lg p-4">
                   <h3 class="font-semibold mb-2">Featured</h3>
                   <p class="text-sm text-base-content/70 mb-3">Check out our latest updates.</p>
-                  <Button.button size="small" variant="primary">Learn More</Button.button>
+                  <Button.button variant="default" color="primary" size="small">Learn More</Button.button>
                 </div>
               </div>
             </div>

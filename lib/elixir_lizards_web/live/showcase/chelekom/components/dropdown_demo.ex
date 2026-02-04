@@ -16,7 +16,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.DropdownDemo do
       <div class="flex flex-wrap gap-6 justify-center">
         <Dropdown.dropdown id="chelekom-dropdown-1" position="bottom" clickable rounded="medium">
           <:trigger>
-            <Button.button>
+            <Button.button variant="default" color="primary">
               Click Me <.icon name="hero-chevron-down" class="size-4 ml-1" />
             </Button.button>
           </:trigger>
@@ -32,7 +32,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.DropdownDemo do
 
         <Dropdown.dropdown id="chelekom-dropdown-2" position="bottom" clickable rounded="medium">
           <:trigger>
-            <Button.button variant="outline">
+            <Button.button variant="outline" color="primary">
               Options <.icon name="hero-chevron-down" class="size-4 ml-1" />
             </Button.button>
           </:trigger>
