@@ -61,7 +61,9 @@ defmodule ElixirLizardsWeb.Demo.DemoIndexLive do
 
       <.header>
         Demo Pages
-        <:subtitle>Explore sample pages showcasing DaisyUI components with Phoenix LiveView</:subtitle>
+        <:subtitle>
+          Explore sample pages showcasing DaisyUI components with Phoenix LiveView
+        </:subtitle>
       </.header>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -95,8 +97,7 @@ defmodule ElixirLizardsWeb.Demo.DemoIndexLive do
             </p>
           </div>
           <.link navigate={~p"/dev/components"} class="btn btn-primary">
-            <.icon name="hero-rectangle-stack" class="size-5 mr-2" />
-            Component Library
+            <.icon name="hero-rectangle-stack" class="size-5 mr-2" /> Component Library
           </.link>
         </div>
       </div>

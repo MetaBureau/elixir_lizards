@@ -120,8 +120,7 @@ defmodule ElixirLizardsWeb.Demo.DashboardLive do
           <.card variant="bordered">
             <:title>
               <div class="flex items-center gap-2">
-                <.icon name="hero-bell" class="size-5" />
-                Recent Activity
+                <.icon name="hero-bell" class="size-5" /> Recent Activity
               </div>
             </:title>
             <:body>

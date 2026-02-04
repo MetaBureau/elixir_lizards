@@ -26,32 +26,27 @@ defmodule ElixirLizardsWeb.Demo.FeaturesLive do
               Build Amazing Apps
             </h1>
             <p class="py-6 text-lg text-base-content/70">
-              Elixir Lizards provides everything you need to build modern, scalable web applications 
-              with Phoenix and Ash Framework. Start shipping features faster with our comprehensive 
+              Elixir Lizards provides everything you need to build modern, scalable web applications
+              with Phoenix and Ash Framework. Start shipping features faster with our comprehensive
               component library and best practices.
             </p>
             <div class="flex flex-wrap gap-4 justify-center">
               <.button variant="primary" class="btn-lg">
-                <.icon name="hero-rocket-launch" class="size-5 mr-2" />
-                Get Started Free
+                <.icon name="hero-rocket-launch" class="size-5 mr-2" /> Get Started Free
               </.button>
               <.button class="btn-lg btn-outline">
-                <.icon name="hero-play-circle" class="size-5 mr-2" />
-                Watch Demo
+                <.icon name="hero-play-circle" class="size-5 mr-2" /> Watch Demo
               </.button>
             </div>
             <div class="flex items-center justify-center gap-8 mt-8 text-sm text-base-content/60">
               <div class="flex items-center gap-2">
-                <.icon name="hero-check-circle" class="size-5 text-success" />
-                Free trial
+                <.icon name="hero-check-circle" class="size-5 text-success" /> Free trial
               </div>
               <div class="flex items-center gap-2">
-                <.icon name="hero-check-circle" class="size-5 text-success" />
-                No credit card
+                <.icon name="hero-check-circle" class="size-5 text-success" /> No credit card
               </div>
               <div class="flex items-center gap-2">
-                <.icon name="hero-check-circle" class="size-5 text-success" />
-                Cancel anytime
+                <.icon name="hero-check-circle" class="size-5 text-success" /> Cancel anytime
               </div>
             </div>
           </div>
@@ -64,7 +59,7 @@ defmodule ElixirLizardsWeb.Demo.FeaturesLive do
           <.badge variant="secondary" class="mb-4">Features</.badge>
           <h2 class="text-3xl font-bold mb-4">Everything you need to succeed</h2>
           <p class="text-base-content/70 max-w-xl mx-auto">
-            Our platform comes packed with powerful features designed to help you build, deploy, 
+            Our platform comes packed with powerful features designed to help you build, deploy,
             and scale your applications with ease.
           </p>
         </div>
@@ -75,7 +70,10 @@ defmodule ElixirLizardsWeb.Demo.FeaturesLive do
             class="card bg-base-100 card-border border-base-300 hover:shadow-lg hover:border-primary/50 transition-all duration-300"
           >
             <div class="card-body">
-              <div class={["rounded-xl w-12 h-12 flex items-center justify-center mb-4", feature.bg_color]}>
+              <div class={[
+                "rounded-xl w-12 h-12 flex items-center justify-center mb-4",
+                feature.bg_color
+              ]}>
                 <.icon name={feature.icon} class={["size-6", feature.icon_color]} />
               </div>
               <h3 class="card-title text-lg">{feature.title}</h3>
@@ -148,7 +146,7 @@ defmodule ElixirLizardsWeb.Demo.FeaturesLive do
       <div class="text-center py-16 bg-base-200 rounded-box">
         <h2 class="text-3xl font-bold mb-4">Ready to get started?</h2>
         <p class="text-base-content/70 mb-8 max-w-xl mx-auto">
-          Join thousands of developers who are already building with Elixir Lizards. 
+          Join thousands of developers who are already building with Elixir Lizards.
           Start your free trial today.
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
@@ -164,42 +162,48 @@ defmodule ElixirLizardsWeb.Demo.FeaturesLive do
     [
       %{
         title: "Real-time Updates",
-        description: "LiveView provides seamless real-time updates without writing any JavaScript. Watch your UI update instantly.",
+        description:
+          "LiveView provides seamless real-time updates without writing any JavaScript. Watch your UI update instantly.",
         icon: "hero-bolt",
         bg_color: "bg-primary/10",
         icon_color: "text-primary"
       },
       %{
         title: "Ash Framework",
-        description: "Build your domain model declaratively with Ash's powerful resource system and automatic API generation.",
+        description:
+          "Build your domain model declaratively with Ash's powerful resource system and automatic API generation.",
         icon: "hero-cube-transparent",
         bg_color: "bg-secondary/10",
         icon_color: "text-secondary"
       },
       %{
         title: "Authentication",
-        description: "Secure authentication out of the box with AshAuthentication. Magic links, OAuth, and more.",
+        description:
+          "Secure authentication out of the box with AshAuthentication. Magic links, OAuth, and more.",
         icon: "hero-shield-check",
         bg_color: "bg-success/10",
         icon_color: "text-success"
       },
       %{
         title: "Beautiful Components",
-        description: "DaisyUI components styled with Tailwind CSS. Dark mode, themes, and responsive design included.",
+        description:
+          "DaisyUI components styled with Tailwind CSS. Dark mode, themes, and responsive design included.",
         icon: "hero-paint-brush",
         bg_color: "bg-info/10",
         icon_color: "text-info"
       },
       %{
         title: "Scalable Architecture",
-        description: "Built on OTP with supervision trees, fault tolerance, and horizontal scaling capabilities.",
+        description:
+          "Built on OTP with supervision trees, fault tolerance, and horizontal scaling capabilities.",
         icon: "hero-server-stack",
         bg_color: "bg-warning/10",
         icon_color: "text-warning"
       },
       %{
         title: "Developer Experience",
-        description: "Hot code reloading, excellent error messages, and a vibrant community to support you.",
+        description:
+          "Hot code reloading, excellent error messages, and a vibrant community to support you.",
         icon: "hero-code-bracket",
         bg_color: "bg-error/10",
         icon_color: "text-error"
@@ -210,19 +214,22 @@ defmodule ElixirLizardsWeb.Demo.FeaturesLive do
   defp sample_testimonials do
     [
       %{
-        quote: "Elixir Lizards cut our development time in half. The component library is incredibly well thought out.",
+        quote:
+          "Elixir Lizards cut our development time in half. The component library is incredibly well thought out.",
         name: "Sarah Chen",
         role: "CTO at TechStart",
         initials: "SC"
       },
       %{
-        quote: "The Ash Framework integration is game-changing. We built a complete API in days, not weeks.",
+        quote:
+          "The Ash Framework integration is game-changing. We built a complete API in days, not weeks.",
         name: "Marcus Johnson",
         role: "Lead Developer at DataFlow",
         initials: "MJ"
       },
       %{
-        quote: "Finally, a Phoenix starter that gets DaisyUI right. Beautiful UI with zero JavaScript headaches.",
+        quote:
+          "Finally, a Phoenix starter that gets DaisyUI right. Beautiful UI with zero JavaScript headaches.",
         name: "Elena Rodriguez",
         role: "Full-stack Developer",
         initials: "ER"

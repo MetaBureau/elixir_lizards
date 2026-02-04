@@ -1,94 +1,89 @@
 <Layouts.flash_group flash={@flash} />
-
-<%!-- Navigation Header --%>
-<header class="navbar px-4 sm:px-6 lg:px-8 bg-base-100/80 backdrop-blur-lg sticky top-0 z-50 border-b border-base-200">
-  <div class="navbar-start">
-    <a href="/" class="flex items-center gap-2">
-      <img src={~p"/images/logo.svg"} width="36" alt="Elixir Lizards" />
-      <span class="font-bold text-lg">Elixir Lizards</span>
-    </a>
-  </div>
-  <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-1 gap-1">
-      <li><a href="/demo/features" class="rounded-lg">Features</a></li>
-      <li><a href="/demo/pricing" class="rounded-lg">Pricing</a></li>
-      <li><a href="/demo/team" class="rounded-lg">Team</a></li>
-      <li><a href="/demo/contact" class="rounded-lg">Contact</a></li>
-      <li>
-        <details class="dropdown">
-          <summary class="rounded-lg">Resources</summary>
-          <ul class="menu dropdown-content bg-base-100 rounded-box z-10 w-52 p-2 shadow-lg border border-base-200">
-            <li><a href="/demo">Demo Pages</a></li>
-            <li><a href="/demo/dashboard">Dashboard</a></li>
-            <li><a href="/dev/components">Component Library</a></li>
-            <li><a href="/admin">Admin Panel</a></li>
-          </ul>
-        </details>
-      </li>
-    </ul>
-  </div>
-  <div class="navbar-end gap-2">
-    <Layouts.theme_toggle />
-    <a href="/sign-in" class="btn btn-ghost hidden sm:flex">Sign In</a>
-    <a href="/demo" class="btn btn-primary">Get Started</a>
-    <%!-- Mobile menu --%>
-    <div class="dropdown dropdown-end lg:hidden">
-      <div tabindex="0" role="button" class="btn btn-ghost">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
-        </svg>
-      </div>
-      <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-lg border border-base-200">
-        <li><a href="/demo/features">Features</a></li>
-        <li><a href="/demo/pricing">Pricing</a></li>
-        <li><a href="/demo/team">Team</a></li>
-        <li><a href="/demo/contact">Contact</a></li>
-        <li><a href="/demo">Demo Pages</a></li>
-        <li><a href="/dev/components">Components</a></li>
-        <li><a href="/sign-in">Sign In</a></li>
-      </ul>
-    </div>
-  </div>
-</header>
+<Layouts.navbar />
 
 <%!-- Hero Section --%>
 <section class="min-h-[85vh] flex items-center relative overflow-hidden">
   <%!-- Background decoration --%>
   <div class="absolute inset-0 -z-10">
-    <div class="absolute top-0 -left-4 w-72 h-72 bg-primary/30 rounded-full filter blur-3xl opacity-70 animate-pulse"></div>
-    <div class="absolute top-0 -right-4 w-72 h-72 bg-secondary/30 rounded-full filter blur-3xl opacity-70 animate-pulse delay-1000"></div>
-    <div class="absolute bottom-20 left-1/2 w-72 h-72 bg-accent/20 rounded-full filter blur-3xl opacity-70 animate-pulse delay-500"></div>
+    <div class="absolute top-0 -left-4 w-72 h-72 bg-primary/30 rounded-full filter blur-3xl opacity-70 animate-pulse">
+    </div>
+    <div class="absolute top-0 -right-4 w-72 h-72 bg-secondary/30 rounded-full filter blur-3xl opacity-70 animate-pulse delay-1000">
+    </div>
+    <div class="absolute bottom-20 left-1/2 w-72 h-72 bg-accent/20 rounded-full filter blur-3xl opacity-70 animate-pulse delay-500">
+    </div>
   </div>
 
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
     <div class="max-w-4xl mx-auto text-center">
       <div class="badge badge-primary badge-lg mb-6 gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 10V3L4 14h7v7l9-11h-7z"
+          />
         </svg>
         Phoenix + Ash + DaisyUI Demo
       </div>
 
       <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-        Build <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Beautiful</span> Web Apps with Elixir
+        Build
+        <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+          Beautiful
+        </span>
+        Web Apps with Elixir
       </h1>
 
       <p class="text-xl text-base-content/70 mb-10 max-w-2xl mx-auto">
-        A demo Phoenix application showcasing the power of Ash Framework, LiveView, and DaisyUI components. 
+        A demo Phoenix application showcasing the power of Ash Framework, LiveView, and DaisyUI components.
         Explore real-world patterns and beautiful UI designs.
       </p>
 
       <div class="flex flex-wrap gap-4 justify-center mb-12">
         <a href="/demo" class="btn btn-primary btn-lg gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+            />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
           </svg>
           Explore Demos
         </a>
         <a href="/dev/components" class="btn btn-outline btn-lg gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
+            />
           </svg>
           View Components
         </a>
@@ -98,31 +93,78 @@
       <div class="flex flex-wrap gap-3 justify-center">
         <div class="badge badge-lg badge-outline gap-2">
           <svg viewBox="0 0 71 48" class="h-4 w-4" aria-hidden="true">
-            <path d="m26.371 33.477-.552-.1c-3.92-.729-6.397-3.1-7.57-6.829-.733-2.324.597-4.035 3.035-4.148 1.995-.092 3.362 1.055 4.57 2.39 1.557 1.72 2.984 3.558 4.514 5.305 2.202 2.515 4.797 4.134 8.347 3.634 3.183-.448 5.958-1.725 8.371-3.828.363-.316.761-.592 1.144-.886l-.241-.284c-2.027.63-4.093.841-6.205.735-3.195-.16-6.24-.828-8.964-2.582-2.486-1.601-4.319-3.746-5.19-6.611-.704-2.315.736-3.934 3.135-3.6.948.133 1.746.56 2.463 1.165.583.493 1.143 1.015 1.738 1.493 2.8 2.25 6.712 2.375 10.265-.068-5.842-.026-9.817-3.24-13.308-7.313-1.366-1.594-2.7-3.216-4.095-4.785-2.698-3.036-5.692-5.71-9.79-6.623C12.8-.623 7.745.14 2.893 2.361 1.926 2.804.997 3.319 0 4.149c.494 0 .763.006 1.032 0 2.446-.064 4.28 1.023 5.602 3.024.962 1.457 1.415 3.104 1.761 4.798.513 2.515.247 5.078.544 7.605.761 6.494 4.08 11.026 10.26 13.346 2.267.852 4.591 1.135 7.172.555Z" fill="currentColor"/>
+            <path
+              d="m26.371 33.477-.552-.1c-3.92-.729-6.397-3.1-7.57-6.829-.733-2.324.597-4.035 3.035-4.148 1.995-.092 3.362 1.055 4.57 2.39 1.557 1.72 2.984 3.558 4.514 5.305 2.202 2.515 4.797 4.134 8.347 3.634 3.183-.448 5.958-1.725 8.371-3.828.363-.316.761-.592 1.144-.886l-.241-.284c-2.027.63-4.093.841-6.205.735-3.195-.16-6.24-.828-8.964-2.582-2.486-1.601-4.319-3.746-5.19-6.611-.704-2.315.736-3.934 3.135-3.6.948.133 1.746.56 2.463 1.165.583.493 1.143 1.015 1.738 1.493 2.8 2.25 6.712 2.375 10.265-.068-5.842-.026-9.817-3.24-13.308-7.313-1.366-1.594-2.7-3.216-4.095-4.785-2.698-3.036-5.692-5.71-9.79-6.623C12.8-.623 7.745.14 2.893 2.361 1.926 2.804.997 3.319 0 4.149c.494 0 .763.006 1.032 0 2.446-.064 4.28 1.023 5.602 3.024.962 1.457 1.415 3.104 1.761 4.798.513 2.515.247 5.078.544 7.605.761 6.494 4.08 11.026 10.26 13.346 2.267.852 4.591 1.135 7.172.555Z"
+              fill="currentColor"
+            />
           </svg>
           Phoenix 1.8
         </div>
         <div class="badge badge-lg badge-outline gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 10V3L4 14h7v7l9-11h-7z"
+            />
           </svg>
           LiveView
         </div>
         <div class="badge badge-lg badge-outline gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+            />
           </svg>
           Ash Framework
         </div>
         <div class="badge badge-lg badge-outline gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+            />
           </svg>
           DaisyUI
         </div>
         <div class="badge badge-lg badge-outline gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+            />
           </svg>
           Tailwind CSS
         </div>
@@ -143,15 +185,31 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-      <a href="/demo/dashboard" class="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+      <a
+        href="/demo/dashboard"
+        class="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
+      >
         <div class="card-body">
           <div class="rounded-xl bg-primary/10 w-14 h-14 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-7 w-7 text-primary"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+              />
             </svg>
           </div>
           <h3 class="card-title">Dashboard</h3>
-          <p class="text-base-content/70">Stats, tables, activity feeds, and quick actions for admin interfaces.</p>
+          <p class="text-base-content/70">
+            Stats, tables, activity feeds, and quick actions for admin interfaces.
+          </p>
           <div class="flex gap-2 mt-3">
             <span class="badge badge-sm badge-ghost">Stats</span>
             <span class="badge badge-sm badge-ghost">Tables</span>
@@ -160,15 +218,31 @@
         </div>
       </a>
 
-      <a href="/demo/features" class="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+      <a
+        href="/demo/features"
+        class="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
+      >
         <div class="card-body">
           <div class="rounded-xl bg-secondary/10 w-14 h-14 flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-7 w-7 text-secondary"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+              />
             </svg>
           </div>
           <h3 class="card-title">Features</h3>
-          <p class="text-base-content/70">Hero sections, feature grids, testimonials, and marketing CTAs.</p>
+          <p class="text-base-content/70">
+            Hero sections, feature grids, testimonials, and marketing CTAs.
+          </p>
           <div class="flex gap-2 mt-3">
             <span class="badge badge-sm badge-ghost">Hero</span>
             <span class="badge badge-sm badge-ghost">Grids</span>
@@ -177,15 +251,31 @@
         </div>
       </a>
 
-      <a href="/demo/pricing" class="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+      <a
+        href="/demo/pricing"
+        class="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
+      >
         <div class="card-body">
           <div class="rounded-xl bg-success/10 w-14 h-14 flex items-center justify-center mb-4 group-hover:bg-success/20 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-7 w-7 text-success"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
             </svg>
           </div>
           <h3 class="card-title">Pricing</h3>
-          <p class="text-base-content/70">Pricing cards, comparison tables, billing toggles, and FAQ sections.</p>
+          <p class="text-base-content/70">
+            Pricing cards, comparison tables, billing toggles, and FAQ sections.
+          </p>
           <div class="flex gap-2 mt-3">
             <span class="badge badge-sm badge-ghost">Cards</span>
             <span class="badge badge-sm badge-ghost">Toggle</span>
@@ -194,15 +284,31 @@
         </div>
       </a>
 
-      <a href="/demo/team" class="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+      <a
+        href="/demo/team"
+        class="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
+      >
         <div class="card-body">
           <div class="rounded-xl bg-info/10 w-14 h-14 flex items-center justify-center mb-4 group-hover:bg-info/20 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-info" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-7 w-7 text-info"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+              />
             </svg>
           </div>
           <h3 class="card-title">Team</h3>
-          <p class="text-base-content/70">Team member cards, avatars, department tabs, and careers CTAs.</p>
+          <p class="text-base-content/70">
+            Team member cards, avatars, department tabs, and careers CTAs.
+          </p>
           <div class="flex gap-2 mt-3">
             <span class="badge badge-sm badge-ghost">Avatars</span>
             <span class="badge badge-sm badge-ghost">Tabs</span>
@@ -211,15 +317,31 @@
         </div>
       </a>
 
-      <a href="/demo/contact" class="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+      <a
+        href="/demo/contact"
+        class="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
+      >
         <div class="card-body">
           <div class="rounded-xl bg-warning/10 w-14 h-14 flex items-center justify-center mb-4 group-hover:bg-warning/20 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-warning" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-7 w-7 text-warning"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
             </svg>
           </div>
           <h3 class="card-title">Contact</h3>
-          <p class="text-base-content/70">Contact forms, validation patterns, info cards, and social links.</p>
+          <p class="text-base-content/70">
+            Contact forms, validation patterns, info cards, and social links.
+          </p>
           <div class="flex gap-2 mt-3">
             <span class="badge badge-sm badge-ghost">Forms</span>
             <span class="badge badge-sm badge-ghost">Inputs</span>
@@ -228,15 +350,31 @@
         </div>
       </a>
 
-      <a href="/dev/components" class="card bg-gradient-to-br from-primary to-secondary text-primary-content shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+      <a
+        href="/dev/components"
+        class="card bg-gradient-to-br from-primary to-secondary text-primary-content shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
+      >
         <div class="card-body">
           <div class="rounded-xl bg-white/20 w-14 h-14 flex items-center justify-center mb-4 group-hover:bg-white/30 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-7 w-7"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
+              />
             </svg>
           </div>
           <h3 class="card-title">Component Library</h3>
-          <p class="text-primary-content/90">Browse all individual DaisyUI components with live previews.</p>
+          <p class="text-primary-content/90">
+            Browse all individual DaisyUI components with live previews.
+          </p>
           <div class="flex gap-2 mt-3">
             <span class="badge badge-sm bg-white/20 border-none">10+ Components</span>
           </div>
@@ -254,56 +392,108 @@
         <div class="badge badge-accent mb-4">Why Elixir Lizards?</div>
         <h2 class="text-4xl font-bold mb-6">Modern Stack, Beautiful Results</h2>
         <p class="text-lg text-base-content/70 mb-8">
-          This demo showcases how Phoenix, Ash Framework, and DaisyUI work together to create 
+          This demo showcases how Phoenix, Ash Framework, and DaisyUI work together to create
           production-ready web applications with minimal effort.
         </p>
 
         <div class="space-y-4">
           <div class="flex gap-4">
             <div class="rounded-lg bg-success/10 p-2 h-fit">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-success"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                />
               </svg>
             </div>
             <div>
               <h4 class="font-semibold mb-1">Real-time by Default</h4>
-              <p class="text-base-content/70">LiveView provides instant updates without JavaScript complexity.</p>
+              <p class="text-base-content/70">
+                LiveView provides instant updates without JavaScript complexity.
+              </p>
             </div>
           </div>
 
           <div class="flex gap-4">
             <div class="rounded-lg bg-success/10 p-2 h-fit">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-success"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                />
               </svg>
             </div>
             <div>
               <h4 class="font-semibold mb-1">Declarative Domain Modeling</h4>
-              <p class="text-base-content/70">Ash Framework generates APIs, validations, and authorization automatically.</p>
+              <p class="text-base-content/70">
+                Ash Framework generates APIs, validations, and authorization automatically.
+              </p>
             </div>
           </div>
 
           <div class="flex gap-4">
             <div class="rounded-lg bg-success/10 p-2 h-fit">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-success"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                />
               </svg>
             </div>
             <div>
               <h4 class="font-semibold mb-1">Beautiful Out of the Box</h4>
-              <p class="text-base-content/70">DaisyUI + Tailwind CSS delivers polished UI with dark mode support.</p>
+              <p class="text-base-content/70">
+                DaisyUI + Tailwind CSS delivers polished UI with dark mode support.
+              </p>
             </div>
           </div>
 
           <div class="flex gap-4">
             <div class="rounded-lg bg-success/10 p-2 h-fit">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-success"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                />
               </svg>
             </div>
             <div>
               <h4 class="font-semibold mb-1">Production Ready Auth</h4>
-              <p class="text-base-content/70">AshAuthentication handles magic links, OAuth, and more securely.</p>
+              <p class="text-base-content/70">
+                AshAuthentication handles magic links, OAuth, and more securely.
+              </p>
             </div>
           </div>
         </div>
@@ -378,36 +568,4 @@
   </div>
 </section>
 
-<%!-- Footer --%>
-<footer class="footer footer-center p-10 bg-base-200 text-base-content">
-  <nav class="grid grid-flow-col gap-4">
-    <a href="/demo/features" class="link link-hover">Features</a>
-    <a href="/demo/pricing" class="link link-hover">Pricing</a>
-    <a href="/demo/team" class="link link-hover">Team</a>
-    <a href="/demo/contact" class="link link-hover">Contact</a>
-    <a href="/dev/components" class="link link-hover">Components</a>
-  </nav>
-  <nav>
-    <div class="grid grid-flow-col gap-4">
-      <a href="https://github.com/phoenixframework/phoenix" class="btn btn-ghost btn-circle">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
-          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-        </svg>
-      </a>
-      <a href="https://discord.gg/elixir" class="btn btn-ghost btn-circle">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
-          <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/>
-        </svg>
-      </a>
-      <a href="https://elixirforum.com" class="btn btn-ghost btn-circle">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-        </svg>
-      </a>
-    </div>
-  </nav>
-  <aside>
-    <p>Built with Phoenix, Ash Framework, and DaisyUI</p>
-    <p class="text-sm text-base-content/60">A demo project showcasing modern Elixir web development</p>
-  </aside>
-</footer>
+<Layouts.site_footer />

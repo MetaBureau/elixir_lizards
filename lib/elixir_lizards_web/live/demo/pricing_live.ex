@@ -48,7 +48,8 @@ defmodule ElixirLizardsWeb.Demo.PricingLive do
             phx-value-period={if @billing_period == :monthly, do: "yearly", else: "monthly"}
           />
           <span class={[@billing_period == :yearly && "font-semibold"]}>
-            Yearly <.badge variant="success" size="sm">Save 20%</.badge>
+            Yearly
+            <.badge variant="success" size="sm">Save 20%</.badge>
           </span>
         </div>
       </div>
@@ -85,7 +86,10 @@ defmodule ElixirLizardsWeb.Demo.PricingLive do
                 <.icon name="hero-check" class="size-5 text-success flex-shrink-0" />
                 <span class="text-sm">{feature}</span>
               </li>
-              <li :for={feature <- plan.not_included} class="flex items-center gap-2 text-base-content/40">
+              <li
+                :for={feature <- plan.not_included}
+                class="flex items-center gap-2 text-base-content/40"
+              >
                 <.icon name="hero-x-mark" class="size-5 flex-shrink-0" />
                 <span class="text-sm">{feature}</span>
               </li>
@@ -141,15 +145,27 @@ defmodule ElixirLizardsWeb.Demo.PricingLive do
               </tr>
               <tr>
                 <td>SSO</td>
-                <td class="text-center"><.icon name="hero-x-mark" class="size-5 text-base-content/30 mx-auto" /></td>
-                <td class="text-center bg-primary/5"><.icon name="hero-check" class="size-5 text-success mx-auto" /></td>
-                <td class="text-center"><.icon name="hero-check" class="size-5 text-success mx-auto" /></td>
+                <td class="text-center">
+                  <.icon name="hero-x-mark" class="size-5 text-base-content/30 mx-auto" />
+                </td>
+                <td class="text-center bg-primary/5">
+                  <.icon name="hero-check" class="size-5 text-success mx-auto" />
+                </td>
+                <td class="text-center">
+                  <.icon name="hero-check" class="size-5 text-success mx-auto" />
+                </td>
               </tr>
               <tr>
                 <td>Custom Integrations</td>
-                <td class="text-center"><.icon name="hero-x-mark" class="size-5 text-base-content/30 mx-auto" /></td>
-                <td class="text-center bg-primary/5"><.icon name="hero-x-mark" class="size-5 text-base-content/30 mx-auto" /></td>
-                <td class="text-center"><.icon name="hero-check" class="size-5 text-success mx-auto" /></td>
+                <td class="text-center">
+                  <.icon name="hero-x-mark" class="size-5 text-base-content/30 mx-auto" />
+                </td>
+                <td class="text-center bg-primary/5">
+                  <.icon name="hero-x-mark" class="size-5 text-base-content/30 mx-auto" />
+                </td>
+                <td class="text-center">
+                  <.icon name="hero-check" class="size-5 text-success mx-auto" />
+                </td>
               </tr>
             </tbody>
           </table>
@@ -247,23 +263,28 @@ defmodule ElixirLizardsWeb.Demo.PricingLive do
     [
       %{
         question: "Can I change my plan later?",
-        answer: "Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle. If you upgrade, you'll be charged the prorated difference immediately."
+        answer:
+          "Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle. If you upgrade, you'll be charged the prorated difference immediately."
       },
       %{
         question: "What payment methods do you accept?",
-        answer: "We accept all major credit cards (Visa, MasterCard, American Express) as well as PayPal. For Enterprise plans, we also offer invoicing and bank transfers."
+        answer:
+          "We accept all major credit cards (Visa, MasterCard, American Express) as well as PayPal. For Enterprise plans, we also offer invoicing and bank transfers."
       },
       %{
         question: "Is there a free trial?",
-        answer: "Yes! All plans come with a 14-day free trial. No credit card required to start. You'll have full access to all features during the trial period."
+        answer:
+          "Yes! All plans come with a 14-day free trial. No credit card required to start. You'll have full access to all features during the trial period."
       },
       %{
         question: "What happens when my trial ends?",
-        answer: "When your trial ends, you'll be prompted to choose a plan. If you don't select a plan, your account will be downgraded to our free tier with limited features."
+        answer:
+          "When your trial ends, you'll be prompted to choose a plan. If you don't select a plan, your account will be downgraded to our free tier with limited features."
       },
       %{
         question: "Can I get a refund?",
-        answer: "We offer a 30-day money-back guarantee on all plans. If you're not satisfied, contact our support team within 30 days of your purchase for a full refund."
+        answer:
+          "We offer a 30-day money-back guarantee on all plans. If you're not satisfied, contact our support team within 30 days of your purchase for a full refund."
       }
     ]
   end
