@@ -54,7 +54,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.DeviceMockupDemo do
         <div class="space-y-4">
           <h3 class="text-lg font-semibold">With Custom Content</h3>
           <div class="flex justify-center">
-            <DeviceMockup.device_mockup type="iphone" color="dark">
+            <DeviceMockup.device_mockup type="iphone" color="natural">
               <div class="bg-gradient-to-br from-primary-light to-secondary-light h-full flex flex-col items-center justify-center text-white p-4">
                 <h4 class="text-lg font-bold">My App</h4>
                 <p class="text-sm mt-2">Welcome Screen</p>
@@ -73,10 +73,10 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.DeviceMockupDemo do
               <span class="text-sm mt-2 block">Base</span>
             </div>
             <div class="text-center">
-              <DeviceMockup.device_mockup type="iphone" color="dark">
+              <DeviceMockup.device_mockup type="iphone" color="natural">
                 <div class="bg-base-100 h-full"></div>
               </DeviceMockup.device_mockup>
-              <span class="text-sm mt-2 block">Dark</span>
+              <span class="text-sm mt-2 block">Natural</span>
             </div>
             <div class="text-center">
               <DeviceMockup.device_mockup type="iphone" color="primary">
@@ -91,7 +91,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.DeviceMockupDemo do
           <h3 class="text-lg font-semibold mb-2">Usage Example</h3>
           <pre class="text-sm overflow-x-auto"><code>&lt;DeviceMockup.device_mockup type="iphone" image="/images/screenshot.png" /&gt;
 
-    &lt;DeviceMockup.device_mockup type="laptop" color="dark"&gt;
+    &lt;DeviceMockup.device_mockup type="laptop" color="natural"&gt;
     &lt;div class="h-full bg-white"&gt;Custom content&lt;/div&gt;
     &lt;/DeviceMockup.device_mockup&gt;</code></pre>
         </div>
