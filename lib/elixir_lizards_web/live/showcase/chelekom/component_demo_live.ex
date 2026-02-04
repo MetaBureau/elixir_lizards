@@ -13,6 +13,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.ComponentDemoLive do
     BreadcrumbDemo,
     ButtonDemo,
     CardDemo,
+    CarouselDemo,
     CheckboxCardDemo,
     CheckboxFieldDemo,
     ColorFieldDemo,
@@ -81,6 +82,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.ComponentDemoLive do
     %{name: "Tooltip", module: TooltipDemo, category: "overlays"},
     # Media
     %{name: "Avatar", module: AvatarDemo, category: "media"},
+    %{name: "Carousel", module: CarouselDemo, category: "media"},
     # Forms
     %{name: "CheckboxCard", module: CheckboxCardDemo, category: "forms"},
     %{name: "CheckboxField", module: CheckboxFieldDemo, category: "forms"},
