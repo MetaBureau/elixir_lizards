@@ -13,25 +13,58 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.FieldsetDemo do
         </p>
       </div>
 
-      <div class="max-w-lg mx-auto">
-        <Fieldset.fieldset legend="Personal Information" color="natural">
-          <div class="space-y-4">
-            <TextField.text_field
-              name="first_name"
-              value=""
-              label="First Name"
-              placeholder="John"
-              floating="outer"
-            />
-            <TextField.text_field
-              name="last_name"
-              value=""
-              label="Last Name"
-              placeholder="Doe"
-              floating="outer"
-            />
-          </div>
-        </Fieldset.fieldset>
+      <div class="max-w-2xl mx-auto space-y-8">
+        <div class="space-y-2">
+          <h3 class="text-sm font-semibold text-base-content/60">Default Variant</h3>
+          <Fieldset.fieldset legend="Personal Information" variant="default" color="natural">
+            <div class="space-y-4">
+              <TextField.text_field
+                name="first_name"
+                value=""
+                label="First Name"
+                placeholder="John"
+                floating="outer"
+                variant="outline"
+                color="natural"
+              />
+              <TextField.text_field
+                name="last_name"
+                value=""
+                label="Last Name"
+                placeholder="Doe"
+                floating="outer"
+                variant="outline"
+                color="natural"
+              />
+            </div>
+          </Fieldset.fieldset>
+        </div>
+
+        <div class="space-y-2">
+          <h3 class="text-sm font-semibold text-base-content/60">Outline Variant</h3>
+          <Fieldset.fieldset legend="Contact Details" variant="outline" color="primary">
+            <div class="space-y-4">
+              <TextField.text_field
+                name="email"
+                value=""
+                label="Email"
+                placeholder="you@example.com"
+                floating="outer"
+                variant="outline"
+                color="primary"
+              />
+              <TextField.text_field
+                name="phone"
+                value=""
+                label="Phone"
+                placeholder="+1 (555) 000-0000"
+                floating="outer"
+                variant="outline"
+                color="primary"
+              />
+            </div>
+          </Fieldset.fieldset>
+        </div>
       </div>
     </div>
     """
