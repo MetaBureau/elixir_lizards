@@ -1,18 +1,22 @@
 defmodule ElixirLizardsWeb.Showcase.Chelekom.Categories.Overlays do
   @moduledoc """
-  Overlay components: Drawer, Modal, Tooltip
+  Overlay components: Drawer, Modal, Overlay, Popover, Tooltip
   """
   use ElixirLizardsWeb, :live_component
 
   alias ElixirLizardsWeb.Showcase.Chelekom.Components.{
     DrawerDemo,
     ModalDemo,
+    OverlayDemo,
+    PopoverDemo,
     TooltipDemo
   }
 
   @components [
     %{name: "Drawer", module: DrawerDemo},
     %{name: "Modal", module: ModalDemo},
+    %{name: "Overlay", module: OverlayDemo},
+    %{name: "Popover", module: PopoverDemo},
     %{name: "Tooltip", module: TooltipDemo}
   ]
 

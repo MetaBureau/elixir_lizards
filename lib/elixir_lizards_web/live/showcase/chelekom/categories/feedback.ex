@@ -1,21 +1,25 @@
 defmodule ElixirLizardsWeb.Showcase.Chelekom.Categories.Feedback do
   @moduledoc """
-  Feedback components: Alert, Progress, Skeleton, Spinner
+  Feedback components: Alert, Banner, Progress, Skeleton, Spinner, Toast
   """
   use ElixirLizardsWeb, :live_component
 
   alias ElixirLizardsWeb.Showcase.Chelekom.Components.{
     AlertDemo,
+    BannerDemo,
     ProgressDemo,
     SkeletonDemo,
-    SpinnerDemo
+    SpinnerDemo,
+    ToastDemo
   }
 
   @components [
     %{name: "Alert", module: AlertDemo},
+    %{name: "Banner", module: BannerDemo},
     %{name: "Progress", module: ProgressDemo},
     %{name: "Skeleton", module: SkeletonDemo},
-    %{name: "Spinner", module: SpinnerDemo}
+    %{name: "Spinner", module: SpinnerDemo},
+    %{name: "Toast", module: ToastDemo}
   ]
 
   def components, do: @components

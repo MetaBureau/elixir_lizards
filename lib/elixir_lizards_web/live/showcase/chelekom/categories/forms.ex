@@ -1,6 +1,6 @@
 defmodule ElixirLizardsWeb.Showcase.Chelekom.Categories.Forms do
   @moduledoc """
-  Form components: CheckboxCard, CheckboxField, ColorField, DateTimeField, EmailField,
+  Form components: CheckboxCard, CheckboxField, ColorField, Combobox, DateTimeField, EmailField,
   Fieldset, FileField, FormWrapper, InputField, NativeSelect, NumberField, PasswordField,
   RadioCard, RadioField, RangeField, SearchField, TelField, TextField, TextareaField,
   ToggleField, UrlField
@@ -11,6 +11,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Categories.Forms do
     CheckboxCardDemo,
     CheckboxFieldDemo,
     ColorFieldDemo,
+    ComboboxDemo,
     DateTimeFieldDemo,
     EmailFieldDemo,
     FieldsetDemo,
@@ -35,6 +36,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Categories.Forms do
     %{name: "CheckboxCard", module: CheckboxCardDemo},
     %{name: "CheckboxField", module: CheckboxFieldDemo},
     %{name: "ColorField", module: ColorFieldDemo},
+    %{name: "Combobox", module: ComboboxDemo},
     %{name: "DateTimeField", module: DateTimeFieldDemo},
     %{name: "EmailField", module: EmailFieldDemo},
     %{name: "Fieldset", module: FieldsetDemo},
