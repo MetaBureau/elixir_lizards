@@ -777,6 +777,137 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
         </div>
       </section>
 
+    <!-- Sidebar Components -->
+      <section class="space-y-6">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-2">Sidebar Components</h2>
+          <p class="text-base-content/70 max-w-2xl mx-auto">
+            Collapsible navigation panels for app layouts
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-4 justify-center">
+          <ElixirLizardsWeb.Components.Chelekom.Button.button phx-click={ElixirLizardsWeb.Components.Chelekom.Sidebar.show_sidebar("demo-sidebar-left", "left")}>
+            Open Left Sidebar
+          </ElixirLizardsWeb.Components.Chelekom.Button.button>
+          <ElixirLizardsWeb.Components.Chelekom.Button.button variant="outline" phx-click={ElixirLizardsWeb.Components.Chelekom.Sidebar.show_sidebar("demo-sidebar-right", "right")}>
+            Open Right Sidebar
+          </ElixirLizardsWeb.Components.Chelekom.Button.button>
+        </div>
+
+        <ElixirLizardsWeb.Components.Chelekom.Sidebar.sidebar id="demo-sidebar-left" size="medium" position="start" hide_position="left" class="!-translate-x-full">
+          <div class="p-4">
+            <h3 class="font-semibold text-lg mb-4">Navigation</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="flex items-center gap-2 p-2 rounded hover:bg-base-200"><.icon name="hero-home" class="size-5" /> Dashboard</a></li>
+              <li><a href="#" class="flex items-center gap-2 p-2 rounded hover:bg-base-200"><.icon name="hero-users" class="size-5" /> Users</a></li>
+              <li><a href="#" class="flex items-center gap-2 p-2 rounded hover:bg-base-200"><.icon name="hero-cog-6-tooth" class="size-5" /> Settings</a></li>
+              <li><a href="#" class="flex items-center gap-2 p-2 rounded hover:bg-base-200"><.icon name="hero-document-text" class="size-5" /> Reports</a></li>
+            </ul>
+          </div>
+        </ElixirLizardsWeb.Components.Chelekom.Sidebar.sidebar>
+
+        <ElixirLizardsWeb.Components.Chelekom.Sidebar.sidebar id="demo-sidebar-right" size="medium" position="end" hide_position="right" color="primary" class="!translate-x-full">
+          <div class="p-4">
+            <h3 class="font-semibold text-lg mb-4">Quick Actions</h3>
+            <div class="space-y-3">
+              <ElixirLizardsWeb.Components.Chelekom.Button.button class="w-full" size="small">New Project</ElixirLizardsWeb.Components.Chelekom.Button.button>
+              <ElixirLizardsWeb.Components.Chelekom.Button.button class="w-full" size="small" variant="outline">Import Data</ElixirLizardsWeb.Components.Chelekom.Button.button>
+              <ElixirLizardsWeb.Components.Chelekom.Button.button class="w-full" size="small" variant="ghost">View Analytics</ElixirLizardsWeb.Components.Chelekom.Button.button>
+            </div>
+          </div>
+        </ElixirLizardsWeb.Components.Chelekom.Sidebar.sidebar>
+      </section>
+
+    <!-- Scroll Area Components -->
+      <section class="space-y-6">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-2">Scroll Area Components</h2>
+          <p class="text-base-content/70 max-w-2xl mx-auto">
+            Custom scrollable containers with styled scrollbars
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div>
+            <h3 class="text-lg font-semibold mb-3">Vertical Scroll</h3>
+            <ElixirLizardsWeb.Components.Chelekom.ScrollArea.scroll_area id="scroll-demo-1" height="h-48" padding="small" class="border border-base-300 rounded-lg">
+              <div class="space-y-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+                <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+              </div>
+            </ElixirLizardsWeb.Components.Chelekom.ScrollArea.scroll_area>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-3">Content List</h3>
+            <ElixirLizardsWeb.Components.Chelekom.ScrollArea.scroll_area id="scroll-demo-2" height="h-48" padding="extra_small" class="border border-base-300 rounded-lg">
+              <ul class="divide-y divide-base-300">
+                <li :for={i <- 1..15} class="p-3 hover:bg-base-200 transition-colors">
+                  <div class="flex items-center gap-3">
+                    <div class="rounded-full bg-primary/10 p-2">
+                      <.icon name="hero-document" class="size-4 text-primary" />
+                    </div>
+                    <div>
+                      <div class="font-medium">Item {i}</div>
+                      <div class="text-sm text-base-content/60">Description for item {i}</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </ElixirLizardsWeb.Components.Chelekom.ScrollArea.scroll_area>
+          </div>
+        </div>
+      </section>
+
+    <!-- Footer Components -->
+      <section class="space-y-6">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-2">Footer Components</h2>
+          <p class="text-base-content/70 max-w-2xl mx-auto">
+            Customizable page footers with sections and layouts
+          </p>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+          <ElixirLizardsWeb.Components.Chelekom.Footer.footer color="natural" padding="medium" rounded="large">
+            <ElixirLizardsWeb.Components.Chelekom.Footer.footer_section class="grid grid-cols-1 md:grid-cols-3 gap-6" padding="medium">
+              <div>
+                <h4 class="font-semibold mb-3">Company</h4>
+                <ul class="space-y-2 text-sm">
+                  <li><a href="#" class="hover:underline">About Us</a></li>
+                  <li><a href="#" class="hover:underline">Careers</a></li>
+                  <li><a href="#" class="hover:underline">Press</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-3">Support</h4>
+                <ul class="space-y-2 text-sm">
+                  <li><a href="#" class="hover:underline">Help Center</a></li>
+                  <li><a href="#" class="hover:underline">Contact Us</a></li>
+                  <li><a href="#" class="hover:underline">Status</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-3">Legal</h4>
+                <ul class="space-y-2 text-sm">
+                  <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                  <li><a href="#" class="hover:underline">Terms of Service</a></li>
+                  <li><a href="#" class="hover:underline">Cookie Policy</a></li>
+                </ul>
+              </div>
+            </ElixirLizardsWeb.Components.Chelekom.Footer.footer_section>
+            <ElixirLizardsWeb.Components.Chelekom.Footer.footer_section text_position="center" class="border-t border-base-content/10" padding="small">
+              <p class="text-sm">&copy; 2024 Elixir Lizards. All rights reserved.</p>
+            </ElixirLizardsWeb.Components.Chelekom.Footer.footer_section>
+          </ElixirLizardsWeb.Components.Chelekom.Footer.footer>
+        </div>
+      </section>
+
     <!-- Flash Group -->
       <section class="space-y-6">
         <div class="text-center">
@@ -800,7 +931,7 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
     <!-- Installation Summary -->
       <section class="space-y-6">
         <div class="text-center">
-          <h2 class="text-3xl font-bold mb-2">23 Components Installed</h2>
+          <h2 class="text-3xl font-bold mb-2">26 Components Installed</h2>
           <p class="text-base-content/70 max-w-2xl mx-auto">
             Mishka Chelekom components are ready to use in your application
           </p>
@@ -849,6 +980,10 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
           </div>
           <div class="flex items-center gap-2 p-2 rounded bg-base-200">
             <.icon name="hero-check" class="size-4 text-success" />
+            <span>Footer</span>
+          </div>
+          <div class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <.icon name="hero-check" class="size-4 text-success" />
             <span>MegaMenu</span>
           </div>
           <div class="flex items-center gap-2 p-2 rounded bg-base-200">
@@ -874,6 +1009,14 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
           <div class="flex items-center gap-2 p-2 rounded bg-base-200">
             <.icon name="hero-check" class="size-4 text-success" />
             <span>Rating</span>
+          </div>
+          <div class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <.icon name="hero-check" class="size-4 text-success" />
+            <span>ScrollArea</span>
+          </div>
+          <div class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <.icon name="hero-check" class="size-4 text-success" />
+            <span>Sidebar</span>
           </div>
           <div class="flex items-center gap-2 p-2 rounded bg-base-200">
             <.icon name="hero-check" class="size-4 text-success" />
