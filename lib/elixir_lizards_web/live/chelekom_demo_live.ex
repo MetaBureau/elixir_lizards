@@ -151,6 +151,344 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
         </div>
       </section>
       
+    <!-- Card Components -->
+      <section class="space-y-6">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-2">Card Components</h2>
+          <p class="text-base-content/70 max-w-2xl mx-auto">
+            Flexible content containers with titles, media, content, and footers
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Basic Card -->
+          <ElixirLizardsWeb.Components.Card.card padding="medium" rounded="large">
+            <ElixirLizardsWeb.Components.Card.card_title title="Basic Card" icon="hero-document-text" />
+            <ElixirLizardsWeb.Components.Card.card_content>
+              A simple card with title, icon, and content section.
+            </ElixirLizardsWeb.Components.Card.card_content>
+          </ElixirLizardsWeb.Components.Card.card>
+
+          <!-- Card with Footer -->
+          <ElixirLizardsWeb.Components.Card.card padding="medium" rounded="large">
+            <ElixirLizardsWeb.Components.Card.card_title title="With Footer" icon="hero-chat-bubble-left" />
+            <ElixirLizardsWeb.Components.Card.card_content>
+              Cards can include footer sections for actions.
+            </ElixirLizardsWeb.Components.Card.card_content>
+            <ElixirLizardsWeb.Components.Card.card_footer class="flex gap-2">
+              <ElixirLizardsWeb.Components.Button.button size="small">Action</ElixirLizardsWeb.Components.Button.button>
+              <ElixirLizardsWeb.Components.Button.button size="small" variant="outline">Cancel</ElixirLizardsWeb.Components.Button.button>
+            </ElixirLizardsWeb.Components.Card.card_footer>
+          </ElixirLizardsWeb.Components.Card.card>
+
+          <!-- Colored Card -->
+          <ElixirLizardsWeb.Components.Card.card variant="default" color="primary" padding="medium" rounded="large">
+            <ElixirLizardsWeb.Components.Card.card_title title="Primary Color" icon="hero-star" />
+            <ElixirLizardsWeb.Components.Card.card_content>
+              Cards support multiple color variants for visual hierarchy.
+            </ElixirLizardsWeb.Components.Card.card_content>
+          </ElixirLizardsWeb.Components.Card.card>
+
+          <!-- Outline Card -->
+          <ElixirLizardsWeb.Components.Card.card variant="outline" color="success" padding="medium" rounded="large">
+            <ElixirLizardsWeb.Components.Card.card_title title="Outline Variant" icon="hero-check-circle" />
+            <ElixirLizardsWeb.Components.Card.card_content>
+              Outline style with success color theme.
+            </ElixirLizardsWeb.Components.Card.card_content>
+          </ElixirLizardsWeb.Components.Card.card>
+
+          <!-- Shadow Card -->
+          <ElixirLizardsWeb.Components.Card.card variant="shadow" color="info" padding="medium" rounded="large">
+            <ElixirLizardsWeb.Components.Card.card_title title="Shadow Variant" icon="hero-sparkles" />
+            <ElixirLizardsWeb.Components.Card.card_content>
+              Shadow variant adds depth with colored shadows.
+            </ElixirLizardsWeb.Components.Card.card_content>
+          </ElixirLizardsWeb.Components.Card.card>
+
+          <!-- Gradient Card -->
+          <ElixirLizardsWeb.Components.Card.card variant="gradient" color="secondary" padding="medium" rounded="large">
+            <ElixirLizardsWeb.Components.Card.card_title title="Gradient" icon="hero-paint-brush" />
+            <ElixirLizardsWeb.Components.Card.card_content>
+              Gradient backgrounds for eye-catching designs.
+            </ElixirLizardsWeb.Components.Card.card_content>
+          </ElixirLizardsWeb.Components.Card.card>
+        </div>
+      </section>
+
+    <!-- Avatar Components -->
+      <section class="space-y-6">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-2">Avatar Components</h2>
+          <p class="text-base-content/70 max-w-2xl mx-auto">
+            User profile images with various sizes, shapes, and styles
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-4 justify-center items-end">
+          <ElixirLizardsWeb.Components.Avatar.avatar size="extra_small" rounded="full" color="primary">
+            <:icon name="hero-user" />
+          </ElixirLizardsWeb.Components.Avatar.avatar>
+          <ElixirLizardsWeb.Components.Avatar.avatar size="small" rounded="full" color="secondary">
+            <:icon name="hero-user" />
+          </ElixirLizardsWeb.Components.Avatar.avatar>
+          <ElixirLizardsWeb.Components.Avatar.avatar size="medium" rounded="full" color="success">
+            <:icon name="hero-user" />
+          </ElixirLizardsWeb.Components.Avatar.avatar>
+          <ElixirLizardsWeb.Components.Avatar.avatar size="large" rounded="full" color="warning">
+            <:icon name="hero-user" />
+          </ElixirLizardsWeb.Components.Avatar.avatar>
+          <ElixirLizardsWeb.Components.Avatar.avatar size="extra_large" rounded="full" color="info">
+            <:icon name="hero-user" />
+          </ElixirLizardsWeb.Components.Avatar.avatar>
+          <ElixirLizardsWeb.Components.Avatar.avatar size="medium" rounded="medium" color="silver">
+            <:icon name="hero-user" />
+          </ElixirLizardsWeb.Components.Avatar.avatar>
+        </div>
+      </section>
+
+    <!-- Progress Components -->
+      <section class="space-y-6">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-2">Progress Components</h2>
+          <p class="text-base-content/70 max-w-2xl mx-auto">
+            Visual indicators for task completion and loading states
+          </p>
+        </div>
+
+        <div class="space-y-4 max-w-xl mx-auto">
+          <ElixirLizardsWeb.Components.Progress.progress value={25} color="primary" size="small" />
+          <ElixirLizardsWeb.Components.Progress.progress value={50} color="secondary" size="medium" />
+          <ElixirLizardsWeb.Components.Progress.progress value={75} color="success" size="large" />
+          <ElixirLizardsWeb.Components.Progress.progress value={90} color="warning" size="extra_large" />
+        </div>
+      </section>
+
+    <!-- Spinner Components -->
+      <section class="space-y-6">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-2">Spinner Components</h2>
+          <p class="text-base-content/70 max-w-2xl mx-auto">
+            Loading indicators with multiple animation styles
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-lg font-semibold mb-3 text-center">Default Spinner</h3>
+            <div class="flex flex-wrap gap-6 justify-center items-center">
+              <ElixirLizardsWeb.Components.Spinner.spinner size="extra_small" color="primary" />
+              <ElixirLizardsWeb.Components.Spinner.spinner size="small" color="secondary" />
+              <ElixirLizardsWeb.Components.Spinner.spinner size="medium" color="success" />
+              <ElixirLizardsWeb.Components.Spinner.spinner size="large" color="warning" />
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-3 text-center">Animation Types</h3>
+            <div class="flex flex-wrap gap-8 justify-center items-center">
+              <div class="text-center">
+                <ElixirLizardsWeb.Components.Spinner.spinner type="default" size="large" color="primary" />
+                <p class="text-sm mt-2">Default</p>
+              </div>
+              <div class="text-center">
+                <ElixirLizardsWeb.Components.Spinner.spinner type="dots" size="large" color="secondary" />
+                <p class="text-sm mt-2">Dots</p>
+              </div>
+              <div class="text-center">
+                <ElixirLizardsWeb.Components.Spinner.spinner type="bars" size="large" color="success" />
+                <p class="text-sm mt-2">Bars</p>
+              </div>
+              <div class="text-center">
+                <ElixirLizardsWeb.Components.Spinner.spinner type="pinging" size="large" color="warning" />
+                <p class="text-sm mt-2">Pinging</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- Tabs Components -->
+      <section class="space-y-6">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-2">Tabs Components</h2>
+          <p class="text-base-content/70 max-w-2xl mx-auto">
+            Organize content into switchable panels
+          </p>
+        </div>
+
+        <div class="max-w-2xl mx-auto">
+          <ElixirLizardsWeb.Components.Tabs.tabs id="demo-tabs" color="primary" variant="pills" padding="small">
+            <:tab icon="hero-home" active>Home</:tab>
+            <:tab icon="hero-user">Profile</:tab>
+            <:tab icon="hero-cog-6-tooth">Settings</:tab>
+
+            <:panel>
+              <div class="p-4">
+                <h3 class="font-semibold mb-2">Welcome Home</h3>
+                <p>This is the home tab content. Tabs help organize related content into separate views.</p>
+              </div>
+            </:panel>
+            <:panel>
+              <div class="p-4">
+                <h3 class="font-semibold mb-2">User Profile</h3>
+                <p>View and edit your profile information here.</p>
+              </div>
+            </:panel>
+            <:panel>
+              <div class="p-4">
+                <h3 class="font-semibold mb-2">Settings</h3>
+                <p>Customize your application preferences and configurations.</p>
+              </div>
+            </:panel>
+          </ElixirLizardsWeb.Components.Tabs.tabs>
+        </div>
+      </section>
+
+    <!-- Accordion Components -->
+      <section class="space-y-6">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-2">Accordion Components</h2>
+          <p class="text-base-content/70 max-w-2xl mx-auto">
+            Collapsible content sections for FAQs and expandable information
+          </p>
+        </div>
+
+        <div class="max-w-2xl mx-auto">
+          <ElixirLizardsWeb.Components.Accordion.accordion id="demo-accordion" color="natural" rounded="medium">
+            <:item id="faq-1" title="What is Mishka Chelekom?" icon="hero-question-mark-circle" open>
+              Mishka Chelekom is a zero-configuration UI component library for Phoenix LiveView,
+              providing beautiful, customizable components out of the box.
+            </:item>
+            <:item id="faq-2" title="How do I install components?" icon="hero-arrow-down-tray">
+              Use the mix task: <code>mix mishka.ui.gen.component component_name</code>
+              to generate any component you need.
+            </:item>
+            <:item id="faq-3" title="Are components customizable?" icon="hero-paint-brush">
+              Yes! Every component supports variants, colors, sizes, and custom CSS classes
+              for complete design flexibility.
+            </:item>
+          </ElixirLizardsWeb.Components.Accordion.accordion>
+        </div>
+      </section>
+
+    <!-- Tooltip Components -->
+      <section class="space-y-6">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-2">Tooltip Components</h2>
+          <p class="text-base-content/70 max-w-2xl mx-auto">
+            Contextual information on hover for enhanced UX
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-6 justify-center">
+          <ElixirLizardsWeb.Components.Tooltip.tooltip position="top" color="natural">
+            <:trigger>
+              <ElixirLizardsWeb.Components.Button.button variant="outline">Top Tooltip</ElixirLizardsWeb.Components.Button.button>
+            </:trigger>
+            <:content>Tooltip on top</:content>
+          </ElixirLizardsWeb.Components.Tooltip.tooltip>
+
+          <ElixirLizardsWeb.Components.Tooltip.tooltip position="bottom" color="primary">
+            <:trigger>
+              <ElixirLizardsWeb.Components.Button.button variant="outline">Bottom Tooltip</ElixirLizardsWeb.Components.Button.button>
+            </:trigger>
+            <:content>Tooltip on bottom</:content>
+          </ElixirLizardsWeb.Components.Tooltip.tooltip>
+
+          <ElixirLizardsWeb.Components.Tooltip.tooltip position="left" color="success">
+            <:trigger>
+              <ElixirLizardsWeb.Components.Button.button variant="outline">Left Tooltip</ElixirLizardsWeb.Components.Button.button>
+            </:trigger>
+            <:content>Tooltip on left</:content>
+          </ElixirLizardsWeb.Components.Tooltip.tooltip>
+
+          <ElixirLizardsWeb.Components.Tooltip.tooltip position="right" color="warning">
+            <:trigger>
+              <ElixirLizardsWeb.Components.Button.button variant="outline">Right Tooltip</ElixirLizardsWeb.Components.Button.button>
+            </:trigger>
+            <:content>Tooltip on right</:content>
+          </ElixirLizardsWeb.Components.Tooltip.tooltip>
+        </div>
+      </section>
+
+    <!-- Table Components -->
+      <section class="space-y-6">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-2">Table Components</h2>
+          <p class="text-base-content/70 max-w-2xl mx-auto">
+            Structured data display with headers, rows, and styling options
+          </p>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+          <ElixirLizardsWeb.Components.Table.table rounded="medium" color="natural">
+            <:header>Name</:header>
+            <:header>Role</:header>
+            <:header>Status</:header>
+            <:header>Actions</:header>
+
+            <ElixirLizardsWeb.Components.Table.tr>
+              <ElixirLizardsWeb.Components.Table.td>Alice Johnson</ElixirLizardsWeb.Components.Table.td>
+              <ElixirLizardsWeb.Components.Table.td>Developer</ElixirLizardsWeb.Components.Table.td>
+              <ElixirLizardsWeb.Components.Table.td>
+                <ElixirLizardsWeb.Components.Badge.badge color="success">Active</ElixirLizardsWeb.Components.Badge.badge>
+              </ElixirLizardsWeb.Components.Table.td>
+              <ElixirLizardsWeb.Components.Table.td>
+                <ElixirLizardsWeb.Components.Button.button size="extra_small" variant="ghost">Edit</ElixirLizardsWeb.Components.Button.button>
+              </ElixirLizardsWeb.Components.Table.td>
+            </ElixirLizardsWeb.Components.Table.tr>
+
+            <ElixirLizardsWeb.Components.Table.tr>
+              <ElixirLizardsWeb.Components.Table.td>Bob Smith</ElixirLizardsWeb.Components.Table.td>
+              <ElixirLizardsWeb.Components.Table.td>Designer</ElixirLizardsWeb.Components.Table.td>
+              <ElixirLizardsWeb.Components.Table.td>
+                <ElixirLizardsWeb.Components.Badge.badge color="warning">Away</ElixirLizardsWeb.Components.Badge.badge>
+              </ElixirLizardsWeb.Components.Table.td>
+              <ElixirLizardsWeb.Components.Table.td>
+                <ElixirLizardsWeb.Components.Button.button size="extra_small" variant="ghost">Edit</ElixirLizardsWeb.Components.Button.button>
+              </ElixirLizardsWeb.Components.Table.td>
+            </ElixirLizardsWeb.Components.Table.tr>
+
+            <ElixirLizardsWeb.Components.Table.tr>
+              <ElixirLizardsWeb.Components.Table.td>Carol White</ElixirLizardsWeb.Components.Table.td>
+              <ElixirLizardsWeb.Components.Table.td>Manager</ElixirLizardsWeb.Components.Table.td>
+              <ElixirLizardsWeb.Components.Table.td>
+                <ElixirLizardsWeb.Components.Badge.badge color="info">Meeting</ElixirLizardsWeb.Components.Badge.badge>
+              </ElixirLizardsWeb.Components.Table.td>
+              <ElixirLizardsWeb.Components.Table.td>
+                <ElixirLizardsWeb.Components.Button.button size="extra_small" variant="ghost">Edit</ElixirLizardsWeb.Components.Button.button>
+              </ElixirLizardsWeb.Components.Table.td>
+            </ElixirLizardsWeb.Components.Table.tr>
+
+            <:footer>Total: 3 team members</:footer>
+          </ElixirLizardsWeb.Components.Table.table>
+        </div>
+      </section>
+
+    <!-- Modal Components -->
+      <section class="space-y-6">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-2">Modal Components</h2>
+          <p class="text-base-content/70 max-w-2xl mx-auto">
+            Dialog windows for important interactions and confirmations
+          </p>
+        </div>
+
+        <div class="flex justify-center">
+          <ElixirLizardsWeb.Components.Button.button phx-click={ElixirLizardsWeb.Components.Modal.show_modal("demo-modal")}>
+            Open Modal
+          </ElixirLizardsWeb.Components.Button.button>
+        </div>
+
+        <ElixirLizardsWeb.Components.Modal.modal id="demo-modal" title="Example Modal" rounded="large">
+          <p class="mb-4">
+            This is a modal dialog. Modals are useful for confirmations, forms, or displaying important information that requires user attention.
+          </p>
+          <p class="text-sm text-base-content/70">
+            Click outside the modal or press ESC to close.
+          </p>
+        </ElixirLizardsWeb.Components.Modal.modal>
+      </section>
+
     <!-- Flash Group -->
       <section class="space-y-6">
         <div class="text-center">
@@ -170,41 +508,71 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
           } />
         </div>
       </section>
-      
+
     <!-- Installation Summary -->
       <section class="space-y-6">
         <div class="text-center">
-          <h2 class="text-3xl font-bold mb-2">Installation Complete!</h2>
+          <h2 class="text-3xl font-bold mb-2">12 Components Installed</h2>
           <p class="text-base-content/70 max-w-2xl mx-auto">
-            Mishka Chelekom components are now ready to use
+            Mishka Chelekom components are ready to use in your application
           </p>
         </div>
 
-        <div class="card bg-base-100 card-border border-base-300">
-          <div class="card-body text-center">
-            <div class="space-y-4">
-              <div class="flex items-center gap-3 justify-center">
-                <.icon name="hero-check-circle" class="size-6 text-success" />
-                <span class="font-semibold">Components Generated</span>
-              </div>
-
-              <div class="flex items-center gap-3 justify-center">
-                <.icon name="hero-swatch" class="size-6 text-primary" />
-                <span class="font-semibold">Styles Imported</span>
-              </div>
-
-              <div class="flex items-center gap-3 justify-center">
-                <.icon name="hero-sparkles" class="size-6 text-warning" />
-                <span class="font-semibold">Ready to Use</span>
-              </div>
-            </div>
-
-            <div class="mt-6 p-4 bg-base-200 rounded-lg">
-              <p class="text-sm font-mono">
-                Access this showcase at: <code>/dev/chelekom</code>
-              </p>
-            </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 max-w-3xl mx-auto">
+          <div class="flex items-center gap-2 p-3 rounded-lg bg-base-200">
+            <.icon name="hero-check-circle" class="size-5 text-success" />
+            <span class="text-sm font-medium">Alert</span>
           </div>
+          <div class="flex items-center gap-2 p-3 rounded-lg bg-base-200">
+            <.icon name="hero-check-circle" class="size-5 text-success" />
+            <span class="text-sm font-medium">Badge</span>
+          </div>
+          <div class="flex items-center gap-2 p-3 rounded-lg bg-base-200">
+            <.icon name="hero-check-circle" class="size-5 text-success" />
+            <span class="text-sm font-medium">Button</span>
+          </div>
+          <div class="flex items-center gap-2 p-3 rounded-lg bg-base-200">
+            <.icon name="hero-check-circle" class="size-5 text-success" />
+            <span class="text-sm font-medium">Card</span>
+          </div>
+          <div class="flex items-center gap-2 p-3 rounded-lg bg-base-200">
+            <.icon name="hero-check-circle" class="size-5 text-success" />
+            <span class="text-sm font-medium">Avatar</span>
+          </div>
+          <div class="flex items-center gap-2 p-3 rounded-lg bg-base-200">
+            <.icon name="hero-check-circle" class="size-5 text-success" />
+            <span class="text-sm font-medium">Progress</span>
+          </div>
+          <div class="flex items-center gap-2 p-3 rounded-lg bg-base-200">
+            <.icon name="hero-check-circle" class="size-5 text-success" />
+            <span class="text-sm font-medium">Spinner</span>
+          </div>
+          <div class="flex items-center gap-2 p-3 rounded-lg bg-base-200">
+            <.icon name="hero-check-circle" class="size-5 text-success" />
+            <span class="text-sm font-medium">Tabs</span>
+          </div>
+          <div class="flex items-center gap-2 p-3 rounded-lg bg-base-200">
+            <.icon name="hero-check-circle" class="size-5 text-success" />
+            <span class="text-sm font-medium">Accordion</span>
+          </div>
+          <div class="flex items-center gap-2 p-3 rounded-lg bg-base-200">
+            <.icon name="hero-check-circle" class="size-5 text-success" />
+            <span class="text-sm font-medium">Tooltip</span>
+          </div>
+          <div class="flex items-center gap-2 p-3 rounded-lg bg-base-200">
+            <.icon name="hero-check-circle" class="size-5 text-success" />
+            <span class="text-sm font-medium">Table</span>
+          </div>
+          <div class="flex items-center gap-2 p-3 rounded-lg bg-base-200">
+            <.icon name="hero-check-circle" class="size-5 text-success" />
+            <span class="text-sm font-medium">Modal</span>
+          </div>
+        </div>
+
+        <div class="text-center mt-6">
+          <p class="text-sm text-base-content/70">
+            Access this showcase at: <code class="bg-base-200 px-2 py-1 rounded">/dev/chelekom</code>
+          </p>
         </div>
       </section>
     </div>
