@@ -34,6 +34,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.MenuDemo do
       },
       %{
         id: "settings-menu",
+        href: "#",
         title: "Settings",
         padding: "pl-5 space-y-3 mt-3",
         size: "extra_small",
