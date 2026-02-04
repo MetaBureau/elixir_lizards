@@ -112,6 +112,7 @@ defmodule ElixirLizardsWeb.Router do
 
       # Component library demos
       live "/components", ElixirLizardsWeb.ComponentDemoLive
+      live "/chelekom", ElixirLizardsWeb.ChelekomDemoLive
       live "/components/modal", ElixirLizardsWeb.ComponentDemo.ModalDemo
       live "/components/card", ElixirLizardsWeb.ComponentDemo.CardDemo
       live "/components/badge", ElixirLizardsWeb.ComponentDemo.BadgeDemo
