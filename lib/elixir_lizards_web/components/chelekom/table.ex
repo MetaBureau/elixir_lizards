@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Components.Table do
+defmodule ElixirLizardsWeb.Components.Chelekom.Table do
   @moduledoc """
   `ElixirLizardsWeb.Components.Table` is a versatile component for creating customizable tables in a
   Phoenix LiveView application. This module offers a wide range of configurations to tailor table
@@ -16,7 +16,7 @@ defmodule ElixirLizardsWeb.Components.Table do
 
   use Phoenix.Component
   use Gettext, backend: ElixirLizardsWeb.Gettext
-  import ElixirLizardsWeb.Components.Icon, only: [icon: 1]
+  import ElixirLizardsWeb.Components.Chelekom.Icon, only: [icon: 1]
 
   @doc """
   Renders a customizable `table` component that supports custom styling for rows, columns,

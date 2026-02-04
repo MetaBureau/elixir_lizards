@@ -10,11 +10,22 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
 
   def render(assigns) do
     ~H"""
-    <div class="container mx-auto p-8 space-y-12">
+    <Layouts.app flash={@flash}>
+      <.breadcrumb>
+        <:crumb navigate={~p"/"}>Home</:crumb>
+        <:crumb navigate="/dev/components">Components</:crumb>
+        <:crumb>Chelekom</:crumb>
+      </.breadcrumb>
+
       <.header>
         Mishka Chelekom Components
         <:subtitle>Modern, customizable UI components for Phoenix LiveView</:subtitle>
+        <:actions>
+          <.button navigate="/dev/components/daisyui">DaisyUI Components</.button>
+        </:actions>
       </.header>
+
+      <div class="space-y-12">
       
     <!-- Alert Components -->
       <section class="space-y-6">
@@ -26,21 +37,21 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <ElixirLizardsWeb.Components.Alert.alert kind={:info} title="Info">
+          <ElixirLizardsWeb.Components.Chelekom.Alert.alert kind={:info} title="Info">
             This is an informational message.
-          </ElixirLizardsWeb.Components.Alert.alert>
+          </ElixirLizardsWeb.Components.Chelekom.Alert.alert>
 
-          <ElixirLizardsWeb.Components.Alert.alert kind={:success} title="Success" variant="outline">
+          <ElixirLizardsWeb.Components.Chelekom.Alert.alert kind={:success} title="Success" variant="outline">
             Action completed successfully.
-          </ElixirLizardsWeb.Components.Alert.alert>
+          </ElixirLizardsWeb.Components.Chelekom.Alert.alert>
 
-          <ElixirLizardsWeb.Components.Alert.alert kind={:warning} title="Warning" variant="bordered">
+          <ElixirLizardsWeb.Components.Chelekom.Alert.alert kind={:warning} title="Warning" variant="bordered">
             Please review your input.
-          </ElixirLizardsWeb.Components.Alert.alert>
+          </ElixirLizardsWeb.Components.Chelekom.Alert.alert>
 
-          <ElixirLizardsWeb.Components.Alert.alert kind={:error} title="Error" variant="shadow">
+          <ElixirLizardsWeb.Components.Chelekom.Alert.alert kind={:error} title="Error" variant="shadow">
             Something went wrong.
-          </ElixirLizardsWeb.Components.Alert.alert>
+          </ElixirLizardsWeb.Components.Chelekom.Alert.alert>
         </div>
       </section>
       
@@ -54,25 +65,25 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
         </div>
 
         <div class="flex flex-wrap gap-3 justify-center">
-          <ElixirLizardsWeb.Components.Badge.badge>Default</ElixirLizardsWeb.Components.Badge.badge>
-          <ElixirLizardsWeb.Components.Badge.badge variant="primary">
+          <ElixirLizardsWeb.Components.Chelekom.Badge.badge>Default</ElixirLizardsWeb.Components.Chelekom.Badge.badge>
+          <ElixirLizardsWeb.Components.Chelekom.Badge.badge variant="primary">
             Primary
-          </ElixirLizardsWeb.Components.Badge.badge>
-          <ElixirLizardsWeb.Components.Badge.badge variant="secondary">
+          </ElixirLizardsWeb.Components.Chelekom.Badge.badge>
+          <ElixirLizardsWeb.Components.Chelekom.Badge.badge variant="secondary">
             Secondary
-          </ElixirLizardsWeb.Components.Badge.badge>
-          <ElixirLizardsWeb.Components.Badge.badge color="success">
+          </ElixirLizardsWeb.Components.Chelekom.Badge.badge>
+          <ElixirLizardsWeb.Components.Chelekom.Badge.badge color="success">
             Success
-          </ElixirLizardsWeb.Components.Badge.badge>
-          <ElixirLizardsWeb.Components.Badge.badge color="warning">
+          </ElixirLizardsWeb.Components.Chelekom.Badge.badge>
+          <ElixirLizardsWeb.Components.Chelekom.Badge.badge color="warning">
             Warning
-          </ElixirLizardsWeb.Components.Badge.badge>
-          <ElixirLizardsWeb.Components.Badge.badge color="error">
+          </ElixirLizardsWeb.Components.Chelekom.Badge.badge>
+          <ElixirLizardsWeb.Components.Chelekom.Badge.badge color="error">
             Error
-          </ElixirLizardsWeb.Components.Badge.badge>
-          <ElixirLizardsWeb.Components.Badge.badge variant="outline">
+          </ElixirLizardsWeb.Components.Chelekom.Badge.badge>
+          <ElixirLizardsWeb.Components.Chelekom.Badge.badge variant="outline">
             Outline
-          </ElixirLizardsWeb.Components.Badge.badge>
+          </ElixirLizardsWeb.Components.Chelekom.Badge.badge>
         </div>
       </section>
       
@@ -90,21 +101,21 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
           <div>
             <h3 class="text-lg font-semibold mb-3">Variants</h3>
             <div class="flex flex-wrap gap-3 justify-center">
-              <ElixirLizardsWeb.Components.Button.button>
+              <ElixirLizardsWeb.Components.Chelekom.Button.button>
                 Default
-              </ElixirLizardsWeb.Components.Button.button>
-              <ElixirLizardsWeb.Components.Button.button variant="primary">
+              </ElixirLizardsWeb.Components.Chelekom.Button.button>
+              <ElixirLizardsWeb.Components.Chelekom.Button.button variant="primary">
                 Primary
-              </ElixirLizardsWeb.Components.Button.button>
-              <ElixirLizardsWeb.Components.Button.button variant="outline">
+              </ElixirLizardsWeb.Components.Chelekom.Button.button>
+              <ElixirLizardsWeb.Components.Chelekom.Button.button variant="outline">
                 Outline
-              </ElixirLizardsWeb.Components.Button.button>
-              <ElixirLizardsWeb.Components.Button.button variant="ghost">
+              </ElixirLizardsWeb.Components.Chelekom.Button.button>
+              <ElixirLizardsWeb.Components.Chelekom.Button.button variant="ghost">
                 Ghost
-              </ElixirLizardsWeb.Components.Button.button>
-              <ElixirLizardsWeb.Components.Button.button variant="link">
+              </ElixirLizardsWeb.Components.Chelekom.Button.button>
+              <ElixirLizardsWeb.Components.Chelekom.Button.button variant="link">
                 Link
-              </ElixirLizardsWeb.Components.Button.button>
+              </ElixirLizardsWeb.Components.Chelekom.Button.button>
             </div>
           </div>
           
@@ -112,18 +123,18 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
           <div>
             <h3 class="text-lg font-semibold mb-3">Colors</h3>
             <div class="flex flex-wrap gap-3 justify-center">
-              <ElixirLizardsWeb.Components.Button.button color="success">
+              <ElixirLizardsWeb.Components.Chelekom.Button.button color="success">
                 Success
-              </ElixirLizardsWeb.Components.Button.button>
-              <ElixirLizardsWeb.Components.Button.button color="warning">
+              </ElixirLizardsWeb.Components.Chelekom.Button.button>
+              <ElixirLizardsWeb.Components.Chelekom.Button.button color="warning">
                 Warning
-              </ElixirLizardsWeb.Components.Button.button>
-              <ElixirLizardsWeb.Components.Button.button color="error">
+              </ElixirLizardsWeb.Components.Chelekom.Button.button>
+              <ElixirLizardsWeb.Components.Chelekom.Button.button color="error">
                 Error
-              </ElixirLizardsWeb.Components.Button.button>
-              <ElixirLizardsWeb.Components.Button.button color="info">
+              </ElixirLizardsWeb.Components.Chelekom.Button.button>
+              <ElixirLizardsWeb.Components.Chelekom.Button.button color="info">
                 Info
-              </ElixirLizardsWeb.Components.Button.button>
+              </ElixirLizardsWeb.Components.Chelekom.Button.button>
             </div>
           </div>
           
@@ -131,21 +142,21 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
           <div>
             <h3 class="text-lg font-semibold mb-3">Sizes</h3>
             <div class="flex flex-wrap gap-3 justify-center items-center">
-              <ElixirLizardsWeb.Components.Button.button size="extra_small">
+              <ElixirLizardsWeb.Components.Chelekom.Button.button size="extra_small">
                 XS
-              </ElixirLizardsWeb.Components.Button.button>
-              <ElixirLizardsWeb.Components.Button.button size="small">
+              </ElixirLizardsWeb.Components.Chelekom.Button.button>
+              <ElixirLizardsWeb.Components.Chelekom.Button.button size="small">
                 SM
-              </ElixirLizardsWeb.Components.Button.button>
-              <ElixirLizardsWeb.Components.Button.button size="medium">
+              </ElixirLizardsWeb.Components.Chelekom.Button.button>
+              <ElixirLizardsWeb.Components.Chelekom.Button.button size="medium">
                 MD
-              </ElixirLizardsWeb.Components.Button.button>
-              <ElixirLizardsWeb.Components.Button.button size="large">
+              </ElixirLizardsWeb.Components.Chelekom.Button.button>
+              <ElixirLizardsWeb.Components.Chelekom.Button.button size="large">
                 LG
-              </ElixirLizardsWeb.Components.Button.button>
-              <ElixirLizardsWeb.Components.Button.button size="extra_large">
+              </ElixirLizardsWeb.Components.Chelekom.Button.button>
+              <ElixirLizardsWeb.Components.Chelekom.Button.button size="extra_large">
                 XL
-              </ElixirLizardsWeb.Components.Button.button>
+              </ElixirLizardsWeb.Components.Chelekom.Button.button>
             </div>
           </div>
         </div>
@@ -162,56 +173,56 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- Basic Card -->
-          <ElixirLizardsWeb.Components.Card.card padding="medium" rounded="large">
-            <ElixirLizardsWeb.Components.Card.card_title title="Basic Card" icon="hero-document-text" />
-            <ElixirLizardsWeb.Components.Card.card_content>
+          <ElixirLizardsWeb.Components.Chelekom.Card.card padding="medium" rounded="large">
+            <ElixirLizardsWeb.Components.Chelekom.Card.card_title title="Basic Card" icon="hero-document-text" />
+            <ElixirLizardsWeb.Components.Chelekom.Card.card_content>
               A simple card with title, icon, and content section.
-            </ElixirLizardsWeb.Components.Card.card_content>
-          </ElixirLizardsWeb.Components.Card.card>
+            </ElixirLizardsWeb.Components.Chelekom.Card.card_content>
+          </ElixirLizardsWeb.Components.Chelekom.Card.card>
 
           <!-- Card with Footer -->
-          <ElixirLizardsWeb.Components.Card.card padding="medium" rounded="large">
-            <ElixirLizardsWeb.Components.Card.card_title title="With Footer" icon="hero-chat-bubble-left" />
-            <ElixirLizardsWeb.Components.Card.card_content>
+          <ElixirLizardsWeb.Components.Chelekom.Card.card padding="medium" rounded="large">
+            <ElixirLizardsWeb.Components.Chelekom.Card.card_title title="With Footer" icon="hero-chat-bubble-left" />
+            <ElixirLizardsWeb.Components.Chelekom.Card.card_content>
               Cards can include footer sections for actions.
-            </ElixirLizardsWeb.Components.Card.card_content>
-            <ElixirLizardsWeb.Components.Card.card_footer class="flex gap-2">
-              <ElixirLizardsWeb.Components.Button.button size="small">Action</ElixirLizardsWeb.Components.Button.button>
-              <ElixirLizardsWeb.Components.Button.button size="small" variant="outline">Cancel</ElixirLizardsWeb.Components.Button.button>
-            </ElixirLizardsWeb.Components.Card.card_footer>
-          </ElixirLizardsWeb.Components.Card.card>
+            </ElixirLizardsWeb.Components.Chelekom.Card.card_content>
+            <ElixirLizardsWeb.Components.Chelekom.Card.card_footer class="flex gap-2">
+              <ElixirLizardsWeb.Components.Chelekom.Button.button size="small">Action</ElixirLizardsWeb.Components.Chelekom.Button.button>
+              <ElixirLizardsWeb.Components.Chelekom.Button.button size="small" variant="outline">Cancel</ElixirLizardsWeb.Components.Chelekom.Button.button>
+            </ElixirLizardsWeb.Components.Chelekom.Card.card_footer>
+          </ElixirLizardsWeb.Components.Chelekom.Card.card>
 
           <!-- Colored Card -->
-          <ElixirLizardsWeb.Components.Card.card variant="default" color="primary" padding="medium" rounded="large">
-            <ElixirLizardsWeb.Components.Card.card_title title="Primary Color" icon="hero-star" />
-            <ElixirLizardsWeb.Components.Card.card_content>
+          <ElixirLizardsWeb.Components.Chelekom.Card.card variant="default" color="primary" padding="medium" rounded="large">
+            <ElixirLizardsWeb.Components.Chelekom.Card.card_title title="Primary Color" icon="hero-star" />
+            <ElixirLizardsWeb.Components.Chelekom.Card.card_content>
               Cards support multiple color variants for visual hierarchy.
-            </ElixirLizardsWeb.Components.Card.card_content>
-          </ElixirLizardsWeb.Components.Card.card>
+            </ElixirLizardsWeb.Components.Chelekom.Card.card_content>
+          </ElixirLizardsWeb.Components.Chelekom.Card.card>
 
           <!-- Outline Card -->
-          <ElixirLizardsWeb.Components.Card.card variant="outline" color="success" padding="medium" rounded="large">
-            <ElixirLizardsWeb.Components.Card.card_title title="Outline Variant" icon="hero-check-circle" />
-            <ElixirLizardsWeb.Components.Card.card_content>
+          <ElixirLizardsWeb.Components.Chelekom.Card.card variant="outline" color="success" padding="medium" rounded="large">
+            <ElixirLizardsWeb.Components.Chelekom.Card.card_title title="Outline Variant" icon="hero-check-circle" />
+            <ElixirLizardsWeb.Components.Chelekom.Card.card_content>
               Outline style with success color theme.
-            </ElixirLizardsWeb.Components.Card.card_content>
-          </ElixirLizardsWeb.Components.Card.card>
+            </ElixirLizardsWeb.Components.Chelekom.Card.card_content>
+          </ElixirLizardsWeb.Components.Chelekom.Card.card>
 
           <!-- Shadow Card -->
-          <ElixirLizardsWeb.Components.Card.card variant="shadow" color="info" padding="medium" rounded="large">
-            <ElixirLizardsWeb.Components.Card.card_title title="Shadow Variant" icon="hero-sparkles" />
-            <ElixirLizardsWeb.Components.Card.card_content>
+          <ElixirLizardsWeb.Components.Chelekom.Card.card variant="shadow" color="info" padding="medium" rounded="large">
+            <ElixirLizardsWeb.Components.Chelekom.Card.card_title title="Shadow Variant" icon="hero-sparkles" />
+            <ElixirLizardsWeb.Components.Chelekom.Card.card_content>
               Shadow variant adds depth with colored shadows.
-            </ElixirLizardsWeb.Components.Card.card_content>
-          </ElixirLizardsWeb.Components.Card.card>
+            </ElixirLizardsWeb.Components.Chelekom.Card.card_content>
+          </ElixirLizardsWeb.Components.Chelekom.Card.card>
 
           <!-- Gradient Card -->
-          <ElixirLizardsWeb.Components.Card.card variant="gradient" color="secondary" padding="medium" rounded="large">
-            <ElixirLizardsWeb.Components.Card.card_title title="Gradient" icon="hero-paint-brush" />
-            <ElixirLizardsWeb.Components.Card.card_content>
+          <ElixirLizardsWeb.Components.Chelekom.Card.card variant="gradient" color="secondary" padding="medium" rounded="large">
+            <ElixirLizardsWeb.Components.Chelekom.Card.card_title title="Gradient" icon="hero-paint-brush" />
+            <ElixirLizardsWeb.Components.Chelekom.Card.card_content>
               Gradient backgrounds for eye-catching designs.
-            </ElixirLizardsWeb.Components.Card.card_content>
-          </ElixirLizardsWeb.Components.Card.card>
+            </ElixirLizardsWeb.Components.Chelekom.Card.card_content>
+          </ElixirLizardsWeb.Components.Chelekom.Card.card>
         </div>
       </section>
 
@@ -225,24 +236,24 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
         </div>
 
         <div class="flex flex-wrap gap-4 justify-center items-end">
-          <ElixirLizardsWeb.Components.Avatar.avatar size="extra_small" rounded="full" color="primary">
+          <ElixirLizardsWeb.Components.Chelekom.Avatar.avatar size="extra_small" rounded="full" color="primary">
             <:icon name="hero-user" />
-          </ElixirLizardsWeb.Components.Avatar.avatar>
-          <ElixirLizardsWeb.Components.Avatar.avatar size="small" rounded="full" color="secondary">
+          </ElixirLizardsWeb.Components.Chelekom.Avatar.avatar>
+          <ElixirLizardsWeb.Components.Chelekom.Avatar.avatar size="small" rounded="full" color="secondary">
             <:icon name="hero-user" />
-          </ElixirLizardsWeb.Components.Avatar.avatar>
-          <ElixirLizardsWeb.Components.Avatar.avatar size="medium" rounded="full" color="success">
+          </ElixirLizardsWeb.Components.Chelekom.Avatar.avatar>
+          <ElixirLizardsWeb.Components.Chelekom.Avatar.avatar size="medium" rounded="full" color="success">
             <:icon name="hero-user" />
-          </ElixirLizardsWeb.Components.Avatar.avatar>
-          <ElixirLizardsWeb.Components.Avatar.avatar size="large" rounded="full" color="warning">
+          </ElixirLizardsWeb.Components.Chelekom.Avatar.avatar>
+          <ElixirLizardsWeb.Components.Chelekom.Avatar.avatar size="large" rounded="full" color="warning">
             <:icon name="hero-user" />
-          </ElixirLizardsWeb.Components.Avatar.avatar>
-          <ElixirLizardsWeb.Components.Avatar.avatar size="extra_large" rounded="full" color="info">
+          </ElixirLizardsWeb.Components.Chelekom.Avatar.avatar>
+          <ElixirLizardsWeb.Components.Chelekom.Avatar.avatar size="extra_large" rounded="full" color="info">
             <:icon name="hero-user" />
-          </ElixirLizardsWeb.Components.Avatar.avatar>
-          <ElixirLizardsWeb.Components.Avatar.avatar size="medium" rounded="medium" color="silver">
+          </ElixirLizardsWeb.Components.Chelekom.Avatar.avatar>
+          <ElixirLizardsWeb.Components.Chelekom.Avatar.avatar size="medium" rounded="medium" color="silver">
             <:icon name="hero-user" />
-          </ElixirLizardsWeb.Components.Avatar.avatar>
+          </ElixirLizardsWeb.Components.Chelekom.Avatar.avatar>
         </div>
       </section>
 
@@ -256,10 +267,10 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
         </div>
 
         <div class="space-y-4 max-w-xl mx-auto">
-          <ElixirLizardsWeb.Components.Progress.progress value={25} color="primary" size="small" />
-          <ElixirLizardsWeb.Components.Progress.progress value={50} color="secondary" size="medium" />
-          <ElixirLizardsWeb.Components.Progress.progress value={75} color="success" size="large" />
-          <ElixirLizardsWeb.Components.Progress.progress value={90} color="warning" size="extra_large" />
+          <ElixirLizardsWeb.Components.Chelekom.Progress.progress value={25} color="primary" size="small" />
+          <ElixirLizardsWeb.Components.Chelekom.Progress.progress value={50} color="secondary" size="medium" />
+          <ElixirLizardsWeb.Components.Chelekom.Progress.progress value={75} color="success" size="large" />
+          <ElixirLizardsWeb.Components.Chelekom.Progress.progress value={90} color="warning" size="extra_large" />
         </div>
       </section>
 
@@ -276,29 +287,29 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
           <div>
             <h3 class="text-lg font-semibold mb-3 text-center">Default Spinner</h3>
             <div class="flex flex-wrap gap-6 justify-center items-center">
-              <ElixirLizardsWeb.Components.Spinner.spinner size="extra_small" color="primary" />
-              <ElixirLizardsWeb.Components.Spinner.spinner size="small" color="secondary" />
-              <ElixirLizardsWeb.Components.Spinner.spinner size="medium" color="success" />
-              <ElixirLizardsWeb.Components.Spinner.spinner size="large" color="warning" />
+              <ElixirLizardsWeb.Components.Chelekom.Spinner.spinner size="extra_small" color="primary" />
+              <ElixirLizardsWeb.Components.Chelekom.Spinner.spinner size="small" color="secondary" />
+              <ElixirLizardsWeb.Components.Chelekom.Spinner.spinner size="medium" color="success" />
+              <ElixirLizardsWeb.Components.Chelekom.Spinner.spinner size="large" color="warning" />
             </div>
           </div>
           <div>
             <h3 class="text-lg font-semibold mb-3 text-center">Animation Types</h3>
             <div class="flex flex-wrap gap-8 justify-center items-center">
               <div class="text-center">
-                <ElixirLizardsWeb.Components.Spinner.spinner type="default" size="large" color="primary" />
+                <ElixirLizardsWeb.Components.Chelekom.Spinner.spinner type="default" size="large" color="primary" />
                 <p class="text-sm mt-2">Default</p>
               </div>
               <div class="text-center">
-                <ElixirLizardsWeb.Components.Spinner.spinner type="dots" size="large" color="secondary" />
+                <ElixirLizardsWeb.Components.Chelekom.Spinner.spinner type="dots" size="large" color="secondary" />
                 <p class="text-sm mt-2">Dots</p>
               </div>
               <div class="text-center">
-                <ElixirLizardsWeb.Components.Spinner.spinner type="bars" size="large" color="success" />
+                <ElixirLizardsWeb.Components.Chelekom.Spinner.spinner type="bars" size="large" color="success" />
                 <p class="text-sm mt-2">Bars</p>
               </div>
               <div class="text-center">
-                <ElixirLizardsWeb.Components.Spinner.spinner type="pinging" size="large" color="warning" />
+                <ElixirLizardsWeb.Components.Chelekom.Spinner.spinner type="pinging" size="large" color="warning" />
                 <p class="text-sm mt-2">Pinging</p>
               </div>
             </div>
@@ -316,7 +327,7 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
         </div>
 
         <div class="max-w-2xl mx-auto">
-          <ElixirLizardsWeb.Components.Tabs.tabs id="demo-tabs" color="primary" variant="pills" padding="small">
+          <ElixirLizardsWeb.Components.Chelekom.Tabs.tabs id="demo-tabs" color="primary" variant="pills" padding="small">
             <:tab icon="hero-home" active>Home</:tab>
             <:tab icon="hero-user">Profile</:tab>
             <:tab icon="hero-cog-6-tooth">Settings</:tab>
@@ -339,7 +350,7 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
                 <p>Customize your application preferences and configurations.</p>
               </div>
             </:panel>
-          </ElixirLizardsWeb.Components.Tabs.tabs>
+          </ElixirLizardsWeb.Components.Chelekom.Tabs.tabs>
         </div>
       </section>
 
@@ -353,7 +364,7 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
         </div>
 
         <div class="max-w-2xl mx-auto">
-          <ElixirLizardsWeb.Components.Accordion.accordion id="demo-accordion" color="natural" rounded="medium">
+          <ElixirLizardsWeb.Components.Chelekom.Accordion.accordion id="demo-accordion" color="natural" rounded="medium">
             <:item id="faq-1" title="What is Mishka Chelekom?" icon="hero-question-mark-circle" open>
               Mishka Chelekom is a zero-configuration UI component library for Phoenix LiveView,
               providing beautiful, customizable components out of the box.
@@ -366,7 +377,7 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
               Yes! Every component supports variants, colors, sizes, and custom CSS classes
               for complete design flexibility.
             </:item>
-          </ElixirLizardsWeb.Components.Accordion.accordion>
+          </ElixirLizardsWeb.Components.Chelekom.Accordion.accordion>
         </div>
       </section>
 
@@ -380,33 +391,33 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
         </div>
 
         <div class="flex flex-wrap gap-6 justify-center">
-          <ElixirLizardsWeb.Components.Tooltip.tooltip position="top" color="natural">
+          <ElixirLizardsWeb.Components.Chelekom.Tooltip.tooltip position="top" color="natural">
             <:trigger>
-              <ElixirLizardsWeb.Components.Button.button variant="outline">Top Tooltip</ElixirLizardsWeb.Components.Button.button>
+              <ElixirLizardsWeb.Components.Chelekom.Button.button variant="outline">Top Tooltip</ElixirLizardsWeb.Components.Chelekom.Button.button>
             </:trigger>
             <:content>Tooltip on top</:content>
-          </ElixirLizardsWeb.Components.Tooltip.tooltip>
+          </ElixirLizardsWeb.Components.Chelekom.Tooltip.tooltip>
 
-          <ElixirLizardsWeb.Components.Tooltip.tooltip position="bottom" color="primary">
+          <ElixirLizardsWeb.Components.Chelekom.Tooltip.tooltip position="bottom" color="primary">
             <:trigger>
-              <ElixirLizardsWeb.Components.Button.button variant="outline">Bottom Tooltip</ElixirLizardsWeb.Components.Button.button>
+              <ElixirLizardsWeb.Components.Chelekom.Button.button variant="outline">Bottom Tooltip</ElixirLizardsWeb.Components.Chelekom.Button.button>
             </:trigger>
             <:content>Tooltip on bottom</:content>
-          </ElixirLizardsWeb.Components.Tooltip.tooltip>
+          </ElixirLizardsWeb.Components.Chelekom.Tooltip.tooltip>
 
-          <ElixirLizardsWeb.Components.Tooltip.tooltip position="left" color="success">
+          <ElixirLizardsWeb.Components.Chelekom.Tooltip.tooltip position="left" color="success">
             <:trigger>
-              <ElixirLizardsWeb.Components.Button.button variant="outline">Left Tooltip</ElixirLizardsWeb.Components.Button.button>
+              <ElixirLizardsWeb.Components.Chelekom.Button.button variant="outline">Left Tooltip</ElixirLizardsWeb.Components.Chelekom.Button.button>
             </:trigger>
             <:content>Tooltip on left</:content>
-          </ElixirLizardsWeb.Components.Tooltip.tooltip>
+          </ElixirLizardsWeb.Components.Chelekom.Tooltip.tooltip>
 
-          <ElixirLizardsWeb.Components.Tooltip.tooltip position="right" color="warning">
+          <ElixirLizardsWeb.Components.Chelekom.Tooltip.tooltip position="right" color="warning">
             <:trigger>
-              <ElixirLizardsWeb.Components.Button.button variant="outline">Right Tooltip</ElixirLizardsWeb.Components.Button.button>
+              <ElixirLizardsWeb.Components.Chelekom.Button.button variant="outline">Right Tooltip</ElixirLizardsWeb.Components.Chelekom.Button.button>
             </:trigger>
             <:content>Tooltip on right</:content>
-          </ElixirLizardsWeb.Components.Tooltip.tooltip>
+          </ElixirLizardsWeb.Components.Chelekom.Tooltip.tooltip>
         </div>
       </section>
 
@@ -420,47 +431,47 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
         </div>
 
         <div class="max-w-4xl mx-auto">
-          <ElixirLizardsWeb.Components.Table.table rounded="medium" color="natural">
+          <ElixirLizardsWeb.Components.Chelekom.Table.table rounded="medium" color="natural">
             <:header>Name</:header>
             <:header>Role</:header>
             <:header>Status</:header>
             <:header>Actions</:header>
 
-            <ElixirLizardsWeb.Components.Table.tr>
-              <ElixirLizardsWeb.Components.Table.td>Alice Johnson</ElixirLizardsWeb.Components.Table.td>
-              <ElixirLizardsWeb.Components.Table.td>Developer</ElixirLizardsWeb.Components.Table.td>
-              <ElixirLizardsWeb.Components.Table.td>
-                <ElixirLizardsWeb.Components.Badge.badge color="success">Active</ElixirLizardsWeb.Components.Badge.badge>
-              </ElixirLizardsWeb.Components.Table.td>
-              <ElixirLizardsWeb.Components.Table.td>
-                <ElixirLizardsWeb.Components.Button.button size="extra_small" variant="ghost">Edit</ElixirLizardsWeb.Components.Button.button>
-              </ElixirLizardsWeb.Components.Table.td>
-            </ElixirLizardsWeb.Components.Table.tr>
+            <ElixirLizardsWeb.Components.Chelekom.Table.tr>
+              <ElixirLizardsWeb.Components.Chelekom.Table.td>Alice Johnson</ElixirLizardsWeb.Components.Chelekom.Table.td>
+              <ElixirLizardsWeb.Components.Chelekom.Table.td>Developer</ElixirLizardsWeb.Components.Chelekom.Table.td>
+              <ElixirLizardsWeb.Components.Chelekom.Table.td>
+                <ElixirLizardsWeb.Components.Chelekom.Badge.badge color="success">Active</ElixirLizardsWeb.Components.Chelekom.Badge.badge>
+              </ElixirLizardsWeb.Components.Chelekom.Table.td>
+              <ElixirLizardsWeb.Components.Chelekom.Table.td>
+                <ElixirLizardsWeb.Components.Chelekom.Button.button size="extra_small" variant="ghost">Edit</ElixirLizardsWeb.Components.Chelekom.Button.button>
+              </ElixirLizardsWeb.Components.Chelekom.Table.td>
+            </ElixirLizardsWeb.Components.Chelekom.Table.tr>
 
-            <ElixirLizardsWeb.Components.Table.tr>
-              <ElixirLizardsWeb.Components.Table.td>Bob Smith</ElixirLizardsWeb.Components.Table.td>
-              <ElixirLizardsWeb.Components.Table.td>Designer</ElixirLizardsWeb.Components.Table.td>
-              <ElixirLizardsWeb.Components.Table.td>
-                <ElixirLizardsWeb.Components.Badge.badge color="warning">Away</ElixirLizardsWeb.Components.Badge.badge>
-              </ElixirLizardsWeb.Components.Table.td>
-              <ElixirLizardsWeb.Components.Table.td>
-                <ElixirLizardsWeb.Components.Button.button size="extra_small" variant="ghost">Edit</ElixirLizardsWeb.Components.Button.button>
-              </ElixirLizardsWeb.Components.Table.td>
-            </ElixirLizardsWeb.Components.Table.tr>
+            <ElixirLizardsWeb.Components.Chelekom.Table.tr>
+              <ElixirLizardsWeb.Components.Chelekom.Table.td>Bob Smith</ElixirLizardsWeb.Components.Chelekom.Table.td>
+              <ElixirLizardsWeb.Components.Chelekom.Table.td>Designer</ElixirLizardsWeb.Components.Chelekom.Table.td>
+              <ElixirLizardsWeb.Components.Chelekom.Table.td>
+                <ElixirLizardsWeb.Components.Chelekom.Badge.badge color="warning">Away</ElixirLizardsWeb.Components.Chelekom.Badge.badge>
+              </ElixirLizardsWeb.Components.Chelekom.Table.td>
+              <ElixirLizardsWeb.Components.Chelekom.Table.td>
+                <ElixirLizardsWeb.Components.Chelekom.Button.button size="extra_small" variant="ghost">Edit</ElixirLizardsWeb.Components.Chelekom.Button.button>
+              </ElixirLizardsWeb.Components.Chelekom.Table.td>
+            </ElixirLizardsWeb.Components.Chelekom.Table.tr>
 
-            <ElixirLizardsWeb.Components.Table.tr>
-              <ElixirLizardsWeb.Components.Table.td>Carol White</ElixirLizardsWeb.Components.Table.td>
-              <ElixirLizardsWeb.Components.Table.td>Manager</ElixirLizardsWeb.Components.Table.td>
-              <ElixirLizardsWeb.Components.Table.td>
-                <ElixirLizardsWeb.Components.Badge.badge color="info">Meeting</ElixirLizardsWeb.Components.Badge.badge>
-              </ElixirLizardsWeb.Components.Table.td>
-              <ElixirLizardsWeb.Components.Table.td>
-                <ElixirLizardsWeb.Components.Button.button size="extra_small" variant="ghost">Edit</ElixirLizardsWeb.Components.Button.button>
-              </ElixirLizardsWeb.Components.Table.td>
-            </ElixirLizardsWeb.Components.Table.tr>
+            <ElixirLizardsWeb.Components.Chelekom.Table.tr>
+              <ElixirLizardsWeb.Components.Chelekom.Table.td>Carol White</ElixirLizardsWeb.Components.Chelekom.Table.td>
+              <ElixirLizardsWeb.Components.Chelekom.Table.td>Manager</ElixirLizardsWeb.Components.Chelekom.Table.td>
+              <ElixirLizardsWeb.Components.Chelekom.Table.td>
+                <ElixirLizardsWeb.Components.Chelekom.Badge.badge color="info">Meeting</ElixirLizardsWeb.Components.Chelekom.Badge.badge>
+              </ElixirLizardsWeb.Components.Chelekom.Table.td>
+              <ElixirLizardsWeb.Components.Chelekom.Table.td>
+                <ElixirLizardsWeb.Components.Chelekom.Button.button size="extra_small" variant="ghost">Edit</ElixirLizardsWeb.Components.Chelekom.Button.button>
+              </ElixirLizardsWeb.Components.Chelekom.Table.td>
+            </ElixirLizardsWeb.Components.Chelekom.Table.tr>
 
             <:footer>Total: 3 team members</:footer>
-          </ElixirLizardsWeb.Components.Table.table>
+          </ElixirLizardsWeb.Components.Chelekom.Table.table>
         </div>
       </section>
 
@@ -474,19 +485,19 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
         </div>
 
         <div class="flex justify-center">
-          <ElixirLizardsWeb.Components.Button.button phx-click={ElixirLizardsWeb.Components.Modal.show_modal("demo-modal")}>
+          <ElixirLizardsWeb.Components.Chelekom.Button.button phx-click={ElixirLizardsWeb.Components.Chelekom.Modal.show_modal("demo-modal")}>
             Open Modal
-          </ElixirLizardsWeb.Components.Button.button>
+          </ElixirLizardsWeb.Components.Chelekom.Button.button>
         </div>
 
-        <ElixirLizardsWeb.Components.Modal.modal id="demo-modal" title="Example Modal" rounded="large">
+        <ElixirLizardsWeb.Components.Chelekom.Modal.modal id="demo-modal" title="Example Modal" rounded="large">
           <p class="mb-4">
             This is a modal dialog. Modals are useful for confirmations, forms, or displaying important information that requires user attention.
           </p>
           <p class="text-sm text-base-content/70">
             Click outside the modal or press ESC to close.
           </p>
-        </ElixirLizardsWeb.Components.Modal.modal>
+        </ElixirLizardsWeb.Components.Chelekom.Modal.modal>
       </section>
 
     <!-- Dropdown Components -->
@@ -499,11 +510,11 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
         </div>
 
         <div class="flex flex-wrap gap-6 justify-center">
-          <ElixirLizardsWeb.Components.Dropdown.dropdown id="demo-dropdown-1" position="bottom" clickable rounded="medium">
+          <ElixirLizardsWeb.Components.Chelekom.Dropdown.dropdown id="demo-dropdown-1" position="bottom" clickable rounded="medium">
             <:trigger>
-              <ElixirLizardsWeb.Components.Button.button>
+              <ElixirLizardsWeb.Components.Chelekom.Button.button>
                 Click Me <.icon name="hero-chevron-down" class="size-4 ml-1" />
-              </ElixirLizardsWeb.Components.Button.button>
+              </ElixirLizardsWeb.Components.Chelekom.Button.button>
             </:trigger>
             <:content>
               <div class="py-1 min-w-32">
@@ -513,13 +524,13 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
                 <div class="px-3 py-2 hover:bg-base-200 cursor-pointer text-error">Sign Out</div>
               </div>
             </:content>
-          </ElixirLizardsWeb.Components.Dropdown.dropdown>
+          </ElixirLizardsWeb.Components.Chelekom.Dropdown.dropdown>
 
-          <ElixirLizardsWeb.Components.Dropdown.dropdown id="demo-dropdown-2" position="bottom" clickable rounded="medium">
+          <ElixirLizardsWeb.Components.Chelekom.Dropdown.dropdown id="demo-dropdown-2" position="bottom" clickable rounded="medium">
             <:trigger>
-              <ElixirLizardsWeb.Components.Button.button variant="outline">
+              <ElixirLizardsWeb.Components.Chelekom.Button.button variant="outline">
                 Options <.icon name="hero-chevron-down" class="size-4 ml-1" />
-              </ElixirLizardsWeb.Components.Button.button>
+              </ElixirLizardsWeb.Components.Chelekom.Button.button>
             </:trigger>
             <:content>
               <div class="py-1 min-w-32">
@@ -528,7 +539,7 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
                 <div class="px-3 py-2 hover:bg-base-200 cursor-pointer">Archive</div>
               </div>
             </:content>
-          </ElixirLizardsWeb.Components.Dropdown.dropdown>
+          </ElixirLizardsWeb.Components.Chelekom.Dropdown.dropdown>
         </div>
       </section>
 
@@ -542,17 +553,17 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
         </div>
 
         <div class="space-y-4 flex flex-col items-center">
-          <ElixirLizardsWeb.Components.Breadcrumb.breadcrumb>
+          <ElixirLizardsWeb.Components.Chelekom.Breadcrumb.breadcrumb>
             <:item icon="hero-home" link="/">Home</:item>
             <:item link="/dev">Development</:item>
             <:item>Chelekom</:item>
-          </ElixirLizardsWeb.Components.Breadcrumb.breadcrumb>
+          </ElixirLizardsWeb.Components.Chelekom.Breadcrumb.breadcrumb>
 
-          <ElixirLizardsWeb.Components.Breadcrumb.breadcrumb color="primary" size="medium">
+          <ElixirLizardsWeb.Components.Chelekom.Breadcrumb.breadcrumb color="primary" size="medium">
             <:item icon="hero-folder">Projects</:item>
             <:item icon="hero-document">Documentation</:item>
             <:item icon="hero-code-bracket">Components</:item>
-          </ElixirLizardsWeb.Components.Breadcrumb.breadcrumb>
+          </ElixirLizardsWeb.Components.Chelekom.Breadcrumb.breadcrumb>
         </div>
       </section>
 
@@ -566,8 +577,8 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
         </div>
 
         <div class="space-y-6 flex flex-col items-center">
-          <ElixirLizardsWeb.Components.Pagination.pagination total={10} active={3} siblings={1} />
-          <ElixirLizardsWeb.Components.Pagination.pagination total={20} active={7} siblings={2} variant="outline" show_edges />
+          <ElixirLizardsWeb.Components.Chelekom.Pagination.pagination total={10} active={3} siblings={1} />
+          <ElixirLizardsWeb.Components.Chelekom.Pagination.pagination total={20} active={7} siblings={2} variant="outline" show_edges />
         </div>
       </section>
 
@@ -583,15 +594,15 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
         <div class="space-y-4 flex flex-col items-center">
           <div class="flex items-center gap-4">
             <span class="text-sm">3/5:</span>
-            <ElixirLizardsWeb.Components.Rating.rating select={3} count={5} size="medium" />
+            <ElixirLizardsWeb.Components.Chelekom.Rating.rating select={3} count={5} size="medium" />
           </div>
           <div class="flex items-center gap-4">
             <span class="text-sm">4.5/5:</span>
-            <ElixirLizardsWeb.Components.Rating.rating select={4.5} count={5} size="large" color="warning" />
+            <ElixirLizardsWeb.Components.Chelekom.Rating.rating select={4.5} count={5} size="large" color="warning" />
           </div>
           <div class="flex items-center gap-4">
             <span class="text-sm">Interactive:</span>
-            <ElixirLizardsWeb.Components.Rating.rating select={0} count={5} size="large" color="primary" interactive />
+            <ElixirLizardsWeb.Components.Chelekom.Rating.rating select={0} count={5} size="large" color="primary" interactive />
           </div>
         </div>
       </section>
@@ -606,14 +617,14 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
         </div>
 
         <div class="max-w-md mx-auto space-y-4">
-          <ElixirLizardsWeb.Components.TextField.text_field
+          <ElixirLizardsWeb.Components.Chelekom.TextField.text_field
             name="demo_name"
             value=""
             label="Your Name"
             placeholder="Enter your name"
             floating="outer"
           />
-          <ElixirLizardsWeb.Components.TextField.text_field
+          <ElixirLizardsWeb.Components.Chelekom.TextField.text_field
             name="demo_email"
             value=""
             label="Email Address"
@@ -621,7 +632,7 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
             description="We'll never share your email"
             floating="outer"
           />
-          <ElixirLizardsWeb.Components.TextField.text_field
+          <ElixirLizardsWeb.Components.Chelekom.TextField.text_field
             name="demo_error"
             value="invalid"
             label="With Error"
@@ -631,7 +642,7 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
             <:end_section>
               <.icon name="hero-exclamation-circle" class="size-5 text-error" />
             </:end_section>
-          </ElixirLizardsWeb.Components.TextField.text_field>
+          </ElixirLizardsWeb.Components.Chelekom.TextField.text_field>
         </div>
       </section>
 
@@ -646,14 +657,14 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
 
         <div class="max-w-md mx-auto space-y-4">
           <div class="flex items-center gap-4">
-            <ElixirLizardsWeb.Components.Skeleton.skeleton width="w-12" height="h-12" rounded="full" animated />
+            <ElixirLizardsWeb.Components.Chelekom.Skeleton.skeleton width="w-12" height="h-12" rounded="full" animated />
             <div class="flex-1 space-y-2">
-              <ElixirLizardsWeb.Components.Skeleton.skeleton width="w-3/4" height="small" animated />
-              <ElixirLizardsWeb.Components.Skeleton.skeleton width="w-1/2" height="extra_small" animated />
+              <ElixirLizardsWeb.Components.Chelekom.Skeleton.skeleton width="w-3/4" height="small" animated />
+              <ElixirLizardsWeb.Components.Chelekom.Skeleton.skeleton width="w-1/2" height="extra_small" animated />
             </div>
           </div>
-          <ElixirLizardsWeb.Components.Skeleton.skeleton width="full" height="medium" animated />
-          <ElixirLizardsWeb.Components.Skeleton.skeleton width="full" height="extra_large" animated />
+          <ElixirLizardsWeb.Components.Chelekom.Skeleton.skeleton width="full" height="medium" animated />
+          <ElixirLizardsWeb.Components.Chelekom.Skeleton.skeleton width="full" height="extra_large" animated />
         </div>
       </section>
 
@@ -667,14 +678,14 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
         </div>
 
         <div class="max-w-xl mx-auto space-y-8">
-          <ElixirLizardsWeb.Components.Divider.divider />
-          <ElixirLizardsWeb.Components.Divider.divider type="dashed" color="primary" />
-          <ElixirLizardsWeb.Components.Divider.divider type="dotted" color="secondary">
+          <ElixirLizardsWeb.Components.Chelekom.Divider.divider />
+          <ElixirLizardsWeb.Components.Chelekom.Divider.divider type="dashed" color="primary" />
+          <ElixirLizardsWeb.Components.Chelekom.Divider.divider type="dotted" color="secondary">
             <:text>OR</:text>
-          </ElixirLizardsWeb.Components.Divider.divider>
-          <ElixirLizardsWeb.Components.Divider.divider color="success">
+          </ElixirLizardsWeb.Components.Chelekom.Divider.divider>
+          <ElixirLizardsWeb.Components.Chelekom.Divider.divider color="success">
             <:icon name="hero-sparkles" class="px-2 bg-base-100" />
-          </ElixirLizardsWeb.Components.Divider.divider>
+          </ElixirLizardsWeb.Components.Chelekom.Divider.divider>
         </div>
       </section>
 
@@ -688,23 +699,23 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
         </div>
 
         <div class="flex flex-wrap gap-4 justify-center">
-          <ElixirLizardsWeb.Components.Button.button phx-click={ElixirLizardsWeb.Components.Drawer.show_drawer("demo-drawer-left", "left")}>
+          <ElixirLizardsWeb.Components.Chelekom.Button.button phx-click={ElixirLizardsWeb.Components.Chelekom.Drawer.show_drawer("demo-drawer-left", "left")}>
             Open Left Drawer
-          </ElixirLizardsWeb.Components.Button.button>
-          <ElixirLizardsWeb.Components.Button.button variant="outline" phx-click={ElixirLizardsWeb.Components.Drawer.show_drawer("demo-drawer-right", "right")}>
+          </ElixirLizardsWeb.Components.Chelekom.Button.button>
+          <ElixirLizardsWeb.Components.Chelekom.Button.button variant="outline" phx-click={ElixirLizardsWeb.Components.Chelekom.Drawer.show_drawer("demo-drawer-right", "right")}>
             Open Right Drawer
-          </ElixirLizardsWeb.Components.Button.button>
+          </ElixirLizardsWeb.Components.Chelekom.Button.button>
         </div>
 
-        <ElixirLizardsWeb.Components.Drawer.drawer id="demo-drawer-left" title="Left Drawer" position="left">
+        <ElixirLizardsWeb.Components.Chelekom.Drawer.drawer id="demo-drawer-left" title="Left Drawer" position="left">
           <p class="mb-4">This drawer slides in from the left side of the screen.</p>
           <p class="text-sm text-base-content/70">Click outside or the X button to close.</p>
-        </ElixirLizardsWeb.Components.Drawer.drawer>
+        </ElixirLizardsWeb.Components.Chelekom.Drawer.drawer>
 
-        <ElixirLizardsWeb.Components.Drawer.drawer id="demo-drawer-right" title="Right Drawer" position="right">
+        <ElixirLizardsWeb.Components.Chelekom.Drawer.drawer id="demo-drawer-right" title="Right Drawer" position="right">
           <p class="mb-4">This drawer slides in from the right side of the screen.</p>
           <p class="text-sm text-base-content/70">Great for settings panels or navigation menus.</p>
-        </ElixirLizardsWeb.Components.Drawer.drawer>
+        </ElixirLizardsWeb.Components.Chelekom.Drawer.drawer>
       </section>
 
     <!-- Flash Group -->
@@ -717,7 +728,7 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
         </div>
 
         <div class="flex justify-center">
-          <ElixirLizardsWeb.Components.Alert.flash_group flash={
+          <ElixirLizardsWeb.Components.Chelekom.Alert.flash_group flash={
             %{
               "info" => "Welcome to Mishka Chelekom components!",
               "success" => "Components loaded successfully",
@@ -833,7 +844,8 @@ defmodule ElixirLizardsWeb.ChelekomDemoLive do
           </p>
         </div>
       </section>
-    </div>
+      </div>
+    </Layouts.app>
     """
   end
 end

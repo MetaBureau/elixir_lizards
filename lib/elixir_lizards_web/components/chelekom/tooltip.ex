@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Components.Tooltip do
+defmodule ElixirLizardsWeb.Components.Chelekom.Tooltip do
   @moduledoc """
   A Tooltip ElixirLizardsWeb.Components.Tooltip module for use in Phoenix applications.
 

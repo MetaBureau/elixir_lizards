@@ -31,7 +31,7 @@ defmodule ElixirLizardsWeb.ComponentDemo.StatDemo do
     <Layouts.app flash={@flash}>
       <.breadcrumb>
         <:crumb navigate={~p"/"}>Home</:crumb>
-        <:crumb navigate="/dev/components">Components</:crumb>
+        <:crumb navigate="/dev/components/daisyui">Components</:crumb>
         <:crumb>Stat</:crumb>
       </.breadcrumb>
 
@@ -39,7 +39,7 @@ defmodule ElixirLizardsWeb.ComponentDemo.StatDemo do
         Stat
         <:subtitle>Display key metrics and statistics in a clean format.</:subtitle>
         <:actions>
-          <.button navigate="/dev/components">Back to Components</.button>
+          <.button navigate="/dev/components/daisyui">Back to Components</.button>
         </:actions>
       </.header>
 

@@ -24,7 +24,7 @@ defmodule ElixirLizardsWeb.ComponentDemo.AvatarDemo do
     <Layouts.app flash={@flash}>
       <.breadcrumb>
         <:crumb navigate={~p"/"}>Home</:crumb>
-        <:crumb navigate="/dev/components">Components</:crumb>
+        <:crumb navigate="/dev/components/daisyui">Components</:crumb>
         <:crumb>Avatar</:crumb>
       </.breadcrumb>
 
@@ -32,7 +32,7 @@ defmodule ElixirLizardsWeb.ComponentDemo.AvatarDemo do
         Avatar
         <:subtitle>User profile images with fallbacks and status indicators.</:subtitle>
         <:actions>
-          <.button navigate="/dev/components">Back to Components</.button>
+          <.button navigate="/dev/components/daisyui">Back to Components</.button>
         </:actions>
       </.header>
 

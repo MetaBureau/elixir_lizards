@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Components.Collapse do
+defmodule ElixirLizardsWeb.Components.Chelekom.Collapse do
   @moduledoc """
   The `ElixirLizardsWeb.Components.Collapse` module provides a collapsible component for showing
   and hiding content with smooth animations.

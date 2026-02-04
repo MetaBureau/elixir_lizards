@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Components.Spinner do
+defmodule ElixirLizardsWeb.Components.Chelekom.Spinner do
   @moduledoc """
   The `ElixirLizardsWeb.Components.Spinner` module provides a dynamic and customizable loading spinner
   component for Phoenix LiveView applications. It supports various animation styles and

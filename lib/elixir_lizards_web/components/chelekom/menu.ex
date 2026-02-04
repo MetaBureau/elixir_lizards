@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Components.Menu do
+defmodule ElixirLizardsWeb.Components.Chelekom.Menu do
   @moduledoc """
   The `ElixirLizardsWeb.Components.Menu` module is designed to render a hierarchical menu structure in
   Phoenix LiveView applications. It provides a versatile menu component capable of
@@ -18,8 +18,8 @@ defmodule ElixirLizardsWeb.Components.Menu do
   **Documentation:** https://mishka.tools/chelekom/docs/menu
   """
   use Phoenix.Component
-  import ElixirLizardsWeb.Components.Button, only: [button_link: 1]
-  import ElixirLizardsWeb.Components.Collapse, only: [collapse: 1]
+  import ElixirLizardsWeb.Components.Chelekom.Button, only: [button_link: 1]
+  import ElixirLizardsWeb.Components.Chelekom.Collapse, only: [collapse: 1]
 
   @doc """
   Renders a customizable `menu` component that can include menu items as a list of maps or use

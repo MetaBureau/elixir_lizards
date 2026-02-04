@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Components.Icon do
+defmodule ElixirLizardsWeb.Components.Chelekom.Icon do
   @moduledoc """
   The `ElixirLizardsWeb.Components.Icon` module provides a flexible and reusable icon
   component for rendering various types of icons in a Phoenix LiveView application.

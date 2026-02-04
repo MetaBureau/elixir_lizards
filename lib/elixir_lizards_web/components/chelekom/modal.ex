@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Components.Modal do
+defmodule ElixirLizardsWeb.Components.Chelekom.Modal do
   @moduledoc """
   The `ElixirLizardsWeb.Components.Modal` module provides a versatile and customizable modal component for
   Phoenix LiveView applications. It supports various configurations for size, style, color,
@@ -21,7 +21,7 @@ defmodule ElixirLizardsWeb.Components.Modal do
   use Phoenix.Component
   use Gettext, backend: ElixirLizardsWeb.Gettext
   alias Phoenix.LiveView.JS
-  import ElixirLizardsWeb.Components.Icon, only: [icon: 1]
+  import ElixirLizardsWeb.Components.Chelekom.Icon, only: [icon: 1]
 
   @doc """
   Renders a customizable `modal` component that displays overlay content with optional title and inner content.

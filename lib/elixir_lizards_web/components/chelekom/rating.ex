@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Components.Rating do
+defmodule ElixirLizardsWeb.Components.Chelekom.Rating do
   @moduledoc """
   The `ElixirLizardsWeb.Components.Rating` module provides a versatile rating component for Phoenix LiveView
   applications. This component is designed to display a configurable number of rating stars with

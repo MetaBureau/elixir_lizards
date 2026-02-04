@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Components.Accordion do
+defmodule ElixirLizardsWeb.Components.Chelekom.Accordion do
   @moduledoc """
   The `ElixirLizardsWeb.Components.Accordion` module provides a flexible and customizable accordion
   component for Phoenix LiveView applications.
@@ -10,7 +10,7 @@ defmodule ElixirLizardsWeb.Components.Accordion do
   """
   use Phoenix.Component
   import Phoenix.LiveView.Utils, only: [random_id: 0]
-  import ElixirLizardsWeb.Components.Icon, only: [icon: 1]
+  import ElixirLizardsWeb.Components.Chelekom.Icon, only: [icon: 1]
 
   @doc type: :component
   attr :id, :string,

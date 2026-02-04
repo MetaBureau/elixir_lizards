@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Components.Button do
+defmodule ElixirLizardsWeb.Components.Chelekom.Button do
   @moduledoc """
   Provides a comprehensive set of button components for the `ElixirLizardsWeb.Components.Button` project.
   These components are highly customizable, allowing various styles, sizes, colors,
@@ -25,7 +25,7 @@ defmodule ElixirLizardsWeb.Components.Button do
   """
 
   use Phoenix.Component
-  import ElixirLizardsWeb.Components.Icon, only: [icon: 1]
+  import ElixirLizardsWeb.Components.Chelekom.Icon, only: [icon: 1]
 
   @indicator_positions [
     "indicator",

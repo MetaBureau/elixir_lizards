@@ -87,6 +87,22 @@ defmodule ElixirLizardsWeb do
       # Core UI components
       import ElixirLizardsWeb.CoreComponents
 
+      # DaisyUI components
+      import ElixirLizardsWeb.Components.DaisyUI.Icon
+      import ElixirLizardsWeb.Components.DaisyUI.Button
+      import ElixirLizardsWeb.Components.DaisyUI.Table
+      import ElixirLizardsWeb.Components.DaisyUI.List
+      import ElixirLizardsWeb.Components.DaisyUI.Modal
+      import ElixirLizardsWeb.Components.DaisyUI.Card
+      import ElixirLizardsWeb.Components.DaisyUI.Badge
+      import ElixirLizardsWeb.Components.DaisyUI.Dropdown
+      import ElixirLizardsWeb.Components.DaisyUI.Avatar
+      import ElixirLizardsWeb.Components.DaisyUI.Stat
+      import ElixirLizardsWeb.Components.DaisyUI.EmptyState
+      import ElixirLizardsWeb.Components.DaisyUI.Tabs
+      import ElixirLizardsWeb.Components.DaisyUI.Breadcrumb
+      import ElixirLizardsWeb.Components.DaisyUI.Tooltip
+
       # Common modules used in templates
       alias Phoenix.LiveView.JS
       alias ElixirLizardsWeb.Layouts

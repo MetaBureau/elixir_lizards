@@ -110,19 +110,24 @@ defmodule ElixirLizardsWeb.Router do
       live_dashboard "/dashboard", metrics: ElixirLizardsWeb.Telemetry
       forward "/mailbox", Plug.Swoosh.MailboxPreview
 
-      # Component library demos
-      live "/components", ElixirLizardsWeb.ComponentDemoLive
-      live "/chelekom", ElixirLizardsWeb.ChelekomDemoLive
-      live "/components/modal", ElixirLizardsWeb.ComponentDemo.ModalDemo
-      live "/components/card", ElixirLizardsWeb.ComponentDemo.CardDemo
-      live "/components/badge", ElixirLizardsWeb.ComponentDemo.BadgeDemo
-      live "/components/dropdown", ElixirLizardsWeb.ComponentDemo.DropdownDemo
-      live "/components/avatar", ElixirLizardsWeb.ComponentDemo.AvatarDemo
-      live "/components/stat", ElixirLizardsWeb.ComponentDemo.StatDemo
-      live "/components/empty-state", ElixirLizardsWeb.ComponentDemo.EmptyStateDemo
-      live "/components/tabs", ElixirLizardsWeb.ComponentDemo.TabsDemo
-      live "/components/breadcrumb", ElixirLizardsWeb.ComponentDemo.BreadcrumbDemo
-      live "/components/tooltip", ElixirLizardsWeb.ComponentDemo.TooltipDemo
+      # Component library index
+      live "/components", ElixirLizardsWeb.ComponentIndexLive
+
+      # DaisyUI component demos
+      live "/components/daisyui", ElixirLizardsWeb.ComponentDemoLive
+      live "/components/daisyui/modal", ElixirLizardsWeb.ComponentDemo.ModalDemo
+      live "/components/daisyui/card", ElixirLizardsWeb.ComponentDemo.CardDemo
+      live "/components/daisyui/badge", ElixirLizardsWeb.ComponentDemo.BadgeDemo
+      live "/components/daisyui/dropdown", ElixirLizardsWeb.ComponentDemo.DropdownDemo
+      live "/components/daisyui/avatar", ElixirLizardsWeb.ComponentDemo.AvatarDemo
+      live "/components/daisyui/stat", ElixirLizardsWeb.ComponentDemo.StatDemo
+      live "/components/daisyui/empty-state", ElixirLizardsWeb.ComponentDemo.EmptyStateDemo
+      live "/components/daisyui/tabs", ElixirLizardsWeb.ComponentDemo.TabsDemo
+      live "/components/daisyui/breadcrumb", ElixirLizardsWeb.ComponentDemo.BreadcrumbDemo
+      live "/components/daisyui/tooltip", ElixirLizardsWeb.ComponentDemo.TooltipDemo
+
+      # Mishka Chelekom component demos
+      live "/components/chelekom", ElixirLizardsWeb.ChelekomDemoLive
     end
   end
 

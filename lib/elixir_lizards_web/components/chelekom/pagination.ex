@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Components.Pagination do
+defmodule ElixirLizardsWeb.Components.Chelekom.Pagination do
   @moduledoc """
   The `ElixirLizardsWeb.Components.Pagination` module provides a comprehensive and highly customizable
   pagination component for Phoenix LiveView applications.
@@ -20,7 +20,7 @@ defmodule ElixirLizardsWeb.Components.Pagination do
 
   use Phoenix.Component
   alias Phoenix.LiveView.JS
-  import ElixirLizardsWeb.Components.Icon, only: [icon: 1]
+  import ElixirLizardsWeb.Components.Chelekom.Icon, only: [icon: 1]
   use Gettext, backend: ElixirLizardsWeb.Gettext
 
   @doc """

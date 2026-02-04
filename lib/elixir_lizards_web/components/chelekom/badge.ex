@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Components.Badge do
+defmodule ElixirLizardsWeb.Components.Chelekom.Badge do
   @moduledoc """
   Provides customizable and flexible badge components for use in Phoenix LiveView.
 
@@ -18,7 +18,7 @@ defmodule ElixirLizardsWeb.Components.Badge do
 
   use Phoenix.Component
   alias Phoenix.LiveView.JS
-  import ElixirLizardsWeb.Components.Icon, only: [icon: 1]
+  import ElixirLizardsWeb.Components.Chelekom.Icon, only: [icon: 1]
   use Gettext, backend: ElixirLizardsWeb.Gettext
 
   @icon_positions [

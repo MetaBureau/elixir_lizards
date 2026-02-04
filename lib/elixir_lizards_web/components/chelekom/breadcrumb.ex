@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Components.Breadcrumb do
+defmodule ElixirLizardsWeb.Components.Chelekom.Breadcrumb do
   @moduledoc """
   Provides a flexible and customizable `ElixirLizardsWeb.Components.Breadcrumb` component for displaying
   breadcrumb navigation in your Phoenix LiveView applications.
@@ -16,7 +16,7 @@ defmodule ElixirLizardsWeb.Components.Breadcrumb do
   **Documentation:** https://mishka.tools/chelekom/docs/breadcrumb
   """
   use Phoenix.Component
-  import ElixirLizardsWeb.Components.Icon, only: [icon: 1]
+  import ElixirLizardsWeb.Components.Chelekom.Icon, only: [icon: 1]
 
   @doc """
   The `breadcrumb` component is used to display a navigational path with customizable

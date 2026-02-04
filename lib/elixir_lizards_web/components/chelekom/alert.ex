@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Components.Alert do
+defmodule ElixirLizardsWeb.Components.Chelekom.Alert do
   @moduledoc """
   ElixirLizardsWeb.Components.Alert module provides collection of alert components and helper functions for managing and displaying alerts
   in a **Phoenix LiveView** application.
@@ -30,7 +30,7 @@ defmodule ElixirLizardsWeb.Components.Alert do
   use Phoenix.Component
   use Gettext, backend: ElixirLizardsWeb.Gettext
   alias Phoenix.LiveView.JS
-  import ElixirLizardsWeb.Components.Icon, only: [icon: 1]
+  import ElixirLizardsWeb.Components.Chelekom.Icon, only: [icon: 1]
   import Phoenix.LiveView.Utils, only: [random_id: 0]
 
   @doc type: :component

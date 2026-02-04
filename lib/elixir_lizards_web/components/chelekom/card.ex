@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Components.Card do
+defmodule ElixirLizardsWeb.Components.Chelekom.Card do
   @moduledoc """
   Provides a set of card components for the `ElixirLizardsWeb.Components.Card` project. These components
   allow for flexible and customizable card layouts, including features such as card titles,
@@ -28,7 +28,7 @@ defmodule ElixirLizardsWeb.Components.Card do
   """
 
   use Phoenix.Component
-  import ElixirLizardsWeb.Components.Icon, only: [icon: 1]
+  import ElixirLizardsWeb.Components.Chelekom.Icon, only: [icon: 1]
 
   @positions [
     "start",

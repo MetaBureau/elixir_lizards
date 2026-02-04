@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Components.Dropdown do
+defmodule ElixirLizardsWeb.Components.Chelekom.Dropdown do
   @moduledoc """
   The `ElixirLizardsWeb.Components.Dropdown` module provides a customizable dropdown component
   built using Phoenix LiveView. It allows you to create dropdown menus with different styles,

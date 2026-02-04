@@ -39,7 +39,7 @@ defmodule ElixirLizardsWeb.ComponentDemo.ModalDemo do
     <Layouts.app flash={@flash}>
       <.breadcrumb>
         <:crumb navigate={~p"/"}>Home</:crumb>
-        <:crumb navigate="/dev/components">Components</:crumb>
+        <:crumb navigate="/dev/components/daisyui">Components</:crumb>
         <:crumb>Modal</:crumb>
       </.breadcrumb>
 
@@ -47,7 +47,7 @@ defmodule ElixirLizardsWeb.ComponentDemo.ModalDemo do
         Modal
         <:subtitle>Modal dialogs for confirmations, forms, and focused interactions.</:subtitle>
         <:actions>
-          <.button navigate="/dev/components">Back to Components</.button>
+          <.button navigate="/dev/components/daisyui">Back to Components</.button>
         </:actions>
       </.header>
 

@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Components.Avatar do
+defmodule ElixirLizardsWeb.Components.Chelekom.Avatar do
   @moduledoc """
   The `ElixirLizardsWeb.Components.Avatar` module provides a set of components for creating and
   managing avatar elements in your **Phoenix LiveView** applications.
@@ -22,7 +22,7 @@ defmodule ElixirLizardsWeb.Components.Avatar do
   """
 
   use Phoenix.Component
-  import ElixirLizardsWeb.Components.Icon, only: [icon: 1]
+  import ElixirLizardsWeb.Components.Chelekom.Icon, only: [icon: 1]
 
   @doc """
   The `avatar` component is used to display user avatars with various customization options,

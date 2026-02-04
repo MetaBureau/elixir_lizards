@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Components.Progress do
+defmodule ElixirLizardsWeb.Components.Chelekom.Progress do
   @moduledoc """
   The `ElixirLizardsWeb.Components.Progress` module provides a customizable progress bar component for
   Phoenix LiveView applications.

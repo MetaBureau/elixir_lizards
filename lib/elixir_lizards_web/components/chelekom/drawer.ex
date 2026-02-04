@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Components.Drawer do
+defmodule ElixirLizardsWeb.Components.Chelekom.Drawer do
   @moduledoc """
   The `ElixirLizardsWeb.Components.Drawer` module provides a flexible and customizable drawer component
   for use in Phoenix LiveView applications.
@@ -21,7 +21,7 @@ defmodule ElixirLizardsWeb.Components.Drawer do
   use Phoenix.Component
   alias Phoenix.LiveView.JS
   use Gettext, backend: ElixirLizardsWeb.Gettext
-  import ElixirLizardsWeb.Components.Icon, only: [icon: 1]
+  import ElixirLizardsWeb.Components.Chelekom.Icon, only: [icon: 1]
 
   @doc """
   A `drawer` component for displaying content in a sliding panel. It can be positioned on the left or

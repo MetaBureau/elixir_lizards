@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Components.Skeleton do
+defmodule ElixirLizardsWeb.Components.Chelekom.Skeleton do
   @moduledoc """
   The `ElixirLizardsWeb.Components.Skeleton` module provides a reusable component for displaying skeleton
   loaders in a Phoenix LiveView application. Skeleton loaders serve as placeholders to indicate

@@ -7,61 +7,61 @@ defmodule ElixirLizardsWeb.ComponentDemoLive do
   @components [
     %{
       name: "Modal",
-      path: "/dev/components/modal",
+      path: "/dev/components/daisyui/modal",
       description: "Dialog overlays for confirmations and forms",
       icon: "hero-window"
     },
     %{
       name: "Card",
-      path: "/dev/components/card",
+      path: "/dev/components/daisyui/card",
       description: "Flexible content containers",
       icon: "hero-rectangle-group"
     },
     %{
       name: "Badge",
-      path: "/dev/components/badge",
+      path: "/dev/components/daisyui/badge",
       description: "Status indicators and labels",
       icon: "hero-tag"
     },
     %{
       name: "Dropdown",
-      path: "/dev/components/dropdown",
+      path: "/dev/components/daisyui/dropdown",
       description: "Contextual menus and actions",
       icon: "hero-chevron-down"
     },
     %{
       name: "Avatar",
-      path: "/dev/components/avatar",
+      path: "/dev/components/daisyui/avatar",
       description: "User profile images with fallbacks",
       icon: "hero-user-circle"
     },
     %{
       name: "Stat",
-      path: "/dev/components/stat",
+      path: "/dev/components/daisyui/stat",
       description: "Dashboard statistics display",
       icon: "hero-chart-bar"
     },
     %{
       name: "Empty State",
-      path: "/dev/components/empty-state",
+      path: "/dev/components/daisyui/empty-state",
       description: "Placeholders for empty collections",
       icon: "hero-folder-open"
     },
     %{
       name: "Tabs",
-      path: "/dev/components/tabs",
+      path: "/dev/components/daisyui/tabs",
       description: "Navigation between views",
       icon: "hero-rectangle-stack"
     },
     %{
       name: "Breadcrumb",
-      path: "/dev/components/breadcrumb",
+      path: "/dev/components/daisyui/breadcrumb",
       description: "Navigation trail",
       icon: "hero-chevron-right"
     },
     %{
       name: "Tooltip",
-      path: "/dev/components/tooltip",
+      path: "/dev/components/daisyui/tooltip",
       description: "Contextual hints on hover",
       icon: "hero-chat-bubble-bottom-center-text"
     }
@@ -81,13 +81,16 @@ defmodule ElixirLizardsWeb.ComponentDemoLive do
     <Layouts.app flash={@flash}>
       <.breadcrumb>
         <:crumb navigate={~p"/"}>Home</:crumb>
-        <:crumb>Dev</:crumb>
-        <:crumb>Components</:crumb>
+        <:crumb navigate="/dev/components">Components</:crumb>
+        <:crumb>DaisyUI</:crumb>
       </.breadcrumb>
 
       <.header>
-        Component Library
-        <:subtitle>DaisyUI components built for ElixirLizards</:subtitle>
+        DaisyUI Components
+        <:subtitle>Tailwind CSS components built for ElixirLizards</:subtitle>
+        <:actions>
+          <.button navigate="/dev/components/chelekom">Mishka Chelekom</.button>
+        </:actions>
       </.header>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

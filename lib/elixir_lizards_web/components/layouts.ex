@@ -76,8 +76,13 @@ defmodule ElixirLizardsWeb.Layouts do
               <ul class="menu dropdown-content bg-base-100 rounded-box z-10 w-52 p-2 shadow-lg border border-base-200">
                 <li><a href="/demo">All Demo Pages</a></li>
                 <li><a href="/demo/dashboard">Dashboard</a></li>
-                <li><a href="/dev/components">Component Library</a></li>
-                <li><a href="/admin">Admin Panel</a></li>
+                <li class="menu-title text-xs pt-2">Components</li>
+                <li><a href="/dev/components">All Components</a></li>
+                <li><a href="/dev/components/daisyui">DaisyUI</a></li>
+                <li><a href="/dev/components/chelekom">Mishka Chelekom</a></li>
+                <li class="border-t border-base-200 mt-2 pt-2">
+                  <a href="/admin">Admin Panel</a>
+                </li>
               </ul>
             </details>
           </li>
@@ -117,9 +122,14 @@ defmodule ElixirLizardsWeb.Layouts do
             <li><a href="/demo/mapbox">Map</a></li>
             <li><a href="/demo/dashboard">Dashboard</a></li>
             <li class="border-t border-base-200 mt-2 pt-2">
-              <a href="/dev/components">Components</a>
+              <span class="menu-title text-xs">Components</span>
             </li>
-            <li><a href="/sign-in">Sign In</a></li>
+            <li><a href="/dev/components">All Components</a></li>
+            <li><a href="/dev/components/daisyui">DaisyUI</a></li>
+            <li><a href="/dev/components/chelekom">Chelekom</a></li>
+            <li class="border-t border-base-200 mt-2 pt-2">
+              <a href="/sign-in">Sign In</a>
+            </li>
           </ul>
         </div>
       </div>

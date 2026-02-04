@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Components.TextField do
+defmodule ElixirLizardsWeb.Components.Chelekom.TextField do
   @moduledoc """
   The `ElixirLizardsWeb.Components.TextField` module provides a highly customizable text input field
   component for use in Phoenix LiveView applications. This component supports various
@@ -24,7 +24,7 @@ defmodule ElixirLizardsWeb.Components.TextField do
   """
 
   use Phoenix.Component
-  import ElixirLizardsWeb.Components.Icon, only: [icon: 1]
+  import ElixirLizardsWeb.Components.Chelekom.Icon, only: [icon: 1]
 
   @doc """
   The `text_field` component is a customizable text input field with support for various styles,

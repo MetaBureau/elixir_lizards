@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Components.Divider do
+defmodule ElixirLizardsWeb.Components.Chelekom.Divider do
   @moduledoc """
   The `ElixirLizardsWeb.Components.Divider` module provides a versatile and customizable divider
   component for creating horizontal and vertical dividers with various styling options
@@ -16,7 +16,7 @@ defmodule ElixirLizardsWeb.Components.Divider do
   **Documentation:** https://mishka.tools/chelekom/docs/divider
   """
   use Phoenix.Component
-  import ElixirLizardsWeb.Components.Icon, only: [icon: 1]
+  import ElixirLizardsWeb.Components.Chelekom.Icon, only: [icon: 1]
 
   @doc """
   The `divider` component is used to visually separate content with either a horizontal or

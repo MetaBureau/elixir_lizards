@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Components.Navbar do
+defmodule ElixirLizardsWeb.Components.Chelekom.Navbar do
   @moduledoc """
   The `ElixirLizardsWeb.Components.Navbar` module provides a flexible and customizable navigation
   bar component for Phoenix LiveView applications. It allows for a variety of styles,
@@ -16,7 +16,7 @@ defmodule ElixirLizardsWeb.Components.Navbar do
   **Documentation:** https://mishka.tools/chelekom/docs/navbar
   """
   use Phoenix.Component
-  import ElixirLizardsWeb.Components.Icon, only: [icon: 1]
+  import ElixirLizardsWeb.Components.Chelekom.Icon, only: [icon: 1]
   use Gettext, backend: ElixirLizardsWeb.Gettext
 
   @doc """

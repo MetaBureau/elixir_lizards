@@ -1,4 +1,4 @@
-defmodule ElixirLizardsWeb.Components.Tabs do
+defmodule ElixirLizardsWeb.Components.Chelekom.Tabs do
   @moduledoc """
   `ElixirLizardsWeb.Components.Tabs` is a Phoenix component module that provides a highly customizable tab
   interface for organizing and displaying content.
@@ -28,8 +28,8 @@ defmodule ElixirLizardsWeb.Components.Tabs do
 
   use Phoenix.Component
   alias Phoenix.LiveView.JS
-  import ElixirLizardsWeb.Components.Badge, only: [badge: 1]
-  import ElixirLizardsWeb.Components.Icon, only: [icon: 1]
+  import ElixirLizardsWeb.Components.Chelekom.Badge, only: [badge: 1]
+  import ElixirLizardsWeb.Components.Chelekom.Icon, only: [icon: 1]
 
   @doc """
   The `tabs` component provides a set of clickable tabs for organizing content.

@@ -26,7 +26,7 @@ defmodule ElixirLizardsWeb.ComponentDemo.BreadcrumbDemo do
     <Layouts.app flash={@flash}>
       <.breadcrumb>
         <:crumb navigate={~p"/"}>Home</:crumb>
-        <:crumb navigate="/dev/components">Components</:crumb>
+        <:crumb navigate="/dev/components/daisyui">Components</:crumb>
         <:crumb>Breadcrumb</:crumb>
       </.breadcrumb>
 
@@ -34,7 +34,7 @@ defmodule ElixirLizardsWeb.ComponentDemo.BreadcrumbDemo do
         Breadcrumb
         <:subtitle>Navigation trail showing the current page location.</:subtitle>
         <:actions>
-          <.button navigate="/dev/components">Back to Components</.button>
+          <.button navigate="/dev/components/daisyui">Back to Components</.button>
         </:actions>
       </.header>
 
@@ -53,7 +53,7 @@ defmodule ElixirLizardsWeb.ComponentDemo.BreadcrumbDemo do
           <h3 class="text-lg font-semibold mb-4">With Navigation</h3>
           <.breadcrumb>
             <:crumb navigate={~p"/"}>Home</:crumb>
-            <:crumb navigate="/dev/components">Components</:crumb>
+            <:crumb navigate="/dev/components/daisyui">Components</:crumb>
             <:crumb>Current</:crumb>
           </.breadcrumb>
         </section>
