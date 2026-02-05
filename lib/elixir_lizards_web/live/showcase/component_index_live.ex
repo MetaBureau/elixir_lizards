@@ -25,7 +25,7 @@ defmodule ElixirLizardsWeb.Showcase.ComponentIndexLive do
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
         <a
-          href="/dev/components/daisyui"
+          href="/showcase/daisyui"
           class="card bg-base-100 card-border border-base-300 hover:shadow-xl hover:border-primary transition-all duration-300 group"
         >
           <div class="card-body">
@@ -64,7 +64,7 @@ defmodule ElixirLizardsWeb.Showcase.ComponentIndexLive do
         </a>
 
         <a
-          href="/dev/components/chelekom"
+          href="/showcase/chelekom"
           class="card bg-base-100 card-border border-base-300 hover:shadow-xl hover:border-secondary transition-all duration-300 group"
         >
           <div class="card-body">

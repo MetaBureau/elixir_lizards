@@ -28,7 +28,7 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Components.TooltipDemo do
     <Layouts.app flash={@flash}>
       <.breadcrumb>
         <:crumb navigate={~p"/"}>Home</:crumb>
-        <:crumb navigate="/dev/components/daisyui">Components</:crumb>
+        <:crumb navigate="/showcase/daisyui">Components</:crumb>
         <:crumb>Tooltip</:crumb>
       </.breadcrumb>
 
@@ -36,7 +36,7 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Components.TooltipDemo do
         Tooltip
         <:subtitle>Contextual hints that appear on hover.</:subtitle>
         <:actions>
-          <.button navigate="/dev/components/daisyui">Back to Components</.button>
+          <.button navigate="/showcase/daisyui">Back to Components</.button>
         </:actions>
       </.header>
 

@@ -52,7 +52,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.ComponentDemoLive do
     <Layouts.app flash={@flash}>
       <.breadcrumb>
         <:crumb navigate={~p"/"}>Home</:crumb>
-        <:crumb navigate="/dev/components">Components</:crumb>
+        <:crumb navigate="/showcase">Components</:crumb>
         <:crumb>Chelekom</:crumb>
       </.breadcrumb>
 
@@ -60,7 +60,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.ComponentDemoLive do
         Mishka Chelekom Components
         <:subtitle>Modern, customizable UI components for Phoenix LiveView</:subtitle>
         <:actions>
-          <.button navigate="/dev/components/daisyui">DaisyUI Components</.button>
+          <.button navigate="/showcase/daisyui">DaisyUI Components</.button>
         </:actions>
       </.header>
       
@@ -129,7 +129,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.ComponentDemoLive do
           <div class="text-center mt-6">
             <p class="text-sm text-base-content/70">
               Access this showcase at:
-              <code class="bg-base-200 px-2 py-1 rounded">/dev/components/chelekom</code>
+              <code class="bg-base-200 px-2 py-1 rounded">/showcase/chelekom</code>
             </p>
           </div>
         </section>

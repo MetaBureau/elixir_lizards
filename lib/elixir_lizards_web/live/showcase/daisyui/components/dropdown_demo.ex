@@ -27,7 +27,7 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Components.DropdownDemo do
     <Layouts.app flash={@flash}>
       <.breadcrumb>
         <:crumb navigate={~p"/"}>Home</:crumb>
-        <:crumb navigate="/dev/components/daisyui">Components</:crumb>
+        <:crumb navigate="/showcase/daisyui">Components</:crumb>
         <:crumb>Dropdown</:crumb>
       </.breadcrumb>
 
@@ -35,7 +35,7 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Components.DropdownDemo do
         Dropdown
         <:subtitle>Contextual menus triggered by buttons or other elements.</:subtitle>
         <:actions>
-          <.button navigate="/dev/components/daisyui">Back to Components</.button>
+          <.button navigate="/showcase/daisyui">Back to Components</.button>
         </:actions>
       </.header>
 

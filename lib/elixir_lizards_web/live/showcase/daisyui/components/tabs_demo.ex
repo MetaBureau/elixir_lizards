@@ -26,7 +26,7 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Components.TabsDemo do
     <Layouts.app flash={@flash}>
       <.breadcrumb>
         <:crumb navigate={~p"/"}>Home</:crumb>
-        <:crumb navigate="/dev/components/daisyui">Components</:crumb>
+        <:crumb navigate="/showcase/daisyui">Components</:crumb>
         <:crumb>Tabs</:crumb>
       </.breadcrumb>
 
@@ -34,7 +34,7 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Components.TabsDemo do
         Tabs
         <:subtitle>Navigation tabs for switching between views.</:subtitle>
         <:actions>
-          <.button navigate="/dev/components/daisyui">Back to Components</.button>
+          <.button navigate="/showcase/daisyui">Back to Components</.button>
         </:actions>
       </.header>
 

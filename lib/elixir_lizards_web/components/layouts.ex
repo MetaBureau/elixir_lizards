@@ -77,9 +77,9 @@ defmodule ElixirLizardsWeb.Layouts do
                 <li><a href="/demo">All Demo Pages</a></li>
                 <li><a href="/demo/dashboard">Dashboard</a></li>
                 <li class="menu-title text-xs pt-2">Components</li>
-                <li><a href="/dev/components">All Components</a></li>
-                <li><a href="/dev/components/daisyui">DaisyUI</a></li>
-                <li><a href="/dev/components/chelekom">Mishka Chelekom</a></li>
+                <li><a href="/showcase">All Components</a></li>
+                <li><a href="/showcase/daisyui">DaisyUI</a></li>
+                <li><a href="/showcase/chelekom">Mishka Chelekom</a></li>
                 <li class="border-t border-base-200 mt-2 pt-2">
                   <a href="/admin">Admin Panel</a>
                 </li>
@@ -124,9 +124,9 @@ defmodule ElixirLizardsWeb.Layouts do
             <li class="border-t border-base-200 mt-2 pt-2">
               <span class="menu-title text-xs">Components</span>
             </li>
-            <li><a href="/dev/components">All Components</a></li>
-            <li><a href="/dev/components/daisyui">DaisyUI</a></li>
-            <li><a href="/dev/components/chelekom">Chelekom</a></li>
+            <li><a href="/showcase">All Components</a></li>
+            <li><a href="/showcase/daisyui">DaisyUI</a></li>
+            <li><a href="/showcase/chelekom">Chelekom</a></li>
             <li class="border-t border-base-200 mt-2 pt-2">
               <a href="/sign-in">Sign In</a>
             </li>
@@ -151,7 +151,7 @@ defmodule ElixirLizardsWeb.Layouts do
         <a href="/demo/team" class="link link-hover">Team</a>
         <a href="/demo/contact" class="link link-hover">Contact</a>
         <a href="/demo/mapbox" class="link link-hover">Map</a>
-        <a href="/dev/components" class="link link-hover">Components</a>
+        <a href="/showcase" class="link link-hover">Components</a>
       </nav>
       <nav>
         <div class="grid grid-flow-col gap-4">

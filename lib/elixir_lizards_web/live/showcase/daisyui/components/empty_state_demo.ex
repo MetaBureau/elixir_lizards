@@ -25,7 +25,7 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Components.EmptyStateDemo do
     <Layouts.app flash={@flash}>
       <.breadcrumb>
         <:crumb navigate={~p"/"}>Home</:crumb>
-        <:crumb navigate="/dev/components/daisyui">Components</:crumb>
+        <:crumb navigate="/showcase/daisyui">Components</:crumb>
         <:crumb>Empty State</:crumb>
       </.breadcrumb>
 
@@ -33,7 +33,7 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Components.EmptyStateDemo do
         Empty State
         <:subtitle>Placeholder content for empty collections or search results.</:subtitle>
         <:actions>
-          <.button navigate="/dev/components/daisyui">Back to Components</.button>
+          <.button navigate="/showcase/daisyui">Back to Components</.button>
         </:actions>
       </.header>
 
