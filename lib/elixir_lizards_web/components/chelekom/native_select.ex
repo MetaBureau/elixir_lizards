@@ -127,6 +127,8 @@ defmodule ElixirLizardsWeb.Components.Chelekom.NativeSelect do
   end
 
   def native_select(assigns) do
+    assigns = assign(assigns, :id, assigns[:id] || "select-#{System.unique_integer([:positive])}")
+
     ~H"""
     <div class={[
       @variant != "native" && color_variant(@variant, @color),
@@ -205,6 +207,9 @@ defmodule ElixirLizardsWeb.Components.Chelekom.NativeSelect do
   end
 
   def select_option_group(assigns) do
+    assigns =
+      assign(assigns, :id, assigns[:id] || "optgroup-#{System.unique_integer([:positive])}")
+
     ~H"""
     <optgroup label={@label} class={@class}>
       <option

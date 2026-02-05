@@ -19,7 +19,7 @@ defmodule ElixirLizardsWeb.Components.Chelekom.Combobox do
   use Phoenix.Component
   use Gettext, backend: ElixirLizardsWeb.Gettext
   import ElixirLizardsWeb.Components.Chelekom.ScrollArea, only: [scroll_area: 1]
-  import Phoenix.LiveView.Utils, only: [random_id: 0]
+
   import ElixirLizardsWeb.Components.Chelekom.Icon, only: [icon: 1]
 
   @doc """
@@ -157,7 +157,7 @@ defmodule ElixirLizardsWeb.Components.Chelekom.Combobox do
   def combobox(%{multiple: true} = assigns) do
     assigns =
       assigns
-      |> assign(:id, assigns[:id] || "combo-#{random_id()}")
+      |> assign(:id, assigns[:id] || "combo-#{System.unique_integer([:positive])}")
       |> assign_new(:options, fn -> [] end)
       |> assign_new(:option, fn -> [] end)
       |> assign_new(:value, fn -> Map.get(assigns, :value, []) end)
@@ -360,7 +360,7 @@ defmodule ElixirLizardsWeb.Components.Chelekom.Combobox do
   def combobox(assigns) do
     assigns =
       assigns
-      |> assign(:id, assigns[:id] || "combo-#{random_id()}")
+      |> assign(:id, assigns[:id] || "combo-#{System.unique_integer([:positive])}")
       |> assign_new(:options, fn -> [] end)
       |> assign_new(:option, fn -> [] end)
       |> assign_new(:value, fn -> Map.get(assigns, :value) end)
