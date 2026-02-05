@@ -42,7 +42,7 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.PricingLive do
           <span class={[@billing_period == :monthly && "font-semibold"]}>Monthly</span>
           <input
             type="checkbox"
-            class="toggle toggle-primary"
+            class="d-toggle d-toggle-primary"
             checked={@billing_period == :yearly}
             phx-click="toggle_billing"
             phx-value-period={if @billing_period == :monthly, do: "yearly", else: "monthly"}
@@ -59,14 +59,14 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.PricingLive do
         <div
           :for={plan <- @plans}
           class={[
-            "card bg-base-100",
+            "d-card bg-base-100",
             plan.featured && "card-border-2 border-primary shadow-lg scale-105",
-            !plan.featured && "card-border border-base-300"
+            !plan.featured && "d-card-border border-base-300"
           ]}
         >
-          <div class="card-body">
+          <div class="d-card-body">
             <div class="flex items-center justify-between">
-              <h3 class="card-title">{plan.name}</h3>
+              <h3 class="d-card-title">{plan.name}</h3>
               <.badge :if={plan.featured} variant="primary">Popular</.badge>
             </div>
             <p class="text-base-content/70 text-sm">{plan.description}</p>
@@ -97,7 +97,7 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.PricingLive do
 
             <.button
               variant={if plan.featured, do: "primary", else: nil}
-              class={["w-full", plan.featured && "btn-lg"]}
+              class={["w-full", plan.featured && "d-btn-lg"]}
             >
               {plan.cta}
             </.button>
@@ -109,7 +109,7 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.PricingLive do
       <div class="mb-16">
         <h2 class="text-2xl font-bold text-center mb-8">Compare plans</h2>
         <div class="overflow-x-auto">
-          <table class="table">
+          <table class="d-table">
             <thead>
               <tr>
                 <th>Feature</th>
@@ -176,10 +176,10 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.PricingLive do
       <div class="mb-16">
         <h2 class="text-2xl font-bold text-center mb-8">Frequently asked questions</h2>
         <div class="max-w-2xl mx-auto space-y-4">
-          <div :for={faq <- @faqs} class="collapse collapse-arrow bg-base-100 border border-base-300">
+          <div :for={faq <- @faqs} class="d-collapse d-collapse-arrow bg-base-100 border border-base-300">
             <input type="radio" name="faq-accordion" />
-            <div class="collapse-title font-semibold">{faq.question}</div>
-            <div class="collapse-content text-base-content/70">
+            <div class="d-collapse-title font-semibold">{faq.question}</div>
+            <div class="d-collapse-content text-base-content/70">
               <p>{faq.answer}</p>
             </div>
           </div>
@@ -187,7 +187,7 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.PricingLive do
       </div>
 
       <%!-- CTA Section --%>
-      <div class="text-center py-12 bg-base-200 rounded-box">
+      <div class="text-center py-12 bg-base-200 d-rounded-box">
         <h2 class="text-2xl font-bold mb-4">Still have questions?</h2>
         <p class="text-base-content/70 mb-6">
           Our team is here to help. Reach out and we'll get back to you within 24 hours.

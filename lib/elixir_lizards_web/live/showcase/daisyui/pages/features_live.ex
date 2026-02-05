@@ -18,8 +18,8 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.FeaturesLive do
     ~H"""
     <Layouts.app flash={@flash}>
       <%!-- Hero Section --%>
-      <div class="hero min-h-[60vh] bg-gradient-to-br from-primary/10 via-base-100 to-secondary/10 rounded-box">
-        <div class="hero-content text-center">
+      <div class="d-hero min-h-[60vh] bg-gradient-to-br from-primary/10 via-base-100 to-secondary/10 d-rounded-box">
+        <div class="d-hero-content text-center">
           <div class="max-w-2xl">
             <.badge variant="primary" class="mb-4">New Release</.badge>
             <h1 class="text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -31,10 +31,10 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.FeaturesLive do
               component library and best practices.
             </p>
             <div class="flex flex-wrap gap-4 justify-center">
-              <.button variant="primary" class="btn-lg">
+              <.button variant="primary" class="d-btn-lg">
                 <.icon name="hero-rocket-launch" class="size-5 mr-2" /> Get Started Free
               </.button>
-              <.button class="btn-lg btn-outline">
+              <.button class="d-btn-lg d-btn-outline">
                 <.icon name="hero-play-circle" class="size-5 mr-2" /> Watch Demo
               </.button>
             </div>
@@ -67,19 +67,19 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.FeaturesLive do
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div
             :for={feature <- @features}
-            class="card bg-base-100 card-border border-base-300 hover:shadow-lg hover:border-primary/50 transition-all duration-300"
+            class="d-card bg-base-100 d-card-border border-base-300 hover:shadow-lg hover:border-primary/50 transition-all duration-300"
           >
-            <div class="card-body">
+            <div class="d-card-body">
               <div class={[
                 "rounded-xl w-12 h-12 flex items-center justify-center mb-4",
                 feature.bg_color
               ]}>
                 <.icon name={feature.icon} class={["size-6", feature.icon_color]} />
               </div>
-              <h3 class="card-title text-lg">{feature.title}</h3>
+              <h3 class="d-card-title text-lg">{feature.title}</h3>
               <p class="text-base-content/70">{feature.description}</p>
-              <div class="card-actions justify-start mt-4">
-                <.link class="link link-primary text-sm flex items-center gap-1">
+              <div class="d-card-actions justify-start mt-4">
+                <.link class="d-link d-link-primary text-sm flex items-center gap-1">
                   Learn more <.icon name="hero-arrow-right" class="size-4" />
                 </.link>
               </div>
@@ -89,7 +89,7 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.FeaturesLive do
       </div>
 
       <%!-- Stats Banner --%>
-      <div class="bg-gradient-to-r from-primary to-secondary rounded-box p-8 text-primary-content">
+      <div class="bg-gradient-to-r from-primary to-secondary d-rounded-box p-8 text-primary-content">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
             <div class="text-4xl font-bold">10K+</div>
@@ -123,9 +123,9 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.FeaturesLive do
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div
             :for={testimonial <- @testimonials}
-            class="card bg-base-100 card-border border-base-300"
+            class="d-card bg-base-100 d-card-border border-base-300"
           >
-            <div class="card-body">
+            <div class="d-card-body">
               <div class="flex gap-1 mb-4">
                 <.icon :for={_ <- 1..5} name="hero-star-solid" class="size-5 text-warning" />
               </div>
@@ -143,15 +143,15 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.FeaturesLive do
       </div>
 
       <%!-- CTA Section --%>
-      <div class="text-center py-16 bg-base-200 rounded-box">
+      <div class="text-center py-16 bg-base-200 d-rounded-box">
         <h2 class="text-3xl font-bold mb-4">Ready to get started?</h2>
         <p class="text-base-content/70 mb-8 max-w-xl mx-auto">
           Join thousands of developers who are already building with Elixir Lizards.
           Start your free trial today.
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
-          <.button variant="primary" class="btn-lg">Start Free Trial</.button>
-          <.button class="btn-lg btn-ghost">Contact Sales</.button>
+          <.button variant="primary" class="d-btn-lg">Start Free Trial</.button>
+          <.button class="d-btn-lg d-btn-ghost">Contact Sales</.button>
         </div>
       </div>
     </Layouts.app>

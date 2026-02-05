@@ -25,7 +25,7 @@ defmodule ElixirLizardsWeb.Components.DaisyUI.Breadcrumb do
 
   def breadcrumb(assigns) do
     ~H"""
-    <div class={["breadcrumbs text-sm", @class]}>
+    <div class={["d-breadcrumbs text-sm", @class]}>
       <ul>
         <li :for={crumb <- @crumb}>
           <.link

@@ -61,7 +61,7 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Components.ModalDemo do
             <:subtitle>This action cannot be undone.</:subtitle>
             <p>Are you sure you want to proceed with this action?</p>
             <:actions>
-              <.button class="btn-ghost" phx-click={hide_modal("demo-modal")}>Cancel</.button>
+              <.button class="d-btn-ghost" phx-click={hide_modal("demo-modal")}>Cancel</.button>
               <.button variant="primary" phx-click="confirm-action">Confirm</.button>
             </:actions>
           </.modal>
@@ -69,7 +69,7 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Components.ModalDemo do
 
         <section>
           <h3 class="text-lg font-semibold mb-4">Usage</h3>
-          <div class="mockup-code">
+          <div class="d-mockup-code">
             <pre><code>{@code_example}</code></pre>
           </div>
         </section>

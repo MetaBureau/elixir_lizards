@@ -26,15 +26,15 @@ defmodule ElixirLizardsWeb.Showcase.ComponentIndexLive do
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
         <a
           href="/showcase/daisyui"
-          class="card bg-base-100 card-border border-base-300 hover:shadow-xl hover:border-primary transition-all duration-300 group"
+          class="d-card bg-base-100 d-card-border border-base-300 hover:shadow-xl hover:border-primary transition-all duration-300 group"
         >
-          <div class="card-body">
+          <div class="d-card-body">
             <div class="flex items-center gap-4 mb-4">
               <div class="rounded-xl bg-primary/10 p-4">
                 <.icon name="hero-paint-brush" class="size-8 text-primary" />
               </div>
               <div>
-                <h2 class="card-title text-2xl group-hover:text-primary transition-colors">
+                <h2 class="d-card-title text-2xl group-hover:text-primary transition-colors">
                   DaisyUI
                 </h2>
                 <.badge variant="primary" size="sm">14 Components</.badge>
@@ -55,7 +55,7 @@ defmodule ElixirLizardsWeb.Showcase.ComponentIndexLive do
                 <.icon name="hero-check" class="size-4 text-success" /> Table, Stat, Tooltip
               </li>
             </ul>
-            <div class="card-actions justify-end">
+            <div class="d-card-actions justify-end">
               <span class="text-primary flex items-center gap-1 group-hover:gap-2 transition-all">
                 Explore Components <.icon name="hero-arrow-right" class="size-4" />
               </span>
@@ -65,15 +65,15 @@ defmodule ElixirLizardsWeb.Showcase.ComponentIndexLive do
 
         <a
           href="/showcase/chelekom"
-          class="card bg-base-100 card-border border-base-300 hover:shadow-xl hover:border-secondary transition-all duration-300 group"
+          class="d-card bg-base-100 d-card-border border-base-300 hover:shadow-xl hover:border-secondary transition-all duration-300 group"
         >
-          <div class="card-body">
+          <div class="d-card-body">
             <div class="flex items-center gap-4 mb-4">
               <div class="rounded-xl bg-secondary/10 p-4">
                 <.icon name="hero-cube-transparent" class="size-8 text-secondary" />
               </div>
               <div>
-                <h2 class="card-title text-2xl group-hover:text-secondary transition-colors">
+                <h2 class="d-card-title text-2xl group-hover:text-secondary transition-colors">
                   Mishka Chelekom
                 </h2>
                 <.badge variant="secondary" size="sm">22 Components</.badge>
@@ -95,7 +95,7 @@ defmodule ElixirLizardsWeb.Showcase.ComponentIndexLive do
                 <.icon name="hero-check" class="size-4 text-success" /> Table, Tabs, Pagination
               </li>
             </ul>
-            <div class="card-actions justify-end">
+            <div class="d-card-actions justify-end">
               <span class="text-secondary flex items-center gap-1 group-hover:gap-2 transition-all">
                 Explore Components <.icon name="hero-arrow-right" class="size-4" />
               </span>
@@ -104,10 +104,10 @@ defmodule ElixirLizardsWeb.Showcase.ComponentIndexLive do
         </a>
       </div>
 
-      <div class="mt-12 p-6 bg-base-200 rounded-box">
+      <div class="mt-12 p-6 bg-base-200 d-rounded-box">
         <h3 class="text-lg font-semibold mb-4">Quick Comparison</h3>
         <div class="overflow-x-auto">
-          <table class="table">
+          <table class="d-table">
             <thead>
               <tr>
                 <th>Feature</th>

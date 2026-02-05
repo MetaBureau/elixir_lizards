@@ -56,13 +56,13 @@ defmodule ElixirLizardsWeb.Components.DaisyUI.Avatar do
       |> assign(:icon_size, Map.get(icon_sizes, assigns.size, "size-8"))
 
     ~H"""
-    <div class={["avatar", @status, @class]} {@rest}>
+    <div class={["d-avatar", @status, @class]} {@rest}>
       <div class={[
         @size_class,
         @shape == "circle" && "rounded-full",
-        @shape == "squircle" && "mask mask-squircle",
-        @shape == "hexagon" && "mask mask-hexagon",
-        @shape == "triangle" && "mask mask-triangle"
+        @shape == "squircle" && "d-mask d-mask-squircle",
+        @shape == "hexagon" && "d-mask d-mask-hexagon",
+        @shape == "triangle" && "d-mask d-mask-triangle"
       ]}>
         <img :if={@src} src={@src} alt={@alt} />
         <div

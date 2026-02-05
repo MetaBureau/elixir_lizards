@@ -21,7 +21,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.PopoverDemo do
               <div id="popover-position-top" class="demo-item">
                 <Popover.popover id="popover-demo-1" position="top">
                   <:trigger>
-                    <button class="btn btn-outline btn-primary">Hover me (Top)</button>
+                    <button class="d-btn d-btn-outline d-btn-primary">Hover me (Top)</button>
                   </:trigger>
                   <:content>
                     <span>This popover appears on top!</span>
@@ -32,7 +32,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.PopoverDemo do
               <div id="popover-position-bottom" class="demo-item">
                 <Popover.popover id="popover-demo-2" position="bottom">
                   <:trigger>
-                    <button class="btn btn-outline btn-secondary">Hover me (Bottom)</button>
+                    <button class="d-btn d-btn-outline d-btn-secondary">Hover me (Bottom)</button>
                   </:trigger>
                   <:content>
                     <span>This popover appears on bottom!</span>
@@ -43,7 +43,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.PopoverDemo do
               <div id="popover-position-left" class="demo-item">
                 <Popover.popover id="popover-demo-3" position="left">
                   <:trigger>
-                    <button class="btn btn-outline btn-accent">Hover me (Left)</button>
+                    <button class="d-btn d-btn-outline d-btn-accent">Hover me (Left)</button>
                   </:trigger>
                   <:content>
                     <span>This popover appears on left!</span>
@@ -54,7 +54,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.PopoverDemo do
               <div id="popover-position-right" class="demo-item">
                 <Popover.popover id="popover-demo-4" position="right">
                   <:trigger>
-                    <button class="btn btn-outline btn-info">Hover me (Right)</button>
+                    <button class="d-btn d-btn-outline d-btn-info">Hover me (Right)</button>
                   </:trigger>
                   <:content>
                     <span>This popover appears on right!</span>
@@ -72,7 +72,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.PopoverDemo do
               <div id="popover-clickable-default" class="demo-item">
                 <Popover.popover id="popover-click-1" clickable position="bottom">
                   <:trigger>
-                    <button class="btn btn-primary">Click me</button>
+                    <button class="d-btn d-btn-primary">Click me</button>
                   </:trigger>
                   <:content>
                     <div class="space-y-2">
@@ -94,7 +94,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.PopoverDemo do
                   variant="default"
                 >
                   <:trigger>
-                    <button class="btn btn-success">Success Popover</button>
+                    <button class="d-btn d-btn-success">Success Popover</button>
                   </:trigger>
                   <:content>
                     <div class="space-y-2">
@@ -120,7 +120,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.PopoverDemo do
                   position="bottom"
                 >
                   <:trigger>
-                    <span class="badge badge-primary cursor-pointer">Primary</span>
+                    <span class="d-badge d-badge-primary cursor-pointer">Primary</span>
                   </:trigger>
                   <:content>
                     <span>Primary colored popover</span>
@@ -136,7 +136,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.PopoverDemo do
                   position="bottom"
                 >
                   <:trigger>
-                    <span class="badge badge-secondary cursor-pointer">Secondary</span>
+                    <span class="d-badge d-badge-secondary cursor-pointer">Secondary</span>
                   </:trigger>
                   <:content>
                     <span>Secondary colored popover</span>
@@ -152,7 +152,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.PopoverDemo do
                   position="bottom"
                 >
                   <:trigger>
-                    <span class="badge badge-warning cursor-pointer">Warning</span>
+                    <span class="d-badge d-badge-warning cursor-pointer">Warning</span>
                   </:trigger>
                   <:content>
                     <span>Warning colored popover</span>
@@ -168,7 +168,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.PopoverDemo do
                   position="bottom"
                 >
                   <:trigger>
-                    <span class="badge badge-error cursor-pointer">Danger</span>
+                    <span class="d-badge d-badge-error cursor-pointer">Danger</span>
                   </:trigger>
                   <:content>
                     <span>Danger colored popover</span>
@@ -179,7 +179,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.PopoverDemo do
               <div id="popover-color-info" class="demo-item">
                 <Popover.popover id="popover-color-5" variant="default" color="info" position="bottom">
                   <:trigger>
-                    <span class="badge badge-info cursor-pointer">Info</span>
+                    <span class="d-badge d-badge-info cursor-pointer">Info</span>
                   </:trigger>
                   <:content>
                     <span>Info colored popover</span>
@@ -212,7 +212,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.PopoverDemo do
           <h3 class="demo-section-title text-lg font-semibold mb-2">Usage Example</h3>
           <pre class="demo-code text-sm overflow-x-auto"><code>&lt;Popover.popover id="my-popover" clickable position="bottom"&gt;
     &lt;:trigger&gt;
-    &lt;button class="btn"&gt;Open Popover&lt;/button&gt;
+    &lt;button class="d-btn"&gt;Open Popover&lt;/button&gt;
     &lt;/:trigger&gt;
     &lt;:content&gt;
     &lt;div&gt;Popover content here&lt;/div&gt;

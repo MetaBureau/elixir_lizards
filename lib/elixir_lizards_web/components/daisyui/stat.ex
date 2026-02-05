@@ -21,7 +21,7 @@ defmodule ElixirLizardsWeb.Components.DaisyUI.Stat do
 
   def stat_group(assigns) do
     ~H"""
-    <div class={["stats shadow", @class]}>
+    <div class={["d-stats shadow", @class]}>
       {render_slot(@inner_block)}
     </div>
     """
@@ -49,13 +49,13 @@ defmodule ElixirLizardsWeb.Components.DaisyUI.Stat do
 
   def stat(assigns) do
     ~H"""
-    <div class={["stat", @class]}>
-      <div :if={@icon} class={["stat-figure", @variant && "text-#{@variant}"]}>
+    <div class={["d-stat", @class]}>
+      <div :if={@icon} class={["d-stat-figure", @variant && "text-#{@variant}"]}>
         <.icon name={@icon} class="size-8" />
       </div>
-      <div class="stat-title">{@title}</div>
-      <div class={["stat-value", @variant && "text-#{@variant}"]}>{@value}</div>
-      <div :if={@description} class="stat-desc">{@description}</div>
+      <div class="d-stat-title">{@title}</div>
+      <div class={["d-stat-value", @variant && "text-#{@variant}"]}>{@value}</div>
+      <div :if={@description} class="d-stat-desc">{@description}</div>
     </div>
     """
   end

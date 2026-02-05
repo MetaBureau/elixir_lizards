@@ -35,13 +35,13 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.DashboardLive do
 
       <%!-- Stats Section --%>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div :for={stat <- @stats} class="stat bg-base-100 rounded-box shadow">
-          <div class={["stat-figure", stat.color]}>
+        <div :for={stat <- @stats} class="d-stat bg-base-100 d-rounded-box shadow">
+          <div class={["d-stat-figure", stat.color]}>
             <.icon name={stat.icon} class="size-8" />
           </div>
-          <div class="stat-title">{stat.title}</div>
-          <div class={["stat-value", stat.color]}>{stat.value}</div>
-          <div class="stat-desc">{stat.description}</div>
+          <div class="d-stat-title">{stat.title}</div>
+          <div class={["d-stat-value", stat.color]}>{stat.value}</div>
+          <div class="d-stat-desc">{stat.description}</div>
         </div>
       </div>
 
@@ -58,7 +58,7 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.DashboardLive do
             </:title>
             <:body>
               <div class="overflow-x-auto">
-                <table class="table table-zebra">
+                <table class="d-table d-table-zebra">
                   <thead>
                     <tr>
                       <th>Project</th>
@@ -88,7 +88,7 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.DashboardLive do
                       <td>
                         <div class="flex items-center gap-2">
                           <progress
-                            class={["progress w-20", "progress-#{project.status_variant}"]}
+                            class={["d-progress w-20", "d-progress-#{project.status_variant}"]}
                             value={project.progress}
                             max="100"
                           >
@@ -97,8 +97,8 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.DashboardLive do
                         </div>
                       </td>
                       <td>
-                        <div class="avatar-group -space-x-4">
-                          <div :for={member <- project.team} class="avatar">
+                        <div class="d-avatar-group -space-x-4">
+                          <div :for={member <- project.team} class="d-avatar">
                             <div class="w-8">
                               <div class="bg-neutral text-neutral-content flex items-center justify-center w-full h-full text-xs rounded-full">
                                 {member}
@@ -124,15 +124,15 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.DashboardLive do
               </div>
             </:title>
             <:body>
-              <ul class="timeline timeline-vertical timeline-compact">
+              <ul class="d-timeline d-timeline-vertical d-timeline-compact">
                 <li :for={{activity, idx} <- Enum.with_index(@recent_activity)}>
                   <hr :if={idx > 0} />
-                  <div class="timeline-middle">
+                  <div class="d-timeline-middle">
                     <div class={["rounded-full p-1", activity.bg_color]}>
                       <.icon name={activity.icon} class="size-3 text-white" />
                     </div>
                   </div>
-                  <div class="timeline-end timeline-box">
+                  <div class="d-timeline-end d-timeline-box">
                     <div class="font-medium text-sm">{activity.title}</div>
                     <div class="text-xs text-base-content/70">{activity.time}</div>
                   </div>

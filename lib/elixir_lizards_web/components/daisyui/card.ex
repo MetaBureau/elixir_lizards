@@ -32,22 +32,22 @@ defmodule ElixirLizardsWeb.Components.DaisyUI.Card do
   def card(assigns) do
     ~H"""
     <div class={[
-      "card bg-base-100",
-      @variant == "bordered" && "card-border border-base-300",
-      @variant == "compact" && "card-compact",
+      "d-card bg-base-100",
+      @variant == "bordered" && "d-card-border border-base-300",
+      @variant == "compact" && "d-card-compact",
       @class
     ]}>
       <figure :if={@figure != []}>
         {render_slot(@figure)}
       </figure>
-      <div class="card-body">
-        <h2 :if={@title != []} class="card-title">
+      <div class="d-card-body">
+        <h2 :if={@title != []} class="d-card-title">
           {render_slot(@title)}
         </h2>
         <div :if={@body != []}>
           {render_slot(@body)}
         </div>
-        <div :if={@actions != []} class="card-actions justify-end">
+        <div :if={@actions != []} class="d-card-actions justify-end">
           {render_slot(@actions)}
         </div>
       </div>

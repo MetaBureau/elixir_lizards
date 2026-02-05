@@ -27,7 +27,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.NavbarDemo do
             <:list><.link navigate="#">Services</.link></:list>
             <:list><.link navigate="#">Contact</.link></:list>
             <:end_content>
-              <button class="btn btn-sm btn-primary">Sign In</button>
+              <button class="d-btn d-btn-sm d-btn-primary">Sign In</button>
             </:end_content>
           </Navbar.navbar>
         </div>
@@ -150,7 +150,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.NavbarDemo do
             <:list><.link navigate="#">Pricing</.link></:list>
             <:list><.link navigate="#">Blog</.link></:list>
             <:end_content>
-              <button class="btn btn-sm btn-ghost">Get Started</button>
+              <button class="d-btn d-btn-sm d-btn-ghost">Get Started</button>
             </:end_content>
           </Navbar.navbar>
         </div>

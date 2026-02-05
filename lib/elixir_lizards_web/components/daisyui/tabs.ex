@@ -37,9 +37,9 @@ defmodule ElixirLizardsWeb.Components.DaisyUI.Tabs do
     <div
       role="tablist"
       class={[
-        "tabs",
-        @variant && "tabs-#{@variant}",
-        @size && "tabs-#{@size}",
+        "d-tabs",
+        @variant && "d-tabs-#{@variant}",
+        @size && "d-tabs-#{@size}",
         @class
       ]}
     >
@@ -51,9 +51,9 @@ defmodule ElixirLizardsWeb.Components.DaisyUI.Tabs do
         href={tab[:href]}
         role="tab"
         class={[
-          "tab",
-          tab[:active] && "tab-active",
-          tab[:disabled] && "tab-disabled"
+          "d-tab",
+          tab[:active] && "d-tab-active",
+          tab[:disabled] && "d-tab-disabled"
         ]}
       >
         {render_slot(tab)}
@@ -63,9 +63,9 @@ defmodule ElixirLizardsWeb.Components.DaisyUI.Tabs do
         :if={!tab[:navigate] && !tab[:patch] && !tab[:href]}
         role="tab"
         class={[
-          "tab",
-          tab[:active] && "tab-active",
-          tab[:disabled] && "tab-disabled"
+          "d-tab",
+          tab[:active] && "d-tab-active",
+          tab[:disabled] && "d-tab-disabled"
         ]}
       >
         {render_slot(tab)}

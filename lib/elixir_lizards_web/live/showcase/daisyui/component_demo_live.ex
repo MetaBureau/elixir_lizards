@@ -97,14 +97,14 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.ComponentDemoLive do
         <.link
           :for={component <- @components}
           navigate={component.path}
-          class="card bg-base-100 card-border border-base-300 hover:border-primary transition-colors"
+          class="d-card bg-base-100 d-card-border border-base-300 hover:border-primary transition-colors"
         >
-          <div class="card-body">
+          <div class="d-card-body">
             <div class="flex items-center gap-3">
               <div class="rounded-lg bg-primary/10 p-2">
                 <.icon name={component.icon} class="size-6 text-primary" />
               </div>
-              <h2 class="card-title text-lg">{component.name}</h2>
+              <h2 class="d-card-title text-lg">{component.name}</h2>
             </div>
             <p class="text-base-content/70 text-sm mt-2">{component.description}</p>
           </div>

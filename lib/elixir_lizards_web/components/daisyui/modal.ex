@@ -37,15 +37,15 @@ defmodule ElixirLizardsWeb.Components.DaisyUI.Modal do
     ~H"""
     <dialog
       id={@id}
-      class="modal"
+      class="d-modal"
       phx-mounted={JS.set_attribute({"open", "true"}, to: "##{@id}")}
       data-cancel={JS.exec(@on_cancel, "phx-remove")}
     >
-      <div class={["modal-box", @class]}>
+      <div class={["d-modal-box", @class]}>
         <form method="dialog">
           <button
             type="button"
-            class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+            class="d-btn d-btn-sm d-btn-circle d-btn-ghost absolute right-2 top-2"
             aria-label={gettext("close")}
             phx-click={hide_modal(@id) |> JS.exec("data-cancel", to: "##{@id}")}
           >
@@ -61,11 +61,11 @@ defmodule ElixirLizardsWeb.Components.DaisyUI.Modal do
         <div class="py-4">
           {render_slot(@inner_block)}
         </div>
-        <div :if={@actions != []} class="modal-action">
+        <div :if={@actions != []} class="d-modal-action">
           {render_slot(@actions)}
         </div>
       </div>
-      <form method="dialog" class="modal-backdrop">
+      <form method="dialog" class="d-modal-backdrop">
         <button type="button" phx-click={hide_modal(@id) |> JS.exec("data-cancel", to: "##{@id}")}>
           close
         </button>

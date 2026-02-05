@@ -17,6 +17,7 @@
    Make sure to look at the daisyUI changelog: https://daisyui.com/docs/changelog/ */
 @plugin "../vendor/daisyui" {
   themes: false;
+  prefix: d-;
 }
 
 /* daisyUI theme plugin. You can update this file by fetching the latest version with:

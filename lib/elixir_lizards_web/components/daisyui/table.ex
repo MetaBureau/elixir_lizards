@@ -37,7 +37,7 @@ defmodule ElixirLizardsWeb.Components.DaisyUI.Table do
       end
 
     ~H"""
-    <table class="table table-zebra">
+    <table class="d-table d-table-zebra">
       <thead>
         <tr>
           <th :for={col <- @col}>{col[:label]}</th>

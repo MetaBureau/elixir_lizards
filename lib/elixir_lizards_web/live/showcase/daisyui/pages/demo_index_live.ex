@@ -70,15 +70,15 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.DemoIndexLive do
         <.link
           :for={demo <- @demos}
           navigate={demo.path}
-          class="card bg-base-100 card-border border-base-300 hover:border-primary hover:shadow-lg transition-all duration-300"
+          class="d-card bg-base-100 d-card-border border-base-300 hover:border-primary hover:shadow-lg transition-all duration-300"
         >
-          <div class="card-body">
+          <div class="d-card-body">
             <div class="flex items-start gap-4">
               <div class={["rounded-xl p-3", demo.color]}>
                 <.icon name={demo.icon} class="size-8" />
               </div>
               <div class="flex-1">
-                <h2 class="card-title text-xl mb-2">{demo.name}</h2>
+                <h2 class="d-card-title text-xl mb-2">{demo.name}</h2>
                 <p class="text-base-content/70">{demo.description}</p>
               </div>
               <.icon name="hero-arrow-right" class="size-5 text-base-content/30" />
@@ -88,7 +88,7 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.DemoIndexLive do
       </div>
 
       <%!-- Component Library Link --%>
-      <div class="mt-8 p-6 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-box">
+      <div class="mt-8 p-6 bg-gradient-to-r from-primary/10 to-secondary/10 d-rounded-box">
         <div class="flex items-center justify-between">
           <div>
             <h3 class="font-semibold text-lg">Looking for individual components?</h3>
@@ -96,7 +96,7 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.DemoIndexLive do
               Check out our component library with live previews and code examples.
             </p>
           </div>
-          <.link href="/showcase" class="btn btn-primary">
+          <.link href="/showcase" class="d-btn d-btn-primary">
             <.icon name="hero-rectangle-stack" class="size-5 mr-2" /> Component Library
           </.link>
         </div>

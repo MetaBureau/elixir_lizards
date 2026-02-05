@@ -94,7 +94,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.MenuDemo do
                 <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-base-300">
                   <.icon name="hero-inbox" class="size-5" />
                   <span>Inbox</span>
-                  <span class="ml-auto badge badge-primary badge-sm">12</span>
+                  <span class="ml-auto d-badge d-badge-primary d-badge-sm">12</span>
                 </a>
               </li>
               <li>

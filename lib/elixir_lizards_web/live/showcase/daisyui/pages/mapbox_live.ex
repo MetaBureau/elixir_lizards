@@ -70,7 +70,7 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.MapboxLive do
                       <a
                         href="https://account.mapbox.com"
                         target="_blank"
-                        class="link link-primary"
+                        class="d-link d-link-primary"
                       >
                         account.mapbox.com
                       </a>

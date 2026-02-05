@@ -24,7 +24,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.ClipboardDemo do
                 copy_error_text="Failed to copy"
               >
                 <:trigger>
-                  <button class="btn btn-primary">Copy Text</button>
+                  <button class="d-btn d-btn-primary">Copy Text</button>
                 </:trigger>
               </Clipboard.clipboard>
 
@@ -33,7 +33,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.ClipboardDemo do
                 copy_success_text="Command copied!"
               >
                 <:trigger>
-                  <button class="btn btn-outline">Copy Command</button>
+                  <button class="d-btn d-btn-outline">Copy Command</button>
                 </:trigger>
               </Clipboard.clipboard>
             </div>
@@ -50,7 +50,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.ClipboardDemo do
             </div>
             <Clipboard.clipboard target_selector="#code-sample" copy_success_text="Code copied!">
               <:trigger>
-                <button class="btn btn-secondary btn-sm">Copy Code Above</button>
+                <button class="d-btn d-btn-secondary d-btn-sm">Copy Code Above</button>
               </:trigger>
             </Clipboard.clipboard>
           </div>
@@ -64,7 +64,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.ClipboardDemo do
                 <code class="text-sm bg-base-300 px-2 py-1 rounded">secret-api-key-12345</code>
               </:content>
               <:trigger>
-                <button class="btn btn-ghost btn-sm">
+                <button class="d-btn d-btn-ghost d-btn-sm">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="h-4 w-4"
@@ -94,7 +94,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.ClipboardDemo do
               copy_success_text="Copied!"
             >
               <:trigger>
-                <button class="btn btn-info">
+                <button class="d-btn d-btn-info">
                   <span class="clipboard-label">Click to Copy</span>
                 </button>
               </:trigger>
@@ -106,7 +106,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.ClipboardDemo do
           <h3 class="demo-section-title text-lg font-semibold mb-2">Usage Example</h3>
           <pre class="demo-code text-sm overflow-x-auto"><code>&lt;Clipboard.clipboard text="Text to copy" copy_success_text="Copied!"&gt;
     &lt;:trigger&gt;
-    &lt;button class="btn"&gt;Copy&lt;/button&gt;
+    &lt;button class="d-btn"&gt;Copy&lt;/button&gt;
     &lt;/:trigger&gt;
     &lt;/Clipboard.clipboard&gt;
 

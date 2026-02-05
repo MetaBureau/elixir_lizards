@@ -70,9 +70,9 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.ComponentDemoLive do
           phx-click="select_category"
           phx-value-category="all"
           class={[
-            "btn btn-sm",
-            @active_category == "all" && "btn-primary",
-            @active_category != "all" && "btn-ghost"
+            "d-btn d-btn-sm",
+            @active_category == "all" && "d-btn-primary",
+            @active_category != "all" && "d-btn-ghost"
           ]}
         >
           All
@@ -82,9 +82,9 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.ComponentDemoLive do
           phx-click="select_category"
           phx-value-category={category.name}
           class={[
-            "btn btn-sm",
-            @active_category == category.name && "btn-primary",
-            @active_category != category.name && "btn-ghost"
+            "d-btn d-btn-sm",
+            @active_category == category.name && "d-btn-primary",
+            @active_category != category.name && "d-btn-ghost"
           ]}
         >
           {category.label}

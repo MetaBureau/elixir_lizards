@@ -20,9 +20,9 @@ defmodule ElixirLizardsWeb.Components.DaisyUI.List do
 
   def list(assigns) do
     ~H"""
-    <ul class="list">
-      <li :for={item <- @item} class="list-row">
-        <div class="list-col-grow">
+    <ul class="d-list">
+      <li :for={item <- @item} class="d-list-row">
+        <div class="d-list-col-grow">
           <div class="font-bold">{item.title}</div>
           <div>{render_slot(item)}</div>
         </div>

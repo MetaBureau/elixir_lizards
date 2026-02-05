@@ -74,7 +74,7 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Components.CardDemo do
 
         <section>
           <h3 class="text-lg font-semibold mb-4">Usage</h3>
-          <div class="mockup-code">
+          <div class="d-mockup-code">
             <pre><code>{@code_example}</code></pre>
           </div>
         </section>

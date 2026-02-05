@@ -33,10 +33,10 @@ defmodule ElixirLizardsWeb.Components.DaisyUI.Tooltip do
     ~H"""
     <div
       class={[
-        "tooltip",
-        @position && "tooltip-#{@position}",
-        @variant && "tooltip-#{@variant}",
-        @open && "tooltip-open",
+        "d-tooltip",
+        @position && "d-tooltip-#{@position}",
+        @variant && "d-tooltip-#{@variant}",
+        @open && "d-tooltip-open",
         @class
       ]}
       data-tip={@content}

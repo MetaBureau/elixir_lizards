@@ -40,10 +40,10 @@ defmodule ElixirLizardsWeb.Components.DaisyUI.Badge do
     ~H"""
     <span
       class={[
-        "badge",
-        @variant && "badge-#{@variant}",
-        @size && "badge-#{@size}",
-        @outline && "badge-outline",
+        "d-badge",
+        @variant && "d-badge-#{@variant}",
+        @size && "d-badge-#{@size}",
+        @outline && "d-badge-outline",
         @class
       ]}
       {@rest}

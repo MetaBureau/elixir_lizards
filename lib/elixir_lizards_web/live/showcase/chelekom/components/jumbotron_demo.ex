@@ -25,8 +25,8 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.JumbotronDemo do
                   Get started today and transform your ideas into reality.
                 </p>
                 <div class="flex justify-center gap-4">
-                  <button class="btn btn-primary">Get Started</button>
-                  <button class="btn btn-outline">Learn More</button>
+                  <button class="d-btn d-btn-primary">Get Started</button>
+                  <button class="d-btn d-btn-outline">Learn More</button>
                 </div>
               </div>
             </Jumbotron.jumbotron>
@@ -98,7 +98,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.JumbotronDemo do
     &lt;div class="text-center py-8"&gt;
     &lt;h1 class="text-4xl font-bold"&gt;Hero Title&lt;/h1&gt;
     &lt;p class="mt-4"&gt;Subtitle or description text&lt;/p&gt;
-    &lt;button class="btn btn-primary mt-6"&gt;Call to Action&lt;/button&gt;
+    &lt;button class="d-btn d-btn-primary mt-6"&gt;Call to Action&lt;/button&gt;
     &lt;/div&gt;
     &lt;/Jumbotron.jumbotron&gt;</code></pre>
         </div>
