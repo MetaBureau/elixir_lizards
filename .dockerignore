@@ -1,0 +1,62 @@
+# Git
+.git
+.gitignore
+
+# Elixir/Phoenix build artifacts
+_build/
+deps/
+*.ez
+
+# Generated on crash by the VM
+erl_crash.dump
+
+# Static artifacts (built during Docker build)
+priv/static/assets/
+
+# Node.js (if using npm/yarn for assets)
+node_modules/
+assets/node_modules/
+
+# Test artifacts
+cover/
+.elixir_ls/
+
+# IDE/Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment and secrets
+.env
+.env.*
+*.pem
+
+# Documentation
+doc/
+docs/
+
+# Development tools
+.formatter.exs
+.credo.exs
+
+# Fly.io
+fly.toml
+
+# Misc
+README*
+CHANGELOG*
+LICENSE*
+.tool-versions
+tmp/
+log/
+
+# Claude/AI assistant files
+.claude/
+_stew/
+AGENTS.md
