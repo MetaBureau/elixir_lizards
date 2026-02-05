@@ -187,12 +187,12 @@ defmodule ElixirLizardsWeb.Components.Chelekom.Alert do
         width="medium"
       />
       <.flash
-        id="client-error"
+        id={"#{@id}-client-error"}
         kind={:error}
         variant={@variant}
         title={gettext("We can't find the internet")}
-        phx-disconnected={show_alert(".phx-client-error #client-error")}
-        phx-connected={hide_alert("#client-error")}
+        phx-disconnected={show_alert(".phx-client-error ##{@id}-client-error")}
+        phx-connected={hide_alert("##{@id}-client-error")}
         width="medium"
         hidden
       >
@@ -201,12 +201,12 @@ defmodule ElixirLizardsWeb.Components.Chelekom.Alert do
       </.flash>
 
       <.flash
-        id="server-error"
+        id={"#{@id}-server-error"}
         kind={:error}
         variant={@variant}
         title={gettext("Something went wrong!")}
-        phx-disconnected={show_alert(".phx-server-error #server-error")}
-        phx-connected={hide_alert("#server-error")}
+        phx-disconnected={show_alert(".phx-server-error ##{@id}-server-error")}
+        phx-connected={hide_alert("##{@id}-server-error")}
         width="medium"
         hidden
       >

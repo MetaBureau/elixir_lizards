@@ -32,13 +32,16 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.AlertDemo do
       </div>
 
       <div class="flex justify-center">
-        <Alert.flash_group flash={
-          %{
-            "info" => "Welcome to Mishka Chelekom components!",
-            "success" => "Components loaded successfully",
-            "error" => "Error message example"
+        <Alert.flash_group
+          id="demo-flash-group"
+          flash={
+            %{
+              "info" => "Welcome to Mishka Chelekom components!",
+              "success" => "Components loaded successfully",
+              "error" => "Error message example"
+            }
           }
-        } />
+        />
       </div>
     </div>
     """

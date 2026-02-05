@@ -217,11 +217,13 @@ defmodule ElixirLizardsWeb.Layouts do
       <.flash kind={:error} flash={@flash} />
 
       <.flash
-        id="client-error"
+        id={"#{@id}-client-error"}
         kind={:error}
         title={gettext("We can't find the internet")}
-        phx-disconnected={show(".phx-client-error #client-error") |> JS.remove_attribute("hidden")}
-        phx-connected={hide("#client-error") |> JS.set_attribute({"hidden", ""})}
+        phx-disconnected={
+          show(".phx-client-error ##{@id}-client-error") |> JS.remove_attribute("hidden")
+        }
+        phx-connected={hide("##{@id}-client-error") |> JS.set_attribute({"hidden", ""})}
         hidden
       >
         {gettext("Attempting to reconnect")}
@@ -229,11 +231,13 @@ defmodule ElixirLizardsWeb.Layouts do
       </.flash>
 
       <.flash
-        id="server-error"
+        id={"#{@id}-server-error"}
         kind={:error}
         title={gettext("Something went wrong!")}
-        phx-disconnected={show(".phx-server-error #server-error") |> JS.remove_attribute("hidden")}
-        phx-connected={hide("#server-error") |> JS.set_attribute({"hidden", ""})}
+        phx-disconnected={
+          show(".phx-server-error ##{@id}-server-error") |> JS.remove_attribute("hidden")
+        }
+        phx-connected={hide("##{@id}-server-error") |> JS.set_attribute({"hidden", ""})}
         hidden
       >
         {gettext("Attempting to reconnect")}
