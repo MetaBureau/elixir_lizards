@@ -103,7 +103,7 @@ defmodule ElixirLizardsWeb.Components.Chelekom.CheckboxField do
 
   def checkbox_field(assigns) do
     assigns =
-      assign(assigns, :id, assigns[:id] || "checkbox-#{System.unique_integer([:positive])}")
+      assign(assigns, :id, assigns[:id] || assigns[:name])
 
     ~H"""
     <div class={[
@@ -223,7 +223,7 @@ defmodule ElixirLizardsWeb.Components.Chelekom.CheckboxField do
 
   def group_checkbox(assigns) do
     assigns =
-      assign(assigns, :id, assigns[:id] || "checkbox-group-#{System.unique_integer([:positive])}")
+      assign(assigns, :id, assigns[:id] || assigns[:name])
 
     ~H"""
     <div class={[

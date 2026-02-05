@@ -157,7 +157,7 @@ defmodule ElixirLizardsWeb.Components.Chelekom.Combobox do
   def combobox(%{multiple: true} = assigns) do
     assigns =
       assigns
-      |> assign(:id, assigns[:id] || "combo-#{System.unique_integer([:positive])}")
+      |> assign(:id, assigns[:id] || assigns[:name])
       |> assign_new(:options, fn -> [] end)
       |> assign_new(:option, fn -> [] end)
       |> assign_new(:value, fn -> Map.get(assigns, :value, []) end)
@@ -360,7 +360,7 @@ defmodule ElixirLizardsWeb.Components.Chelekom.Combobox do
   def combobox(assigns) do
     assigns =
       assigns
-      |> assign(:id, assigns[:id] || "combo-#{System.unique_integer([:positive])}")
+      |> assign(:id, assigns[:id] || assigns[:name])
       |> assign_new(:options, fn -> [] end)
       |> assign_new(:option, fn -> [] end)
       |> assign_new(:value, fn -> Map.get(assigns, :value) end)
