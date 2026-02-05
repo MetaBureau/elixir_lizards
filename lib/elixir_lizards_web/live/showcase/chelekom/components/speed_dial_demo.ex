@@ -48,6 +48,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.SpeedDialDemo do
                 <SpeedDial.speed_dial
                   id="speed-dial-primary"
                   icon="hero-plus"
+                  variant="default"
                   color="primary"
                   class="!relative !bottom-0 !right-0 !position-[unset]"
                 >
@@ -61,6 +62,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.SpeedDialDemo do
                 <SpeedDial.speed_dial
                   id="speed-dial-success"
                   icon="hero-plus"
+                  variant="default"
                   color="success"
                   class="!relative !bottom-0 !right-0 !position-[unset]"
                 >
@@ -74,6 +76,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.SpeedDialDemo do
                 <SpeedDial.speed_dial
                   id="speed-dial-warning"
                   icon="hero-plus"
+                  variant="default"
                   color="warning"
                   class="!relative !bottom-0 !right-0 !position-[unset]"
                 >
@@ -87,6 +90,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.SpeedDialDemo do
                 <SpeedDial.speed_dial
                   id="speed-dial-danger"
                   icon="hero-plus"
+                  variant="default"
                   color="danger"
                   class="!relative !bottom-0 !right-0 !position-[unset]"
                 >
