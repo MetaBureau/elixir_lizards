@@ -5,22 +5,22 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.SpeedDialDemo do
 
   def render(assigns) do
     ~H"""
-    <div class="space-y-6">
-      <div class="text-center">
+    <div id="speed-dial-demo" class="demo-component space-y-6">
+      <div class="demo-header text-center">
         <h2 class="text-3xl font-bold mb-2">Speed Dial</h2>
         <p class="text-base-content/70 max-w-2xl mx-auto">
           Floating action button with expandable quick actions
         </p>
       </div>
 
-      <div class="max-w-4xl mx-auto space-y-8">
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">Interactive Demo</h3>
-          <p class="text-sm text-base-content/60 mb-4">
+      <div class="demo-content max-w-4xl mx-auto space-y-8">
+        <div id="speed-dial-interactive" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">Interactive Demo</h3>
+          <p class="demo-note text-sm text-base-content/60 mb-4">
             Note: Speed dial is a fixed-position component. Below are static examples showing the component structure.
           </p>
 
-          <div class="relative h-64 bg-base-200 rounded-lg overflow-hidden">
+          <div class="demo-box relative h-64 bg-base-200 rounded-lg overflow-hidden">
             <div class="absolute bottom-4 right-4">
               <SpeedDial.speed_dial
                 id="speed-dial-demo-1"
@@ -40,11 +40,11 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.SpeedDialDemo do
           </div>
         </div>
 
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">Color Variants</h3>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="text-center">
-              <div class="relative h-24 bg-base-200 rounded-lg flex items-center justify-center">
+        <div id="speed-dial-colors" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">Color Variants</h3>
+          <div class="demo-grid grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div id="speed-dial-color-primary" class="demo-item text-center">
+              <div class="demo-box relative h-24 bg-base-200 rounded-lg flex items-center justify-center">
                 <SpeedDial.speed_dial
                   id="speed-dial-primary"
                   icon="hero-plus"
@@ -54,11 +54,11 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.SpeedDialDemo do
                 >
                 </SpeedDial.speed_dial>
               </div>
-              <span class="text-sm mt-2 block">Primary</span>
+              <span class="demo-label text-sm mt-2 block">Primary</span>
             </div>
 
-            <div class="text-center">
-              <div class="relative h-24 bg-base-200 rounded-lg flex items-center justify-center">
+            <div id="speed-dial-color-success" class="demo-item text-center">
+              <div class="demo-box relative h-24 bg-base-200 rounded-lg flex items-center justify-center">
                 <SpeedDial.speed_dial
                   id="speed-dial-success"
                   icon="hero-plus"
@@ -68,11 +68,11 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.SpeedDialDemo do
                 >
                 </SpeedDial.speed_dial>
               </div>
-              <span class="text-sm mt-2 block">Success</span>
+              <span class="demo-label text-sm mt-2 block">Success</span>
             </div>
 
-            <div class="text-center">
-              <div class="relative h-24 bg-base-200 rounded-lg flex items-center justify-center">
+            <div id="speed-dial-color-warning" class="demo-item text-center">
+              <div class="demo-box relative h-24 bg-base-200 rounded-lg flex items-center justify-center">
                 <SpeedDial.speed_dial
                   id="speed-dial-warning"
                   icon="hero-plus"
@@ -82,11 +82,11 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.SpeedDialDemo do
                 >
                 </SpeedDial.speed_dial>
               </div>
-              <span class="text-sm mt-2 block">Warning</span>
+              <span class="demo-label text-sm mt-2 block">Warning</span>
             </div>
 
-            <div class="text-center">
-              <div class="relative h-24 bg-base-200 rounded-lg flex items-center justify-center">
+            <div id="speed-dial-color-danger" class="demo-item text-center">
+              <div class="demo-box relative h-24 bg-base-200 rounded-lg flex items-center justify-center">
                 <SpeedDial.speed_dial
                   id="speed-dial-danger"
                   icon="hero-plus"
@@ -96,16 +96,16 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.SpeedDialDemo do
                 >
                 </SpeedDial.speed_dial>
               </div>
-              <span class="text-sm mt-2 block">Danger</span>
+              <span class="demo-label text-sm mt-2 block">Danger</span>
             </div>
           </div>
         </div>
 
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">Sizes</h3>
-          <div class="flex flex-wrap gap-8 items-center justify-center">
-            <div class="text-center">
-              <div class="relative h-20 w-20 bg-base-200 rounded-lg flex items-center justify-center">
+        <div id="speed-dial-sizes" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">Sizes</h3>
+          <div class="demo-items flex flex-wrap gap-8 items-center justify-center">
+            <div id="speed-dial-size-small" class="demo-item text-center">
+              <div class="demo-box relative h-20 w-20 bg-base-200 rounded-lg flex items-center justify-center">
                 <SpeedDial.speed_dial
                   id="speed-dial-small"
                   icon="hero-plus"
@@ -114,11 +114,11 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.SpeedDialDemo do
                 >
                 </SpeedDial.speed_dial>
               </div>
-              <span class="text-sm mt-2 block">Small</span>
+              <span class="demo-label text-sm mt-2 block">Small</span>
             </div>
 
-            <div class="text-center">
-              <div class="relative h-20 w-20 bg-base-200 rounded-lg flex items-center justify-center">
+            <div id="speed-dial-size-medium" class="demo-item text-center">
+              <div class="demo-box relative h-20 w-20 bg-base-200 rounded-lg flex items-center justify-center">
                 <SpeedDial.speed_dial
                   id="speed-dial-medium"
                   icon="hero-plus"
@@ -127,11 +127,11 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.SpeedDialDemo do
                 >
                 </SpeedDial.speed_dial>
               </div>
-              <span class="text-sm mt-2 block">Medium</span>
+              <span class="demo-label text-sm mt-2 block">Medium</span>
             </div>
 
-            <div class="text-center">
-              <div class="relative h-24 w-24 bg-base-200 rounded-lg flex items-center justify-center">
+            <div id="speed-dial-size-large" class="demo-item text-center">
+              <div class="demo-box relative h-24 w-24 bg-base-200 rounded-lg flex items-center justify-center">
                 <SpeedDial.speed_dial
                   id="speed-dial-large"
                   icon="hero-plus"
@@ -140,14 +140,14 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.SpeedDialDemo do
                 >
                 </SpeedDial.speed_dial>
               </div>
-              <span class="text-sm mt-2 block">Large</span>
+              <span class="demo-label text-sm mt-2 block">Large</span>
             </div>
           </div>
         </div>
 
-        <div class="p-4 bg-base-200 rounded-lg">
-          <h3 class="text-lg font-semibold mb-2">Usage Example</h3>
-          <pre class="text-sm overflow-x-auto"><code>&lt;SpeedDial.speed_dial id="my-speed-dial" icon="hero-plus" clickable&gt;
+        <div id="speed-dial-usage" class="demo-section demo-usage p-4 bg-base-200 rounded-lg">
+          <h3 class="demo-section-title text-lg font-semibold mb-2">Usage Example</h3>
+          <pre class="demo-code text-sm overflow-x-auto"><code>&lt;SpeedDial.speed_dial id="my-speed-dial" icon="hero-plus" clickable&gt;
     &lt;:item icon="hero-home" href="/" color="primary"&gt;&lt;/:item&gt;
     &lt;:item icon="hero-document" navigate="/docs" color="secondary"&gt;&lt;/:item&gt;
     &lt;:item icon="hero-cog-6-tooth" patch="/settings" color="info"&gt;&lt;/:item&gt;

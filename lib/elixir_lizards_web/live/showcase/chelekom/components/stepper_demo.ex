@@ -5,18 +5,18 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.StepperDemo do
 
   def render(assigns) do
     ~H"""
-    <div class="space-y-6">
-      <div class="text-center">
+    <div id="stepper-demo" class="demo-component space-y-6">
+      <div class="demo-header text-center">
         <h2 class="text-3xl font-bold mb-2">Stepper</h2>
         <p class="text-base-content/70 max-w-2xl mx-auto">
           Multi-step process indicators for forms and workflows
         </p>
       </div>
 
-      <div class="max-w-4xl mx-auto space-y-8">
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">Basic Horizontal Stepper</h3>
-          <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+      <div class="demo-content max-w-4xl mx-auto space-y-8">
+        <div id="stepper-horizontal" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">Basic Horizontal Stepper</h3>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg">
             <Stepper.stepper>
               <Stepper.stepper_section
                 step="completed"
@@ -34,9 +34,9 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.StepperDemo do
           </div>
         </div>
 
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">Vertical Stepper</h3>
-          <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+        <div id="stepper-vertical" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">Vertical Stepper</h3>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg">
             <Stepper.stepper vertical>
               <Stepper.stepper_section
                 step="completed"
@@ -58,9 +58,9 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.StepperDemo do
           </div>
         </div>
 
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">With Icons</h3>
-          <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+        <div id="stepper-icons" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">With Icons</h3>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg">
             <Stepper.stepper>
               <Stepper.stepper_section step="completed" icon="hero-user" title="Account" />
               <Stepper.stepper_section step="current" icon="hero-credit-card" title="Payment" />
@@ -70,11 +70,14 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.StepperDemo do
           </div>
         </div>
 
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">Color Variants</h3>
-          <div class="space-y-6">
-            <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
-              <p class="text-sm text-base-content/60 mb-2">Primary</p>
+        <div id="stepper-colors" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">Color Variants</h3>
+          <div class="demo-variants space-y-6">
+            <div
+              id="stepper-color-primary"
+              class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg"
+            >
+              <p class="demo-label text-sm text-base-content/60 mb-2">Primary</p>
               <Stepper.stepper color="primary">
                 <Stepper.stepper_section step="completed" title="Step 1" />
                 <Stepper.stepper_section step="current" title="Step 2" />
@@ -82,8 +85,11 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.StepperDemo do
               </Stepper.stepper>
             </div>
 
-            <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
-              <p class="text-sm text-base-content/60 mb-2">Success</p>
+            <div
+              id="stepper-color-success"
+              class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg"
+            >
+              <p class="demo-label text-sm text-base-content/60 mb-2">Success</p>
               <Stepper.stepper color="success">
                 <Stepper.stepper_section step="completed" title="Step 1" />
                 <Stepper.stepper_section step="current" title="Step 2" />
@@ -91,8 +97,11 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.StepperDemo do
               </Stepper.stepper>
             </div>
 
-            <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
-              <p class="text-sm text-base-content/60 mb-2">Info</p>
+            <div
+              id="stepper-color-info"
+              class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg"
+            >
+              <p class="demo-label text-sm text-base-content/60 mb-2">Info</p>
               <Stepper.stepper color="info">
                 <Stepper.stepper_section step="completed" title="Step 1" />
                 <Stepper.stepper_section step="current" title="Step 2" />
@@ -102,11 +111,14 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.StepperDemo do
           </div>
         </div>
 
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">Different Sizes</h3>
-          <div class="space-y-6">
-            <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
-              <p class="text-sm text-base-content/60 mb-2">Small</p>
+        <div id="stepper-sizes" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">Different Sizes</h3>
+          <div class="demo-variants space-y-6">
+            <div
+              id="stepper-size-small"
+              class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg"
+            >
+              <p class="demo-label text-sm text-base-content/60 mb-2">Small</p>
               <Stepper.stepper size="small">
                 <Stepper.stepper_section step="completed" title="Step 1" />
                 <Stepper.stepper_section step="current" title="Step 2" />
@@ -114,8 +126,11 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.StepperDemo do
               </Stepper.stepper>
             </div>
 
-            <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
-              <p class="text-sm text-base-content/60 mb-2">Large</p>
+            <div
+              id="stepper-size-large"
+              class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg"
+            >
+              <p class="demo-label text-sm text-base-content/60 mb-2">Large</p>
               <Stepper.stepper size="large">
                 <Stepper.stepper_section step="completed" title="Step 1" />
                 <Stepper.stepper_section step="current" title="Step 2" />
@@ -125,9 +140,9 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.StepperDemo do
           </div>
         </div>
 
-        <div class="p-4 bg-base-200 rounded-lg">
-          <h3 class="text-lg font-semibold mb-2">Usage Example</h3>
-          <pre class="text-sm overflow-x-auto"><code>&lt;Stepper.stepper color="primary"&gt;
+        <div id="stepper-usage" class="demo-section demo-usage p-4 bg-base-200 rounded-lg">
+          <h3 class="demo-section-title text-lg font-semibold mb-2">Usage Example</h3>
+          <pre class="demo-code text-sm overflow-x-auto"><code>&lt;Stepper.stepper color="primary"&gt;
     &lt;Stepper.stepper_section step="completed" title="Step 1" description="Done" /&gt;
     &lt;Stepper.stepper_section step="current" title="Step 2" description="In progress" /&gt;
     &lt;Stepper.stepper_section title="Step 3" description="Pending" /&gt;

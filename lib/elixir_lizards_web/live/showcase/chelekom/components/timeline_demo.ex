@@ -5,18 +5,18 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TimelineDemo do
 
   def render(assigns) do
     ~H"""
-    <div class="space-y-6">
-      <div class="text-center">
+    <div id="timeline-demo" class="demo-component space-y-6">
+      <div class="demo-header text-center">
         <h2 class="text-3xl font-bold mb-2">Timeline</h2>
         <p class="text-base-content/70 max-w-2xl mx-auto">
           Display chronological events and activity logs
         </p>
       </div>
 
-      <div class="max-w-4xl mx-auto space-y-8">
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">Basic Vertical Timeline</h3>
-          <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+      <div class="demo-content max-w-4xl mx-auto space-y-8">
+        <div id="timeline-basic" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">Basic Vertical Timeline</h3>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg">
             <Timeline.timeline hide_last_line>
               <Timeline.timeline_section
                 title="Application submitted"
@@ -45,9 +45,9 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TimelineDemo do
           </div>
         </div>
 
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">With Icons</h3>
-          <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+        <div id="timeline-icons" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">With Icons</h3>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg">
             <Timeline.timeline hide_last_line>
               <Timeline.timeline_section
                 bullet_icon="hero-document-text"
@@ -73,9 +73,9 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TimelineDemo do
           </div>
         </div>
 
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">Color Variants</h3>
-          <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+        <div id="timeline-colors" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">Color Variants</h3>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg">
             <Timeline.timeline color="primary" hide_last_line>
               <Timeline.timeline_section
                 title="Primary timeline item"
@@ -90,9 +90,9 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TimelineDemo do
           </div>
         </div>
 
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">Gapped Sections</h3>
-          <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+        <div id="timeline-gapped" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">Gapped Sections</h3>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg">
             <Timeline.timeline gapped_sections hide_last_line>
               <Timeline.timeline_section
                 title="Step 1"
@@ -112,9 +112,9 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TimelineDemo do
           </div>
         </div>
 
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">With Custom Content</h3>
-          <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+        <div id="timeline-custom-content" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">With Custom Content</h3>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg">
             <Timeline.timeline hide_last_line>
               <Timeline.timeline_section
                 size="double_large"
@@ -145,9 +145,9 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TimelineDemo do
           </div>
         </div>
 
-        <div class="p-4 bg-base-200 rounded-lg">
-          <h3 class="text-lg font-semibold mb-2">Usage Example</h3>
-          <pre class="text-sm overflow-x-auto"><code>&lt;Timeline.timeline hide_last_line&gt;
+        <div id="timeline-usage" class="demo-section demo-usage p-4 bg-base-200 rounded-lg">
+          <h3 class="demo-section-title text-lg font-semibold mb-2">Usage Example</h3>
+          <pre class="demo-code text-sm overflow-x-auto"><code>&lt;Timeline.timeline hide_last_line&gt;
     &lt;Timeline.timeline_section
     bullet_icon="hero-check"
     title="Event Title"

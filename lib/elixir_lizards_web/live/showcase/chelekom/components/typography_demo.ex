@@ -5,18 +5,18 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TypographyDemo do
 
   def render(assigns) do
     ~H"""
-    <div class="space-y-6">
-      <div class="text-center">
+    <div id="typography-demo" class="demo-component space-y-6">
+      <div class="demo-header text-center">
         <h2 class="text-3xl font-bold mb-2">Typography</h2>
         <p class="text-base-content/70 max-w-2xl mx-auto">
           Styled headings and text elements for consistent typography
         </p>
       </div>
 
-      <div class="max-w-4xl mx-auto space-y-8">
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">Headings</h3>
-          <div class="p-4 bg-base-100 border border-base-300 rounded-lg space-y-4">
+      <div class="demo-content max-w-4xl mx-auto space-y-8">
+        <div id="typography-headings" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">Headings</h3>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg space-y-4">
             <Typography.h1>Heading 1</Typography.h1>
             <Typography.h2>Heading 2</Typography.h2>
             <Typography.h3>Heading 3</Typography.h3>
@@ -26,9 +26,9 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TypographyDemo do
           </div>
         </div>
 
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">Paragraphs</h3>
-          <div class="p-4 bg-base-100 border border-base-300 rounded-lg space-y-4">
+        <div id="typography-paragraphs" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">Paragraphs</h3>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg space-y-4">
             <Typography.p>
               This is a standard paragraph using the typography component.
               It provides consistent styling across your application and
@@ -41,9 +41,9 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TypographyDemo do
           </div>
         </div>
 
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">Color Variants</h3>
-          <div class="p-4 bg-base-100 border border-base-300 rounded-lg space-y-2">
+        <div id="typography-colors" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">Color Variants</h3>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg space-y-2">
             <Typography.h4 color="primary">Primary Heading</Typography.h4>
             <Typography.h4 color="secondary">Secondary Heading</Typography.h4>
             <Typography.h4 color="success">Success Heading</Typography.h4>
@@ -53,9 +53,9 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TypographyDemo do
           </div>
         </div>
 
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">Font Weights</h3>
-          <div class="p-4 bg-base-100 border border-base-300 rounded-lg space-y-2">
+        <div id="typography-weights" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">Font Weights</h3>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg space-y-2">
             <Typography.p font_weight="font-light">Light weight text</Typography.p>
             <Typography.p font_weight="font-normal">Normal weight text</Typography.p>
             <Typography.p font_weight="font-medium">Medium weight text</Typography.p>
@@ -64,9 +64,9 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TypographyDemo do
           </div>
         </div>
 
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">Sizes</h3>
-          <div class="p-4 bg-base-100 border border-base-300 rounded-lg space-y-2">
+        <div id="typography-sizes" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">Sizes</h3>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg space-y-2">
             <Typography.p size="extra_small">Extra small text</Typography.p>
             <Typography.p size="small">Small text</Typography.p>
             <Typography.p size="medium">Medium text</Typography.p>
@@ -75,9 +75,9 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TypographyDemo do
           </div>
         </div>
 
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">Combined Example</h3>
-          <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+        <div id="typography-combined" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">Combined Example</h3>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg">
             <article class="space-y-4">
               <Typography.h2 font_weight="font-bold">Article Title</Typography.h2>
               <Typography.p color="silver" size="small">Published on February 5, 2024</Typography.p>
@@ -95,9 +95,9 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TypographyDemo do
           </div>
         </div>
 
-        <div class="p-4 bg-base-200 rounded-lg">
-          <h3 class="text-lg font-semibold mb-2">Usage Example</h3>
-          <pre class="text-sm overflow-x-auto"><code>&lt;Typography.h1&gt;Main Title&lt;/Typography.h1&gt;
+        <div id="typography-usage" class="demo-section demo-usage p-4 bg-base-200 rounded-lg">
+          <h3 class="demo-section-title text-lg font-semibold mb-2">Usage Example</h3>
+          <pre class="demo-code text-sm overflow-x-auto"><code>&lt;Typography.h1&gt;Main Title&lt;/Typography.h1&gt;
     &lt;Typography.h2 color="primary"&gt;Colored Heading&lt;/Typography.h2&gt;
     &lt;Typography.p font_weight="font-semibold"&gt;Bold paragraph text&lt;/Typography.p&gt;
     &lt;Typography.p size="small" color="silver"&gt;Small muted text&lt;/Typography.p&gt;</code></pre>

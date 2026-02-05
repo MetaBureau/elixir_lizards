@@ -5,18 +5,18 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TableContentDemo do
 
   def render(assigns) do
     ~H"""
-    <div class="space-y-6">
-      <div class="text-center">
+    <div id="table-content-demo" class="demo-component space-y-6">
+      <div class="demo-header text-center">
         <h2 class="text-3xl font-bold mb-2">Table of Contents</h2>
         <p class="text-base-content/70 max-w-2xl mx-auto">
           Navigation component for document sections
         </p>
       </div>
 
-      <div class="max-w-4xl mx-auto space-y-8">
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">Basic Table of Contents</h3>
-          <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+      <div class="demo-content max-w-4xl mx-auto space-y-8">
+        <div id="table-content-basic" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">Basic Table of Contents</h3>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg">
             <TableContent.table_content space="small">
               <:item icon="hero-hashtag" link="#intro" link_title="Introduction"></:item>
               <:item icon="hero-hashtag" link="#getting-started" link_title="Getting Started"></:item>
@@ -27,9 +27,9 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TableContentDemo do
           </div>
         </div>
 
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">With Title</h3>
-          <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+        <div id="table-content-with-title" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">With Title</h3>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg">
             <TableContent.table_content title="On this page" space="small">
               <:item icon="hero-hashtag" link="#overview" link_title="Overview"></:item>
               <:item icon="hero-hashtag" link="#features" link_title="Features"></:item>
@@ -39,9 +39,9 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TableContentDemo do
           </div>
         </div>
 
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">Nested Content</h3>
-          <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+        <div id="table-content-nested" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">Nested Content</h3>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg">
             <TableContent.table_content title="Documentation" space="small">
               <:item icon="hero-hashtag" link="#basics" link_title="Basics"></:item>
               <:item title="Components">
@@ -62,10 +62,13 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TableContentDemo do
           </div>
         </div>
 
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">Color Variants</h3>
-          <div class="grid md:grid-cols-2 gap-6">
-            <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+        <div id="table-content-colors" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">Color Variants</h3>
+          <div class="demo-grid grid md:grid-cols-2 gap-6">
+            <div
+              id="table-content-color-primary"
+              class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg"
+            >
               <TableContent.table_content color="primary" title="Primary" space="small">
                 <:item link="#section1" link_title="Section 1"></:item>
                 <:item link="#section2" link_title="Section 2"></:item>
@@ -73,7 +76,10 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TableContentDemo do
               </TableContent.table_content>
             </div>
 
-            <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+            <div
+              id="table-content-color-secondary"
+              class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg"
+            >
               <TableContent.table_content color="secondary" title="Secondary" space="small">
                 <:item link="#section1" link_title="Section 1"></:item>
                 <:item link="#section2" link_title="Section 2"></:item>
@@ -83,9 +89,9 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TableContentDemo do
           </div>
         </div>
 
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">With Animation (Smooth Scroll)</h3>
-          <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+        <div id="table-content-animated" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">With Animation (Smooth Scroll)</h3>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg">
             <TableContent.table_content title="Animated Navigation" animated space="small">
               <:item icon="hero-hashtag" link="#section-a" link_title="Section A"></:item>
               <:item icon="hero-hashtag" link="#section-b" link_title="Section B"></:item>
@@ -94,9 +100,9 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TableContentDemo do
           </div>
         </div>
 
-        <div class="p-4 bg-base-200 rounded-lg">
-          <h3 class="text-lg font-semibold mb-2">Usage Example</h3>
-          <pre class="text-sm overflow-x-auto"><code>&lt;TableContent.table_content title="On this page" animated space="small"&gt;
+        <div id="table-content-usage" class="demo-section demo-usage p-4 bg-base-200 rounded-lg">
+          <h3 class="demo-section-title text-lg font-semibold mb-2">Usage Example</h3>
+          <pre class="demo-code text-sm overflow-x-auto"><code>&lt;TableContent.table_content title="On this page" animated space="small"&gt;
     &lt;:item icon="hero-hashtag" link="#intro" link_title="Introduction"&gt;&lt;/:item&gt;
     &lt;:item icon="hero-hashtag" link="#usage" link_title="Usage" active&gt;&lt;/:item&gt;
     &lt;:item title="Nested Section"&gt;

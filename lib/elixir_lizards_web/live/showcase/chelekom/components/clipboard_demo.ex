@@ -5,19 +5,19 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.ClipboardDemo do
 
   def render(assigns) do
     ~H"""
-    <div class="space-y-6">
-      <div class="text-center">
+    <div id="clipboard-demo" class="demo-component space-y-6">
+      <div class="demo-header text-center">
         <h2 class="text-3xl font-bold mb-2">Clipboard</h2>
         <p class="text-base-content/70 max-w-2xl mx-auto">
           Copy-to-clipboard functionality with visual feedback
         </p>
       </div>
 
-      <div class="max-w-4xl mx-auto space-y-8">
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">Basic Clipboard</h3>
-          <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
-            <div class="flex flex-wrap gap-4">
+      <div class="demo-content max-w-4xl mx-auto space-y-8">
+        <div id="clipboard-basic" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">Basic Clipboard</h3>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg">
+            <div class="demo-items flex flex-wrap gap-4">
               <Clipboard.clipboard
                 text="Hello, World!"
                 copy_success_text="Copied!"
@@ -40,10 +40,10 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.ClipboardDemo do
           </div>
         </div>
 
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">Copy from Element</h3>
-          <div class="p-4 bg-base-100 border border-base-300 rounded-lg space-y-4">
-            <div id="code-sample" class="p-4 bg-base-300 rounded-lg font-mono text-sm">
+        <div id="clipboard-from-element" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">Copy from Element</h3>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg space-y-4">
+            <div id="code-sample" class="demo-code-block p-4 bg-base-300 rounded-lg font-mono text-sm">
               defmodule MyApp.Hello do
               def world, do: "Hello, World!"
               end
@@ -56,9 +56,9 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.ClipboardDemo do
           </div>
         </div>
 
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">With Content Display</h3>
-          <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+        <div id="clipboard-with-content" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">With Content Display</h3>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg">
             <Clipboard.clipboard text="secret-api-key-12345" copy_success_text="API Key copied!">
               <:content>
                 <code class="text-sm bg-base-300 px-2 py-1 rounded">secret-api-key-12345</code>
@@ -85,9 +85,9 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.ClipboardDemo do
           </div>
         </div>
 
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">Dynamic Label Change</h3>
-          <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+        <div id="clipboard-dynamic" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">Dynamic Label Change</h3>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg">
             <Clipboard.clipboard
               text="Copied text content"
               dynamic_label={true}
@@ -102,9 +102,9 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.ClipboardDemo do
           </div>
         </div>
 
-        <div class="p-4 bg-base-200 rounded-lg">
-          <h3 class="text-lg font-semibold mb-2">Usage Example</h3>
-          <pre class="text-sm overflow-x-auto"><code>&lt;Clipboard.clipboard text="Text to copy" copy_success_text="Copied!"&gt;
+        <div id="clipboard-usage" class="demo-section demo-usage p-4 bg-base-200 rounded-lg">
+          <h3 class="demo-section-title text-lg font-semibold mb-2">Usage Example</h3>
+          <pre class="demo-code text-sm overflow-x-auto"><code>&lt;Clipboard.clipboard text="Text to copy" copy_success_text="Copied!"&gt;
     &lt;:trigger&gt;
     &lt;button class="btn"&gt;Copy&lt;/button&gt;
     &lt;/:trigger&gt;
