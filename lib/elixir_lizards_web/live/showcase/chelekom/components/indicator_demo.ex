@@ -17,109 +17,117 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.IndicatorDemo do
       <div class="max-w-4xl mx-auto space-y-8">
         <div class="space-y-4">
           <h3 class="text-lg font-semibold">Basic Indicators</h3>
-          <div class="flex flex-wrap gap-8">
-            <div class="relative inline-block">
-              <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
-              <Indicator.indicator top_right />
-            </div>
+          <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+            <div class="flex flex-wrap gap-8">
+              <div class="relative inline-block">
+                <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
+                <Indicator.indicator top_right />
+              </div>
 
-            <div class="relative inline-block">
-              <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
-              <Indicator.indicator top_left />
-            </div>
+              <div class="relative inline-block">
+                <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
+                <Indicator.indicator top_left />
+              </div>
 
-            <div class="relative inline-block">
-              <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
-              <Indicator.indicator bottom_right />
-            </div>
+              <div class="relative inline-block">
+                <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
+                <Indicator.indicator bottom_right />
+              </div>
 
-            <div class="relative inline-block">
-              <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
-              <Indicator.indicator bottom_left />
+              <div class="relative inline-block">
+                <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
+                <Indicator.indicator bottom_left />
+              </div>
             </div>
           </div>
         </div>
 
         <div class="space-y-4">
           <h3 class="text-lg font-semibold">Color Variants</h3>
-          <div class="flex flex-wrap gap-8">
-            <div class="relative inline-block">
-              <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
-              <Indicator.indicator color="primary" top_right />
-            </div>
+          <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+            <div class="flex flex-wrap gap-8">
+              <div class="relative inline-block">
+                <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
+                <Indicator.indicator color="primary" top_right />
+              </div>
 
-            <div class="relative inline-block">
-              <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
-              <Indicator.indicator color="secondary" top_right />
-            </div>
+              <div class="relative inline-block">
+                <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
+                <Indicator.indicator color="secondary" top_right />
+              </div>
 
-            <div class="relative inline-block">
-              <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
-              <Indicator.indicator color="success" top_right />
-            </div>
+              <div class="relative inline-block">
+                <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
+                <Indicator.indicator color="success" top_right />
+              </div>
 
-            <div class="relative inline-block">
-              <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
-              <Indicator.indicator color="warning" top_right />
-            </div>
+              <div class="relative inline-block">
+                <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
+                <Indicator.indicator color="warning" top_right />
+              </div>
 
-            <div class="relative inline-block">
-              <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
-              <Indicator.indicator color="danger" top_right />
-            </div>
+              <div class="relative inline-block">
+                <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
+                <Indicator.indicator color="danger" top_right />
+              </div>
 
-            <div class="relative inline-block">
-              <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
-              <Indicator.indicator color="info" top_right />
+              <div class="relative inline-block">
+                <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
+                <Indicator.indicator color="info" top_right />
+              </div>
             </div>
           </div>
         </div>
 
         <div class="space-y-4">
           <h3 class="text-lg font-semibold">Sizes</h3>
-          <div class="flex flex-wrap gap-8 items-center">
-            <div class="relative inline-block">
-              <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
-              <Indicator.indicator size="extra_small" color="primary" top_right />
-              <span class="block text-xs mt-2 text-center">Extra Small</span>
-            </div>
+          <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+            <div class="flex flex-wrap gap-8 items-center">
+              <div class="relative inline-block">
+                <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
+                <Indicator.indicator size="extra_small" color="primary" top_right />
+                <span class="block text-xs mt-2 text-center">Extra Small</span>
+              </div>
 
-            <div class="relative inline-block">
-              <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
-              <Indicator.indicator size="small" color="primary" top_right />
-              <span class="block text-xs mt-2 text-center">Small</span>
-            </div>
+              <div class="relative inline-block">
+                <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
+                <Indicator.indicator size="small" color="primary" top_right />
+                <span class="block text-xs mt-2 text-center">Small</span>
+              </div>
 
-            <div class="relative inline-block">
-              <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
-              <Indicator.indicator size="medium" color="primary" top_right />
-              <span class="block text-xs mt-2 text-center">Medium</span>
-            </div>
+              <div class="relative inline-block">
+                <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
+                <Indicator.indicator size="medium" color="primary" top_right />
+                <span class="block text-xs mt-2 text-center">Medium</span>
+              </div>
 
-            <div class="relative inline-block">
-              <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
-              <Indicator.indicator size="large" color="primary" top_right />
-              <span class="block text-xs mt-2 text-center">Large</span>
+              <div class="relative inline-block">
+                <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
+                <Indicator.indicator size="large" color="primary" top_right />
+                <span class="block text-xs mt-2 text-center">Large</span>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="space-y-4">
           <h3 class="text-lg font-semibold">With Ping Animation</h3>
-          <div class="flex flex-wrap gap-8">
-            <div class="relative inline-block">
-              <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
-              <Indicator.indicator color="success" top_right pinging />
-            </div>
+          <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+            <div class="flex flex-wrap gap-8">
+              <div class="relative inline-block">
+                <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
+                <Indicator.indicator color="success" top_right pinging />
+              </div>
 
-            <div class="relative inline-block">
-              <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
-              <Indicator.indicator color="danger" top_right pinging />
-            </div>
+              <div class="relative inline-block">
+                <div class="w-12 h-12 bg-base-300 rounded-lg"></div>
+                <Indicator.indicator color="danger" top_right pinging />
+              </div>
 
-            <div class="relative inline-block">
-              <Avatar.avatar src="https://i.pravatar.cc/150?img=5" size="large" rounded="full" />
-              <Indicator.indicator color="success" size="medium" bottom_right />
+              <div class="relative inline-block">
+                <Avatar.avatar src="https://i.pravatar.cc/150?img=5" size="large" rounded="full" />
+                <Indicator.indicator color="success" size="medium" bottom_right />
+              </div>
             </div>
           </div>
         </div>

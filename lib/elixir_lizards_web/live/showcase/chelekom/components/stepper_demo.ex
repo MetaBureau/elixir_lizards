@@ -16,54 +16,64 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.StepperDemo do
       <div class="max-w-4xl mx-auto space-y-8">
         <div class="space-y-4">
           <h3 class="text-lg font-semibold">Basic Horizontal Stepper</h3>
-          <Stepper.stepper>
-            <Stepper.stepper_section
-              step="completed"
-              title="Account"
-              description="Create your account"
-            />
-            <Stepper.stepper_section step="current" title="Profile" description="Add profile details" />
-            <Stepper.stepper_section title="Verification" description="Verify your email" />
-            <Stepper.stepper_section title="Complete" description="Start using the app" />
-          </Stepper.stepper>
+          <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+            <Stepper.stepper>
+              <Stepper.stepper_section
+                step="completed"
+                title="Account"
+                description="Create your account"
+              />
+              <Stepper.stepper_section
+                step="current"
+                title="Profile"
+                description="Add profile details"
+              />
+              <Stepper.stepper_section title="Verification" description="Verify your email" />
+              <Stepper.stepper_section title="Complete" description="Start using the app" />
+            </Stepper.stepper>
+          </div>
         </div>
 
         <div class="space-y-4">
           <h3 class="text-lg font-semibold">Vertical Stepper</h3>
-          <Stepper.stepper vertical>
-            <Stepper.stepper_section
-              step="completed"
-              title="Order Placed"
-              description="Your order has been confirmed"
-            />
-            <Stepper.stepper_section
-              step="completed"
-              title="Processing"
-              description="Order is being prepared"
-            />
-            <Stepper.stepper_section
-              step="current"
-              title="Shipping"
-              description="Package is on the way"
-            />
-            <Stepper.stepper_section title="Delivered" description="Package will arrive soon" />
-          </Stepper.stepper>
+          <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+            <Stepper.stepper vertical>
+              <Stepper.stepper_section
+                step="completed"
+                title="Order Placed"
+                description="Your order has been confirmed"
+              />
+              <Stepper.stepper_section
+                step="completed"
+                title="Processing"
+                description="Order is being prepared"
+              />
+              <Stepper.stepper_section
+                step="current"
+                title="Shipping"
+                description="Package is on the way"
+              />
+              <Stepper.stepper_section title="Delivered" description="Package will arrive soon" />
+            </Stepper.stepper>
+          </div>
         </div>
 
         <div class="space-y-4">
           <h3 class="text-lg font-semibold">With Icons</h3>
-          <Stepper.stepper>
-            <Stepper.stepper_section step="completed" icon="hero-user" title="Account" />
-            <Stepper.stepper_section step="current" icon="hero-credit-card" title="Payment" />
-            <Stepper.stepper_section icon="hero-truck" title="Shipping" />
-            <Stepper.stepper_section icon="hero-check-circle" title="Complete" />
-          </Stepper.stepper>
+          <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+            <Stepper.stepper>
+              <Stepper.stepper_section step="completed" icon="hero-user" title="Account" />
+              <Stepper.stepper_section step="current" icon="hero-credit-card" title="Payment" />
+              <Stepper.stepper_section icon="hero-truck" title="Shipping" />
+              <Stepper.stepper_section icon="hero-check-circle" title="Complete" />
+            </Stepper.stepper>
+          </div>
         </div>
 
         <div class="space-y-4">
           <h3 class="text-lg font-semibold">Color Variants</h3>
           <div class="space-y-6">
-            <div>
+            <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
               <p class="text-sm text-base-content/60 mb-2">Primary</p>
               <Stepper.stepper color="primary">
                 <Stepper.stepper_section step="completed" title="Step 1" />
@@ -72,7 +82,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.StepperDemo do
               </Stepper.stepper>
             </div>
 
-            <div>
+            <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
               <p class="text-sm text-base-content/60 mb-2">Success</p>
               <Stepper.stepper color="success">
                 <Stepper.stepper_section step="completed" title="Step 1" />
@@ -81,7 +91,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.StepperDemo do
               </Stepper.stepper>
             </div>
 
-            <div>
+            <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
               <p class="text-sm text-base-content/60 mb-2">Info</p>
               <Stepper.stepper color="info">
                 <Stepper.stepper_section step="completed" title="Step 1" />
@@ -95,7 +105,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.StepperDemo do
         <div class="space-y-4">
           <h3 class="text-lg font-semibold">Different Sizes</h3>
           <div class="space-y-6">
-            <div>
+            <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
               <p class="text-sm text-base-content/60 mb-2">Small</p>
               <Stepper.stepper size="small">
                 <Stepper.stepper_section step="completed" title="Step 1" />
@@ -104,7 +114,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.StepperDemo do
               </Stepper.stepper>
             </div>
 
-            <div>
+            <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
               <p class="text-sm text-base-content/60 mb-2">Large</p>
               <Stepper.stepper size="large">
                 <Stepper.stepper_section step="completed" title="Step 1" />

@@ -16,31 +16,33 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.ClipboardDemo do
       <div class="max-w-4xl mx-auto space-y-8">
         <div class="space-y-4">
           <h3 class="text-lg font-semibold">Basic Clipboard</h3>
-          <div class="flex flex-wrap gap-4">
-            <Clipboard.clipboard
-              text="Hello, World!"
-              copy_success_text="Copied!"
-              copy_error_text="Failed to copy"
-            >
-              <:trigger>
-                <button class="btn btn-primary">Copy Text</button>
-              </:trigger>
-            </Clipboard.clipboard>
+          <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+            <div class="flex flex-wrap gap-4">
+              <Clipboard.clipboard
+                text="Hello, World!"
+                copy_success_text="Copied!"
+                copy_error_text="Failed to copy"
+              >
+                <:trigger>
+                  <button class="btn btn-primary">Copy Text</button>
+                </:trigger>
+              </Clipboard.clipboard>
 
-            <Clipboard.clipboard
-              text="npm install phoenix_live_view"
-              copy_success_text="Command copied!"
-            >
-              <:trigger>
-                <button class="btn btn-outline">Copy Command</button>
-              </:trigger>
-            </Clipboard.clipboard>
+              <Clipboard.clipboard
+                text="npm install phoenix_live_view"
+                copy_success_text="Command copied!"
+              >
+                <:trigger>
+                  <button class="btn btn-outline">Copy Command</button>
+                </:trigger>
+              </Clipboard.clipboard>
+            </div>
           </div>
         </div>
 
         <div class="space-y-4">
           <h3 class="text-lg font-semibold">Copy from Element</h3>
-          <div class="space-y-4">
+          <div class="p-4 bg-base-100 border border-base-300 rounded-lg space-y-4">
             <div id="code-sample" class="p-4 bg-base-300 rounded-lg font-mono text-sm">
               defmodule MyApp.Hello do
               def world, do: "Hello, World!"
@@ -56,44 +58,48 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.ClipboardDemo do
 
         <div class="space-y-4">
           <h3 class="text-lg font-semibold">With Content Display</h3>
-          <Clipboard.clipboard text="secret-api-key-12345" copy_success_text="API Key copied!">
-            <:content>
-              <code class="text-sm bg-base-300 px-2 py-1 rounded">secret-api-key-12345</code>
-            </:content>
-            <:trigger>
-              <button class="btn btn-ghost btn-sm">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-4 w-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-                  />
-                </svg>
-              </button>
-            </:trigger>
-          </Clipboard.clipboard>
+          <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+            <Clipboard.clipboard text="secret-api-key-12345" copy_success_text="API Key copied!">
+              <:content>
+                <code class="text-sm bg-base-300 px-2 py-1 rounded">secret-api-key-12345</code>
+              </:content>
+              <:trigger>
+                <button class="btn btn-ghost btn-sm">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                    />
+                  </svg>
+                </button>
+              </:trigger>
+            </Clipboard.clipboard>
+          </div>
         </div>
 
         <div class="space-y-4">
           <h3 class="text-lg font-semibold">Dynamic Label Change</h3>
-          <Clipboard.clipboard
-            text="Copied text content"
-            dynamic_label={true}
-            copy_success_text="Copied!"
-          >
-            <:trigger>
-              <button class="btn btn-info">
-                <span class="clipboard-label">Click to Copy</span>
-              </button>
-            </:trigger>
-          </Clipboard.clipboard>
+          <div class="p-4 bg-base-100 border border-base-300 rounded-lg">
+            <Clipboard.clipboard
+              text="Copied text content"
+              dynamic_label={true}
+              copy_success_text="Copied!"
+            >
+              <:trigger>
+                <button class="btn btn-info">
+                  <span class="clipboard-label">Click to Copy</span>
+                </button>
+              </:trigger>
+            </Clipboard.clipboard>
+          </div>
         </div>
 
         <div class="p-4 bg-base-200 rounded-lg">
