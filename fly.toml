@@ -33,11 +33,10 @@ primary_region = "syd"
 
   [[http_service.checks]]
     interval = "10s"
-    timeout = "2s"
-    grace_period = "5s"
+    timeout = "5s"
+    grace_period = "30s"
     method = "GET"
-    path = "/"
-    protocol = "https"
+    path = "/health"
 
 [[vm]]
   memory = "1gb"

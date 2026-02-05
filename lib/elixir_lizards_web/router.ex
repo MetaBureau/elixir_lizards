@@ -21,6 +21,11 @@ defmodule ElixirLizardsWeb.Router do
     plug :set_actor, :user
   end
 
+  # Health check endpoint - no SSL redirect, no auth
+  scope "/health", ElixirLizardsWeb do
+    get "/", HealthController, :index
+  end
+
   scope "/", ElixirLizardsWeb do
     pipe_through :browser
 
