@@ -37,7 +37,6 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.AlertDemo do
           flash={
             %{
               "info" => "Welcome to Mishka Chelekom components!",
-              "success" => "Components loaded successfully",
               "error" => "Error message example"
             }
           }

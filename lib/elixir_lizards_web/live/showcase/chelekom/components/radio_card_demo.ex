@@ -18,7 +18,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.RadioCardDemo do
           id="shipping-radio-card"
           name="shipping"
           color="primary"
-          cols="3"
+          cols="three"
         >
           <:radio value="standard" title="Standard" description="5-7 business days"></:radio>
           <:radio value="express" title="Express" description="2-3 business days" checked></:radio>

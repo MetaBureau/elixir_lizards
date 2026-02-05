@@ -18,7 +18,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.CheckboxCardDemo do
           id="features-checkbox-card"
           name="features"
           color="primary"
-          cols="3"
+          cols="three"
         >
           <:checkbox value="analytics" title="Analytics" description="Track user behavior">
           </:checkbox>

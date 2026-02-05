@@ -1,6 +1,8 @@
 defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.BannerDemo do
   use ElixirLizardsWeb, :live_component
 
+  alias ElixirLizardsWeb.Components.Chelekom.Banner
+
   def render(assigns) do
     ~H"""
     <div id="banner-demo" class="demo-component space-y-6">
@@ -15,84 +17,84 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.BannerDemo do
         <div id="banner-colors" class="demo-section space-y-4">
           <h3 class="demo-section-title text-lg font-semibold">Color Variants</h3>
           <p class="text-sm text-base-content/60 mb-4">
-            Note: Banners are fixed positioned. These examples show static versions for demo purposes.
+            Note: Banners are normally fixed positioned. These examples override positioning for demo purposes.
           </p>
           <div class="demo-grid grid gap-4">
-            <div
+            <Banner.banner
               id="banner-color-primary"
-              class="demo-item relative p-4 rounded-lg bg-primary-light text-white"
+              variant="default"
+              color="primary"
+              hide_dismiss={true}
+              class="!static"
             >
-              <div class="demo-item-content flex gap-2 items-center justify-between">
-                <span>Primary banner - Perfect for announcements</span>
-              </div>
-            </div>
+              <span>Primary banner - Perfect for announcements</span>
+            </Banner.banner>
 
-            <div
+            <Banner.banner
               id="banner-color-success"
-              class="demo-item relative p-4 rounded-lg bg-success-light text-white"
+              variant="default"
+              color="success"
+              hide_dismiss={true}
+              class="!static"
             >
-              <div class="demo-item-content flex gap-2 items-center justify-between">
-                <span>Success banner - Operation completed</span>
-              </div>
-            </div>
+              <span>Success banner - Operation completed</span>
+            </Banner.banner>
 
-            <div
+            <Banner.banner
               id="banner-color-warning"
-              class="demo-item relative p-4 rounded-lg bg-warning-light text-white"
+              variant="default"
+              color="warning"
+              hide_dismiss={true}
+              class="!static"
             >
-              <div class="demo-item-content flex gap-2 items-center justify-between">
-                <span>Warning banner - Requires attention</span>
-              </div>
-            </div>
+              <span>Warning banner - Requires attention</span>
+            </Banner.banner>
 
-            <div
+            <Banner.banner
               id="banner-color-danger"
-              class="demo-item relative p-4 rounded-lg bg-danger-light text-white"
+              variant="default"
+              color="danger"
+              hide_dismiss={true}
+              class="!static"
             >
-              <div class="demo-item-content flex gap-2 items-center justify-between">
-                <span>Danger banner - Critical information</span>
-              </div>
-            </div>
+              <span>Danger banner - Critical information</span>
+            </Banner.banner>
           </div>
         </div>
 
         <div id="banner-variants" class="demo-section space-y-4">
           <h3 class="demo-section-title text-lg font-semibold">Variant Styles</h3>
           <div class="demo-grid grid gap-4">
-            <div
-              id="banner-variant-default"
-              class="demo-item relative p-4 rounded-lg bg-info-light text-white border-b-2 border-info-dark"
+            <Banner.banner
+              id="banner-variant-bordered"
+              variant="bordered"
+              color="info"
+              hide_dismiss={true}
+              class="!static"
             >
-              <div class="demo-item-content flex gap-2 items-center justify-between">
-                <span>Default variant with border</span>
-              </div>
-            </div>
+              <span>Bordered variant</span>
+            </Banner.banner>
 
-            <div
+            <Banner.banner
               id="banner-variant-outline"
-              class="demo-item relative p-4 rounded-lg border-2 border-secondary-light text-secondary-light"
+              variant="outline"
+              color="secondary"
+              hide_dismiss={true}
+              class="!static"
             >
-              <div class="demo-item-content flex gap-2 items-center justify-between">
-                <span>Outline variant</span>
-              </div>
-            </div>
+              <span>Outline variant</span>
+            </Banner.banner>
 
-            <div
+            <Banner.banner
               id="banner-variant-gradient"
-              class="demo-item relative p-4 rounded-lg bg-gradient-to-br from-misc-light to-misc-dark text-white"
+              variant="gradient"
+              color="misc"
+              hide_dismiss={true}
+              class="!static"
             >
-              <div class="demo-item-content flex gap-2 items-center justify-between">
-                <span>Gradient variant</span>
-              </div>
-            </div>
+              <span>Gradient variant</span>
+            </Banner.banner>
           </div>
-        </div>
-
-        <div id="banner-usage" class="demo-section demo-usage p-4 bg-base-200 rounded-lg">
-          <h3 class="demo-section-title text-lg font-semibold mb-2">Usage Example</h3>
-          <pre class="demo-code text-sm overflow-x-auto"><code>&lt;Banner.banner id="my-banner" color="primary" position="full"&gt;
-    &lt;span&gt;Welcome to our new feature!&lt;/span&gt;
-    &lt;/Banner.banner&gt;</code></pre>
         </div>
       </div>
     </div>
