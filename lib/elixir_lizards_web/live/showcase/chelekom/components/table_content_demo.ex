@@ -16,58 +16,65 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TableContentDemo do
       <div class="demo-content max-w-4xl mx-auto space-y-8">
         <div id="table-content-basic" class="demo-section space-y-4">
           <h3 class="demo-section-title text-lg font-semibold">Basic Table of Contents</h3>
-          <div class="demo-box">
-            <TableContent.table_content space="small" padding="small" rounded="medium">
-              <:item icon="hero-hashtag" link="#intro" link_title="Introduction"></:item>
-              <:item icon="hero-hashtag" link="#getting-started" link_title="Getting Started"></:item>
-              <:item icon="hero-hashtag" link="#installation" link_title="Installation"></:item>
-              <:item icon="hero-hashtag" link="#usage" link_title="Usage"></:item>
-              <:item icon="hero-hashtag" link="#api" link_title="API Reference"></:item>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg">
+            <TableContent.table_content>
+              <TableContent.content_item link_title="Home" link="#home" />
+              <TableContent.content_item link_title="Overview" link="#overview" />
+              <TableContent.content_item link_title="Slots" link="#slots" />
             </TableContent.table_content>
           </div>
         </div>
 
         <div id="table-content-with-title" class="demo-section space-y-4">
           <h3 class="demo-section-title text-lg font-semibold">With Title</h3>
-          <div class="demo-box">
-            <TableContent.table_content
-              title="On this page"
-              space="small"
-              padding="small"
-              rounded="medium"
-            >
-              <:item icon="hero-hashtag" link="#overview" link_title="Overview"></:item>
-              <:item icon="hero-hashtag" link="#features" link_title="Features"></:item>
-              <:item icon="hero-hashtag" link="#examples" link_title="Examples"></:item>
-              <:item icon="hero-hashtag" link="#faq" link_title="FAQ" active></:item>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg">
+            <TableContent.table_content title="On this page">
+              <TableContent.content_item link_title="Introduction" link="#intro" />
+              <TableContent.content_item link_title="Getting Started" link="#getting-started" />
+              <TableContent.content_item link_title="Installation" link="#installation" />
+              <TableContent.content_item link_title="API Reference" link="#api" active />
+            </TableContent.table_content>
+          </div>
+        </div>
+
+        <div id="table-content-with-icons" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">With Icons</h3>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg">
+            <TableContent.table_content>
+              <TableContent.content_item icon="hero-home" link_title="Home" link="#home" />
+              <TableContent.content_item
+                icon="hero-document-text"
+                link_title="Documentation"
+                link="#docs"
+              />
+              <TableContent.content_item
+                icon="hero-cog-6-tooth"
+                link_title="Settings"
+                link="#settings"
+              />
             </TableContent.table_content>
           </div>
         </div>
 
         <div id="table-content-nested" class="demo-section space-y-4">
           <h3 class="demo-section-title text-lg font-semibold">Nested Content</h3>
-          <div class="demo-box">
-            <TableContent.table_content
-              title="Documentation"
-              space="small"
-              padding="small"
-              rounded="medium"
-            >
-              <:item icon="hero-hashtag" link="#basics" link_title="Basics"></:item>
-              <:item title="Components">
-                <TableContent.content_wrapper class="space-y-2 mt-2">
-                  <TableContent.content_item icon="hero-minus" class="pl-4">
-                    <a href="#buttons">Buttons</a>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg">
+            <TableContent.table_content title="Documentation">
+              <TableContent.content_item link_title="Basics" link="#basics" />
+              <TableContent.content_item title="Components">
+                <TableContent.content_wrapper class="space-y-1 mt-1 ml-4">
+                  <TableContent.content_item icon="hero-minus">
+                    <a href="#buttons" class="hover:underline">Buttons</a>
                   </TableContent.content_item>
-                  <TableContent.content_item icon="hero-minus" class="pl-4">
-                    <a href="#forms">Forms</a>
+                  <TableContent.content_item icon="hero-minus">
+                    <a href="#forms" class="hover:underline">Forms</a>
                   </TableContent.content_item>
-                  <TableContent.content_item icon="hero-minus" class="pl-4">
-                    <a href="#navigation">Navigation</a>
+                  <TableContent.content_item icon="hero-minus">
+                    <a href="#navigation" class="hover:underline">Navigation</a>
                   </TableContent.content_item>
                 </TableContent.content_wrapper>
-              </:item>
-              <:item icon="hero-hashtag" link="#advanced" link_title="Advanced"></:item>
+              </TableContent.content_item>
+              <TableContent.content_item link_title="Advanced" link="#advanced" />
             </TableContent.table_content>
           </div>
         </div>
@@ -77,29 +84,60 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TableContentDemo do
           <div class="demo-grid grid md:grid-cols-2 gap-6">
             <div id="table-content-color-primary" class="demo-box">
               <TableContent.table_content
+                variant="default"
                 color="primary"
                 title="Primary"
-                space="small"
                 padding="small"
                 rounded="medium"
               >
-                <:item link="#section1" link_title="Section 1"></:item>
-                <:item link="#section2" link_title="Section 2"></:item>
-                <:item link="#section3" link_title="Section 3"></:item>
+                <TableContent.content_item link_title="Section 1" link="#section1" />
+                <TableContent.content_item link_title="Section 2" link="#section2" />
+                <TableContent.content_item link_title="Section 3" link="#section3" />
               </TableContent.table_content>
             </div>
 
             <div id="table-content-color-secondary" class="demo-box">
               <TableContent.table_content
+                variant="default"
                 color="secondary"
                 title="Secondary"
-                space="small"
                 padding="small"
                 rounded="medium"
               >
-                <:item link="#section1" link_title="Section 1"></:item>
-                <:item link="#section2" link_title="Section 2"></:item>
-                <:item link="#section3" link_title="Section 3"></:item>
+                <TableContent.content_item link_title="Section 1" link="#section1" />
+                <TableContent.content_item link_title="Section 2" link="#section2" />
+                <TableContent.content_item link_title="Section 3" link="#section3" />
+              </TableContent.table_content>
+            </div>
+          </div>
+        </div>
+
+        <div id="table-content-variants" class="demo-section space-y-4">
+          <h3 class="demo-section-title text-lg font-semibold">Style Variants</h3>
+          <div class="demo-grid grid md:grid-cols-2 gap-6">
+            <div id="table-content-variant-outline" class="demo-box">
+              <TableContent.table_content
+                variant="outline"
+                color="primary"
+                title="Outline"
+                padding="small"
+                rounded="medium"
+              >
+                <TableContent.content_item link_title="Item 1" link="#item1" />
+                <TableContent.content_item link_title="Item 2" link="#item2" />
+              </TableContent.table_content>
+            </div>
+
+            <div id="table-content-variant-bordered" class="demo-box">
+              <TableContent.table_content
+                variant="bordered"
+                color="info"
+                title="Bordered"
+                padding="small"
+                rounded="medium"
+              >
+                <TableContent.content_item link_title="Item 1" link="#item1" />
+                <TableContent.content_item link_title="Item 2" link="#item2" />
               </TableContent.table_content>
             </div>
           </div>
@@ -107,33 +145,32 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TableContentDemo do
 
         <div id="table-content-animated" class="demo-section space-y-4">
           <h3 class="demo-section-title text-lg font-semibold">With Animation (Smooth Scroll)</h3>
-          <div class="demo-box">
-            <TableContent.table_content
-              title="Animated Navigation"
-              animated
-              space="small"
-              padding="small"
-              rounded="medium"
-            >
-              <:item icon="hero-hashtag" link="#section-a" link_title="Section A"></:item>
-              <:item icon="hero-hashtag" link="#section-b" link_title="Section B"></:item>
-              <:item icon="hero-hashtag" link="#section-c" link_title="Section C"></:item>
+          <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg">
+            <TableContent.table_content title="Animated Navigation" animated>
+              <TableContent.content_item icon="hero-hashtag" link_title="Section A" link="#section-a" />
+              <TableContent.content_item icon="hero-hashtag" link_title="Section B" link="#section-b" />
+              <TableContent.content_item
+                icon="hero-hashtag"
+                link_title="Section C"
+                link="#section-c"
+                active
+              />
             </TableContent.table_content>
           </div>
         </div>
 
         <div id="table-content-usage" class="demo-section demo-usage p-4 bg-base-200 rounded-lg">
           <h3 class="demo-section-title text-lg font-semibold mb-2">Usage Example</h3>
-          <pre class="demo-code text-sm overflow-x-auto"><code>&lt;TableContent.table_content title="On this page" animated space="small"&gt;
-    &lt;:item icon="hero-hashtag" link="#intro" link_title="Introduction"&gt;&lt;/:item&gt;
-    &lt;:item icon="hero-hashtag" link="#usage" link_title="Usage" active&gt;&lt;/:item&gt;
-    &lt;:item title="Nested Section"&gt;
+          <pre class="demo-code text-sm overflow-x-auto"><code>&lt;TableContent.table_content title="On this page" animated&gt;
+    &lt;TableContent.content_item link_title="Home" link="#home" /&gt;
+    &lt;TableContent.content_item link_title="Overview" link="#overview" /&gt;
+    &lt;TableContent.content_item title="Components"&gt;
     &lt;TableContent.content_wrapper&gt;
-      &lt;TableContent.content_item&gt;
-        &lt;a href="#sub-item"&gt;Sub Item&lt;/a&gt;
+      &lt;TableContent.content_item icon="hero-minus"&gt;
+        &lt;a href="#buttons"&gt;Buttons&lt;/a&gt;
       &lt;/TableContent.content_item&gt;
     &lt;/TableContent.content_wrapper&gt;
-    &lt;/:item&gt;
+    &lt;/TableContent.content_item&gt;
     &lt;/TableContent.table_content&gt;</code></pre>
         </div>
       </div>
