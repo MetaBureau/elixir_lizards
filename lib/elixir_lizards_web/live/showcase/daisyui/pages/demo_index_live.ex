@@ -96,7 +96,7 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.DemoIndexLive do
               Check out our component library with live previews and code examples.
             </p>
           </div>
-          <.link navigate={~p"/dev/components"} class="btn btn-primary">
+          <.link href="/dev/components" class="btn btn-primary">
             <.icon name="hero-rectangle-stack" class="size-5 mr-2" /> Component Library
           </.link>
         </div>

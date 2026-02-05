@@ -48,13 +48,13 @@ COPY priv priv
 
 COPY lib lib
 
+# Compile the app first (generates colocated hooks for LiveView)
+RUN mix compile
+
 COPY assets assets
 
-# compile assets
+# compile assets (must happen after mix compile for colocated hooks)
 RUN mix assets.deploy
-
-# Compile the release
-RUN mix compile
 
 # Changes to config/runtime.exs don't require recompiling the code
 COPY config/runtime.exs config/
