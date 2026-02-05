@@ -1,11 +1,13 @@
-# fly.toml app configuration file generated for elixir-lizards
+# fly.toml app configuration file for elixir-lizards
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 
 app = "elixir-lizards"
 primary_region = "syd"
 
+# Explicitly use our Dockerfile - skip auto-detection
 [build]
+  dockerfile = "Dockerfile"
 
 [deploy]
   release_command = "/app/bin/migrate"
@@ -13,6 +15,8 @@ primary_region = "syd"
 [env]
   PHX_HOST = "elixir-lizards.fly.dev"
   PORT = "8080"
+  PHX_SERVER = "true"
+  ECTO_IPV6 = "true"
 
 [http_service]
   internal_port = 8080
