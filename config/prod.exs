@@ -14,7 +14,7 @@ config :elixir_lizards, ElixirLizardsWeb.Endpoint,
 config :elixir_lizards, ElixirLizardsWeb.Endpoint,
   force_ssl: [
     rewrite_on: [:x_forwarded_proto],
-    exclude: fn conn -> conn.request_path == "/health" end
+    exclude: [paths: ["/health"]]
   ]
 
 # Configure Swoosh API Client
