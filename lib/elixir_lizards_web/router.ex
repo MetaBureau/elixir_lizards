@@ -100,13 +100,31 @@ defmodule ElixirLizardsWeb.Router do
   #   pipe_through :api
   # end
 
+  # Component showcase - always available
+  scope "/showcase", ElixirLizardsWeb.Showcase do
+    pipe_through :browser
+
+    live "/", ComponentIndexLive
+
+    # DaisyUI component demos
+    live "/daisyui", DaisyUI.ComponentDemoLive
+    live "/daisyui/modal", DaisyUI.Components.ModalDemo
+    live "/daisyui/card", DaisyUI.Components.CardDemo
+    live "/daisyui/badge", DaisyUI.Components.BadgeDemo
+    live "/daisyui/dropdown", DaisyUI.Components.DropdownDemo
+    live "/daisyui/avatar", DaisyUI.Components.AvatarDemo
+    live "/daisyui/stat", DaisyUI.Components.StatDemo
+    live "/daisyui/empty-state", DaisyUI.Components.EmptyStateDemo
+    live "/daisyui/tabs", DaisyUI.Components.TabsDemo
+    live "/daisyui/breadcrumb", DaisyUI.Components.BreadcrumbDemo
+    live "/daisyui/tooltip", DaisyUI.Components.TooltipDemo
+
+    # Mishka Chelekom component demos
+    live "/chelekom", Chelekom.ComponentDemoLive
+  end
+
   # Enable LiveDashboard and Swoosh mailbox preview in development
   if Application.compile_env(:elixir_lizards, :dev_routes) do
-    # If you want to use the LiveDashboard in production, you should put
-    # it behind authentication and allow only admins to access it.
-    # If your application does not have an admins-only section yet,
-    # you can use Plug.BasicAuth to set up some basic authentication
-    # as long as you are also using SSL (which you should anyway).
     import Phoenix.LiveDashboard.Router
 
     scope "/dev" do
@@ -114,34 +132,6 @@ defmodule ElixirLizardsWeb.Router do
 
       live_dashboard "/dashboard", metrics: ElixirLizardsWeb.Telemetry
       forward "/mailbox", Plug.Swoosh.MailboxPreview
-
-      # Component library index
-      live "/components", ElixirLizardsWeb.Showcase.ComponentIndexLive
-
-      # DaisyUI component demos
-      live "/components/daisyui", ElixirLizardsWeb.Showcase.DaisyUI.ComponentDemoLive
-      live "/components/daisyui/modal", ElixirLizardsWeb.Showcase.DaisyUI.Components.ModalDemo
-      live "/components/daisyui/card", ElixirLizardsWeb.Showcase.DaisyUI.Components.CardDemo
-      live "/components/daisyui/badge", ElixirLizardsWeb.Showcase.DaisyUI.Components.BadgeDemo
-
-      live "/components/daisyui/dropdown",
-           ElixirLizardsWeb.Showcase.DaisyUI.Components.DropdownDemo
-
-      live "/components/daisyui/avatar", ElixirLizardsWeb.Showcase.DaisyUI.Components.AvatarDemo
-      live "/components/daisyui/stat", ElixirLizardsWeb.Showcase.DaisyUI.Components.StatDemo
-
-      live "/components/daisyui/empty-state",
-           ElixirLizardsWeb.Showcase.DaisyUI.Components.EmptyStateDemo
-
-      live "/components/daisyui/tabs", ElixirLizardsWeb.Showcase.DaisyUI.Components.TabsDemo
-
-      live "/components/daisyui/breadcrumb",
-           ElixirLizardsWeb.Showcase.DaisyUI.Components.BreadcrumbDemo
-
-      live "/components/daisyui/tooltip", ElixirLizardsWeb.Showcase.DaisyUI.Components.TooltipDemo
-
-      # Mishka Chelekom component demos
-      live "/components/chelekom", ElixirLizardsWeb.Showcase.Chelekom.ComponentDemoLive
     end
   end
 
