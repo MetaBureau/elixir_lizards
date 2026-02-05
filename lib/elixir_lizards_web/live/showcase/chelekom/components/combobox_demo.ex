@@ -34,6 +34,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.ComboboxDemo do
           <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg">
             <div class="demo-item max-w-md">
               <Combobox.combobox
+                id="combobox-country"
                 name="country"
                 searchable
                 placeholder="Search countries..."
@@ -178,7 +179,12 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.ComboboxDemo do
           <h3 class="demo-section-title text-lg font-semibold">With Disabled Option</h3>
           <div class="demo-box p-4 bg-base-100 border border-base-300 rounded-lg">
             <div class="demo-item max-w-md">
-              <Combobox.combobox name="plan" placeholder="Select a plan..." label="Subscription Plan">
+              <Combobox.combobox
+                id="combobox-plan"
+                name="plan"
+                placeholder="Select a plan..."
+                label="Subscription Plan"
+              >
                 <:option value="free">Free</:option>
                 <:option value="basic">Basic</:option>
                 <:option value="pro" disabled>Pro (Coming Soon)</:option>

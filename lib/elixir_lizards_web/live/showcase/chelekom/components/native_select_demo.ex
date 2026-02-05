@@ -18,6 +18,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.NativeSelectDemo do
         <div class="space-y-2">
           <h3 class="text-sm font-semibold text-base-content/60">Default Variant</h3>
           <NativeSelect.native_select
+            id="native-select-country"
             name="country"
             label="Select Country"
             description="Choose your country of residence"
@@ -31,8 +32,8 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.NativeSelectDemo do
             <:option value="au">Australia</:option>
           </NativeSelect.native_select>
         </div>
-
-        <!-- Shadow variant with color -->
+        
+    <!-- Shadow variant with color -->
         <div class="space-y-2">
           <h3 class="text-sm font-semibold text-base-content/60">Shadow Variant</h3>
           <NativeSelect.native_select
@@ -46,8 +47,8 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.NativeSelectDemo do
             <:option value="high">High Priority</:option>
           </NativeSelect.native_select>
         </div>
-
-        <!-- Bordered variant -->
+        
+    <!-- Bordered variant -->
         <div class="space-y-2">
           <h3 class="text-sm font-semibold text-base-content/60">Bordered Variant</h3>
           <NativeSelect.native_select
@@ -61,8 +62,8 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.NativeSelectDemo do
             <:option value="marketing">Marketing</:option>
           </NativeSelect.native_select>
         </div>
-
-        <!-- Multiple selection -->
+        
+    <!-- Multiple selection -->
         <div class="space-y-2">
           <h3 class="text-sm font-semibold text-base-content/60">Multiple Selection</h3>
           <NativeSelect.native_select
@@ -79,11 +80,12 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.NativeSelectDemo do
             <:option value="python">Python</:option>
           </NativeSelect.native_select>
         </div>
-
-        <!-- With disabled option -->
+        
+    <!-- With disabled option -->
         <div class="space-y-2">
           <h3 class="text-sm font-semibold text-base-content/60">With Disabled Options</h3>
           <NativeSelect.native_select
+            id="native-select-plan"
             name="plan"
             label="Subscription Plan"
             variant="default"

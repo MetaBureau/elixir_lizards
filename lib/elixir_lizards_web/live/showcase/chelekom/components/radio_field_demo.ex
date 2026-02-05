@@ -18,12 +18,14 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.RadioFieldDemo do
           <h3 class="text-sm font-semibold text-base-content/60">Primary Color Group</h3>
           <div class="space-y-2">
             <RadioField.radio_field
+              id="size-small"
               name="size"
               value="small"
               label="Small"
               color="primary"
             />
             <RadioField.radio_field
+              id="size-medium"
               name="size"
               value="medium"
               label="Medium"
@@ -31,6 +33,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.RadioFieldDemo do
               checked
             />
             <RadioField.radio_field
+              id="size-large"
               name="size"
               value="large"
               label="Large"
@@ -43,12 +46,14 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.RadioFieldDemo do
           <h3 class="text-sm font-semibold text-base-content/60">Success Color Group</h3>
           <div class="space-y-2">
             <RadioField.radio_field
+              id="plan-free"
               name="plan"
               value="free"
               label="Free Plan"
               color="success"
             />
             <RadioField.radio_field
+              id="plan-pro"
               name="plan"
               value="pro"
               label="Pro Plan"
@@ -56,6 +61,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.RadioFieldDemo do
               checked
             />
             <RadioField.radio_field
+              id="plan-enterprise"
               name="plan"
               value="enterprise"
               label="Enterprise Plan"
@@ -68,6 +74,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.RadioFieldDemo do
           <h3 class="text-sm font-semibold text-base-content/60">Reversed Layout</h3>
           <div class="space-y-2">
             <RadioField.radio_field
+              id="theme-light"
               name="theme"
               value="light"
               label="Light Theme"
@@ -75,6 +82,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.RadioFieldDemo do
               reverse
             />
             <RadioField.radio_field
+              id="theme-dark"
               name="theme"
               value="dark"
               label="Dark Theme"

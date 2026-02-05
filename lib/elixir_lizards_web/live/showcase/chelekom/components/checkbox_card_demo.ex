@@ -15,13 +15,19 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.CheckboxCardDemo do
 
       <div class="max-w-3xl mx-auto">
         <CheckboxCard.checkbox_card
+          id="features-checkbox-card"
           name="features"
           color="primary"
           cols="3"
         >
           <:checkbox value="analytics" title="Analytics" description="Track user behavior">
           </:checkbox>
-          <:checkbox value="notifications" title="Notifications" description="Push and email alerts" checked>
+          <:checkbox
+            value="notifications"
+            title="Notifications"
+            description="Push and email alerts"
+            checked
+          >
           </:checkbox>
           <:checkbox value="integrations" title="Integrations" description="Third-party connections">
           </:checkbox>

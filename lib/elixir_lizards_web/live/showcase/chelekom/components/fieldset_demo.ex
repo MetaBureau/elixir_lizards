@@ -16,7 +16,12 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.FieldsetDemo do
       <div class="max-w-2xl mx-auto space-y-8">
         <div class="space-y-2">
           <h3 class="text-sm font-semibold text-base-content/60">Default Variant</h3>
-          <Fieldset.fieldset legend="Personal Information" variant="default" color="natural">
+          <Fieldset.fieldset
+            id="personal-info-fieldset"
+            legend="Personal Information"
+            variant="default"
+            color="natural"
+          >
             <div class="space-y-4">
               <TextField.text_field
                 name="first_name"
@@ -42,7 +47,12 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.FieldsetDemo do
 
         <div class="space-y-2">
           <h3 class="text-sm font-semibold text-base-content/60">Outline Variant</h3>
-          <Fieldset.fieldset legend="Contact Details" variant="outline" color="primary">
+          <Fieldset.fieldset
+            id="contact-details-fieldset"
+            legend="Contact Details"
+            variant="outline"
+            color="primary"
+          >
             <div class="space-y-4">
               <TextField.text_field
                 name="email"
