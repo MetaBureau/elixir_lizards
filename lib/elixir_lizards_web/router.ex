@@ -118,12 +118,21 @@ defmodule ElixirLizardsWeb.Router do
       live "/components/daisyui/modal", ElixirLizardsWeb.Showcase.DaisyUI.Components.ModalDemo
       live "/components/daisyui/card", ElixirLizardsWeb.Showcase.DaisyUI.Components.CardDemo
       live "/components/daisyui/badge", ElixirLizardsWeb.Showcase.DaisyUI.Components.BadgeDemo
-      live "/components/daisyui/dropdown", ElixirLizardsWeb.Showcase.DaisyUI.Components.DropdownDemo
+
+      live "/components/daisyui/dropdown",
+           ElixirLizardsWeb.Showcase.DaisyUI.Components.DropdownDemo
+
       live "/components/daisyui/avatar", ElixirLizardsWeb.Showcase.DaisyUI.Components.AvatarDemo
       live "/components/daisyui/stat", ElixirLizardsWeb.Showcase.DaisyUI.Components.StatDemo
-      live "/components/daisyui/empty-state", ElixirLizardsWeb.Showcase.DaisyUI.Components.EmptyStateDemo
+
+      live "/components/daisyui/empty-state",
+           ElixirLizardsWeb.Showcase.DaisyUI.Components.EmptyStateDemo
+
       live "/components/daisyui/tabs", ElixirLizardsWeb.Showcase.DaisyUI.Components.TabsDemo
-      live "/components/daisyui/breadcrumb", ElixirLizardsWeb.Showcase.DaisyUI.Components.BreadcrumbDemo
+
+      live "/components/daisyui/breadcrumb",
+           ElixirLizardsWeb.Showcase.DaisyUI.Components.BreadcrumbDemo
+
       live "/components/daisyui/tooltip", ElixirLizardsWeb.Showcase.DaisyUI.Components.TooltipDemo
 
       # Mishka Chelekom component demos

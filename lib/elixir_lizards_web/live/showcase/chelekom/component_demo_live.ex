@@ -63,8 +63,8 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.ComponentDemoLive do
           <.button navigate="/dev/components/daisyui">DaisyUI Components</.button>
         </:actions>
       </.header>
-
-      <!-- Category Filter -->
+      
+    <!-- Category Filter -->
       <div class="flex flex-wrap gap-2 justify-center my-8">
         <button
           phx-click="select_category"
@@ -106,8 +106,8 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.ComponentDemoLive do
             id={"category-#{category.name}"}
           />
         <% end %>
-
-        <!-- Installation Summary -->
+        
+    <!-- Installation Summary -->
         <section class="space-y-6">
           <div class="text-center">
             <h2 class="text-3xl font-bold mb-2">{length(@all_components)} Components Installed</h2>
@@ -117,7 +117,10 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.ComponentDemoLive do
           </div>
 
           <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 max-w-4xl mx-auto text-sm">
-            <div :for={component <- @all_components} class="flex items-center gap-2 p-2 rounded bg-base-200">
+            <div
+              :for={component <- @all_components}
+              class="flex items-center gap-2 p-2 rounded bg-base-200"
+            >
               <.icon name="hero-check" class="size-4 text-success" />
               <span>{component.name}</span>
             </div>
@@ -125,7 +128,8 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.ComponentDemoLive do
 
           <div class="text-center mt-6">
             <p class="text-sm text-base-content/70">
-              Access this showcase at: <code class="bg-base-200 px-2 py-1 rounded">/dev/components/chelekom</code>
+              Access this showcase at:
+              <code class="bg-base-200 px-2 py-1 rounded">/dev/components/chelekom</code>
             </p>
           </div>
         </section>

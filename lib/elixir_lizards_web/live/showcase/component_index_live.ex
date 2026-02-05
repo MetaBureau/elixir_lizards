@@ -85,7 +85,8 @@ defmodule ElixirLizardsWeb.Showcase.ComponentIndexLive do
             </p>
             <ul class="text-sm text-base-content/60 space-y-1 mb-4">
               <li class="flex items-center gap-2">
-                <.icon name="hero-check" class="size-4 text-success" /> Alert, Accordion, Modal, Drawer
+                <.icon name="hero-check" class="size-4 text-success" />
+                Alert, Accordion, Modal, Drawer
               </li>
               <li class="flex items-center gap-2">
                 <.icon name="hero-check" class="size-4 text-success" /> Progress, Spinner, Rating

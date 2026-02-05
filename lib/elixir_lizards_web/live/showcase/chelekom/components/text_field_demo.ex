@@ -27,8 +27,8 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TextFieldDemo do
             color="natural"
           />
         </div>
-
-        <!-- With description -->
+        
+    <!-- With description -->
         <div class="space-y-2">
           <h3 class="text-sm font-semibold text-base-content/60">With Description</h3>
           <TextField.text_field
@@ -42,8 +42,8 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TextFieldDemo do
             color="primary"
           />
         </div>
-
-        <!-- With start section (icon) -->
+        
+    <!-- With start section (icon) -->
         <div class="space-y-2">
           <h3 class="text-sm font-semibold text-base-content/60">With Start Icon</h3>
           <TextField.text_field
@@ -60,8 +60,8 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TextFieldDemo do
             </:start_section>
           </TextField.text_field>
         </div>
-
-        <!-- With end section -->
+        
+    <!-- With end section -->
         <div class="space-y-2">
           <h3 class="text-sm font-semibold text-base-content/60">With End Section</h3>
           <TextField.text_field
@@ -81,8 +81,8 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TextFieldDemo do
             </:end_section>
           </TextField.text_field>
         </div>
-
-        <!-- Shadow variant -->
+        
+    <!-- Shadow variant -->
         <div class="space-y-2">
           <h3 class="text-sm font-semibold text-base-content/60">Shadow Variant</h3>
           <TextField.text_field
@@ -95,8 +95,8 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TextFieldDemo do
             color="secondary"
           />
         </div>
-
-        <!-- Inner floating label -->
+        
+    <!-- Inner floating label -->
         <div class="space-y-2">
           <h3 class="text-sm font-semibold text-base-content/60">Floating Inner Label</h3>
           <TextField.text_field
@@ -109,8 +109,8 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TextFieldDemo do
             color="primary"
           />
         </div>
-
-        <!-- Error state -->
+        
+    <!-- Error state -->
         <div class="space-y-2">
           <h3 class="text-sm font-semibold text-base-content/60">Error State</h3>
           <TextField.text_field

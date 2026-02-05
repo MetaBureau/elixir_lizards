@@ -35,15 +35,21 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.MegaMenuDemo do
                 <div>
                   <h3 class="font-semibold mb-3 text-secondary">Resources</h3>
                   <ul class="space-y-2">
-                    <li><a href="#" class="hover:text-secondary transition-colors">Documentation</a></li>
+                    <li>
+                      <a href="#" class="hover:text-secondary transition-colors">Documentation</a>
+                    </li>
                     <li><a href="#" class="hover:text-secondary transition-colors">Guides</a></li>
-                    <li><a href="#" class="hover:text-secondary transition-colors">API Reference</a></li>
+                    <li>
+                      <a href="#" class="hover:text-secondary transition-colors">API Reference</a>
+                    </li>
                   </ul>
                 </div>
                 <div class="bg-base-200 rounded-lg p-4">
                   <h3 class="font-semibold mb-2">Featured</h3>
                   <p class="text-sm text-base-content/70 mb-3">Check out our latest updates.</p>
-                  <Button.button variant="default" color="primary" size="small">Learn More</Button.button>
+                  <Button.button variant="default" color="primary" size="small">
+                    Learn More
+                  </Button.button>
                 </div>
               </div>
             </div>

@@ -15,7 +15,12 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.AccordionDemo do
 
       <div class="max-w-2xl mx-auto">
         <Accordion.accordion id="chelekom-accordion" color="natural" rounded="medium">
-          <:item id="chelekom-faq-1" title="What is Mishka Chelekom?" icon="hero-question-mark-circle" open>
+          <:item
+            id="chelekom-faq-1"
+            title="What is Mishka Chelekom?"
+            icon="hero-question-mark-circle"
+            open
+          >
             Mishka Chelekom is a zero-configuration UI component library for Phoenix LiveView.
           </:item>
           <:item id="chelekom-faq-2" title="How do I install components?" icon="hero-arrow-down-tray">

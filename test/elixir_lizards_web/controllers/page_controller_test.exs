@@ -3,6 +3,8 @@ defmodule ElixirLizardsWeb.PageControllerTest do
 
   test "GET /", %{conn: conn} do
     conn = get(conn, ~p"/")
-    assert html_response(conn, 200) =~ "Peace of mind from prototype to production"
+
+    assert html_response(conn, 200) =~
+             "A demo Phoenix application showcasing the power of Ash Framework, LiveView, and DaisyUI components"
   end
 end

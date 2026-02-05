@@ -38,7 +38,11 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.FooterDemo do
               </ul>
             </div>
           </Footer.footer_section>
-          <Footer.footer_section text_position="center" class="border-t border-base-content/10" padding="small">
+          <Footer.footer_section
+            text_position="center"
+            class="border-t border-base-content/10"
+            padding="small"
+          >
             <p class="text-sm">&copy; 2024 Elixir Lizards. All rights reserved.</p>
           </Footer.footer_section>
         </Footer.footer>

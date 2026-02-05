@@ -23,22 +23,40 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TableDemo do
           <Table.tr>
             <Table.td>Alice Johnson</Table.td>
             <Table.td>Developer</Table.td>
-            <Table.td><Badge.badge variant="default" color="success">Active</Badge.badge></Table.td>
-            <Table.td><Button.button variant="transparent" color="primary" size="extra_small">Edit</Button.button></Table.td>
+            <Table.td>
+              <Badge.badge variant="default" color="success">Active</Badge.badge>
+            </Table.td>
+            <Table.td>
+              <Button.button variant="transparent" color="primary" size="extra_small">
+                Edit
+              </Button.button>
+            </Table.td>
           </Table.tr>
 
           <Table.tr>
             <Table.td>Bob Smith</Table.td>
             <Table.td>Designer</Table.td>
-            <Table.td><Badge.badge variant="default" color="warning">Away</Badge.badge></Table.td>
-            <Table.td><Button.button variant="transparent" color="primary" size="extra_small">Edit</Button.button></Table.td>
+            <Table.td>
+              <Badge.badge variant="default" color="warning">Away</Badge.badge>
+            </Table.td>
+            <Table.td>
+              <Button.button variant="transparent" color="primary" size="extra_small">
+                Edit
+              </Button.button>
+            </Table.td>
           </Table.tr>
 
           <Table.tr>
             <Table.td>Carol White</Table.td>
             <Table.td>Manager</Table.td>
-            <Table.td><Badge.badge variant="default" color="info">Meeting</Badge.badge></Table.td>
-            <Table.td><Button.button variant="transparent" color="primary" size="extra_small">Edit</Button.button></Table.td>
+            <Table.td>
+              <Badge.badge variant="default" color="info">Meeting</Badge.badge>
+            </Table.td>
+            <Table.td>
+              <Button.button variant="transparent" color="primary" size="extra_small">
+                Edit
+              </Button.button>
+            </Table.td>
           </Table.tr>
 
           <:footer>Total: 3 team members</:footer>

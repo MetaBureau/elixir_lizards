@@ -14,7 +14,11 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.ModalDemo do
       </div>
 
       <div class="flex justify-center">
-        <Button.button variant="default" color="primary" phx-click={Modal.show_modal("chelekom-modal")}>
+        <Button.button
+          variant="default"
+          color="primary"
+          phx-click={Modal.show_modal("chelekom-modal")}
+        >
           Open Modal
         </Button.button>
       </div>
