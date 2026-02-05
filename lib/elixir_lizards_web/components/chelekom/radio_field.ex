@@ -104,6 +104,8 @@ defmodule ElixirLizardsWeb.Components.Chelekom.RadioField do
   end
 
   def radio_field(assigns) do
+    assigns = assign(assigns, :id, assigns[:id] || "radio-#{System.unique_integer([:positive])}")
+
     ~H"""
     <div class={[
       color_class(@color),
@@ -214,6 +216,9 @@ defmodule ElixirLizardsWeb.Components.Chelekom.RadioField do
   end
 
   def group_radio(assigns) do
+    assigns =
+      assign(assigns, :id, assigns[:id] || "radio-group-#{System.unique_integer([:positive])}")
+
     ~H"""
     <div class={[
       @variation == "horizontal" && "flex flex-wrap items-center",

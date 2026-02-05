@@ -102,6 +102,9 @@ defmodule ElixirLizardsWeb.Components.Chelekom.CheckboxField do
   end
 
   def checkbox_field(assigns) do
+    assigns =
+      assign(assigns, :id, assigns[:id] || "checkbox-#{System.unique_integer([:positive])}")
+
     ~H"""
     <div class={[
       color_class(@color),
@@ -219,6 +222,9 @@ defmodule ElixirLizardsWeb.Components.Chelekom.CheckboxField do
   end
 
   def group_checkbox(assigns) do
+    assigns =
+      assign(assigns, :id, assigns[:id] || "checkbox-group-#{System.unique_integer([:positive])}")
+
     ~H"""
     <div class={[
       @variation == "horizontal" && "flex flex-wrap items-center",
