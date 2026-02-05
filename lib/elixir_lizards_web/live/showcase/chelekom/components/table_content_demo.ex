@@ -45,7 +45,7 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.Components.TableContentDemo do
             <TableContent.table_content title="Documentation" space="small">
               <:item icon="hero-hashtag" link="#basics" link_title="Basics"></:item>
               <:item title="Components">
-                <TableContent.content_wrapper>
+                <TableContent.content_wrapper class="space-y-2 mt-2">
                   <TableContent.content_item icon="hero-minus" class="pl-4">
                     <a href="#buttons">Buttons</a>
                   </TableContent.content_item>
