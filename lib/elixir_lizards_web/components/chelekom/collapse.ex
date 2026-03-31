@@ -83,6 +83,7 @@ defmodule ElixirLizardsWeb.Components.Chelekom.Collapse do
     <div
       id={@id}
       phx-hook="Collapsible"
+      phx-update="ignore"
       data-multiple="false"
       data-collapsible="true"
       data-duration={@duration}
@@ -97,10 +98,10 @@ defmodule ElixirLizardsWeb.Components.Chelekom.Collapse do
           {render_slot(@trigger)}
         </div>
 
-        <div data-collapsible-panel={@item_id} class="collapse-panel">
+        <div data-collapsible-panel={@item_id} class="collapse-panel overflow-hidden">
           <div
             data-collapsible-content
-            class="transition-[max-height] max-h-0"
+            class="transition-[max-height] max-h-0 overflow-hidden"
             data-duration={@duration}
           >
             <div class="collapse-content">{render_slot(@inner_block)}</div>

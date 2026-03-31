@@ -62,11 +62,21 @@ defmodule ElixirLizardsWeb.Components.Chelekom.Accordion do
   def accordion(assigns) do
     assigns = assigns |> assign_new(:id, fn -> "accordion-#{random_id()}" end)
 
+    items_with_ids =
+      assigns.item
+      |> Enum.with_index(1)
+      |> Enum.map(fn {item, index} ->
+        if item[:id], do: item, else: Map.put(item, :id, "#{assigns.id}-item-#{index}")
+      end)
+
+    assigns = assign(assigns, :item, items_with_ids)
+
     ~H"""
     <div
       id={@id}
       phx-hook="Collapsible"
-      data-multiple={@multiple}
+      phx-update="ignore"
+      data-multiple={to_string(@multiple)}
       data-collapsible={to_string(@collapsible)}
       data-duration={@duration}
       data-keep-mounted={to_string(@keep_mounted)}
@@ -85,12 +95,9 @@ defmodule ElixirLizardsWeb.Components.Chelekom.Accordion do
         @class
       ]}
     >
-      <div
-        :for={{item, index} <- Enum.with_index(@item, 1)}
-        class={["accordion-item overflow-hidden"]}
-      >
+      <div :for={item <- @item} class={["accordion-item overflow-hidden"]}>
         <button
-          data-collapsible-trigger={item[:id] || "#{@id}-item-#{index + 1}"}
+          data-collapsible-trigger={item.id}
           class={[
             "accordion-trigger cursor-pointer w-full text-left flex items-center justify-between",
             "transition-colors duration-200 focus:outline-none overflow-hidden",
@@ -128,10 +135,10 @@ defmodule ElixirLizardsWeb.Components.Chelekom.Accordion do
           />
         </button>
 
-        <div data-collapsible-panel={item[:id] || "#{@id}-item-#{index + 1}"} class="overflow-hidden">
+        <div data-collapsible-panel={item.id} class="overflow-hidden">
           <div
             data-collapsible-content
-            class={["transition-[max-height] max-h-0", "duration-#{@duration}"]}
+            class={["transition-[max-height] max-h-0 overflow-hidden", "duration-#{@duration}"]}
           >
             <div class={["accordion-panel-content", item[:content_class]]}>
               {render_slot(item)}
@@ -147,7 +154,7 @@ defmodule ElixirLizardsWeb.Components.Chelekom.Accordion do
     slot_open_items =
       items
       |> Enum.filter(&(&1[:open] == true))
-      |> Enum.map(& &1.id)
+      |> Enum.map(& &1[:id])
 
     cond do
       length(initial_open) > 0 -> Enum.join(initial_open, ",")
