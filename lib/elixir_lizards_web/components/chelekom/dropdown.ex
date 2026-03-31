@@ -59,7 +59,7 @@ defmodule ElixirLizardsWeb.Components.Chelekom.Dropdown do
     required: true,
     doc: "A unique identifier is used to manage state and interaction"
 
-  attr :class, :string, default: nil, doc: "Custom CSS class for additional styling"
+  attr :class, :any, default: nil, doc: "Custom CSS class for additional styling"
   attr :width, :string, default: "w-fit", doc: "Determines the element width"
   attr :position, :string, default: "bottom", doc: "Determines the element position"
   attr :relative, :string, default: nil, doc: "Custom relative position for the dropdown"
@@ -101,11 +101,11 @@ defmodule ElixirLizardsWeb.Components.Chelekom.Dropdown do
   slot :inner_block, required: false, doc: "Inner block that renders HEEx content"
 
   slot :trigger, required: false do
-    attr :class, :string, doc: "Custom CSS class for additional styling"
+    attr :class, :any, doc: "Custom CSS class for additional styling"
   end
 
   slot :content, required: false do
-    attr :class, :string, doc: "Custom CSS class for additional styling"
+    attr :class, :any, doc: "Custom CSS class for additional styling"
   end
 
   def dropdown(assigns) do
@@ -161,7 +161,7 @@ defmodule ElixirLizardsWeb.Components.Chelekom.Dropdown do
           border_class(@border, @variant),
           padding_size(@padding),
           @font_weight,
-          @class
+          content[:class]
         ]}
         {@rest}
       >
@@ -190,7 +190,7 @@ defmodule ElixirLizardsWeb.Components.Chelekom.Dropdown do
     doc: "A unique identifier is used to manage state and interaction"
 
   attr :trigger_id, :string, default: nil, doc: "Identifies what is the triggered element id"
-  attr :class, :string, default: nil, doc: "Custom CSS class for additional styling"
+  attr :class, :any, default: nil, doc: "Custom CSS class for additional styling"
   slot :inner_block, required: false, doc: "Inner block that renders HEEx content"
 
   attr :rest, :global,
@@ -254,7 +254,7 @@ defmodule ElixirLizardsWeb.Components.Chelekom.Dropdown do
 
   attr :padding, :string, default: "none", doc: "Determines padding for items"
   attr :border, :string, default: "extra_small", doc: "Determines border style"
-  attr :class, :string, default: nil, doc: "Custom CSS class for additional styling"
+  attr :class, :any, default: nil, doc: "Custom CSS class for additional styling"
 
   attr :rest, :global,
     doc:

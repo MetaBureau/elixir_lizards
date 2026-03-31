@@ -67,48 +67,66 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.ComponentDemoLive do
     }
   ]
 
+  def components, do: @components
+  def component_count, do: length(@components)
+
+  defp component_dom_id(name) do
+    "daisyui-component-" <>
+      (name
+       |> String.downcase()
+       |> String.replace(~r/[^a-z0-9]+/u, "-")
+       |> String.trim("-"))
+  end
+
   @impl true
   def mount(_params, _session, socket) do
     {:ok,
      socket
      |> assign(:page_title, "Component Library")
-     |> assign(:components, @components)}
+     |> assign(:components, components())}
   end
 
   @impl true
   def render(assigns) do
     ~H"""
     <Layouts.app flash={@flash}>
-      <.breadcrumb>
-        <:crumb navigate={~p"/"}>Home</:crumb>
-        <:crumb navigate="/showcase">Components</:crumb>
-        <:crumb>DaisyUI</:crumb>
-      </.breadcrumb>
+      <div id="daisyui-showcase">
+        <.breadcrumb>
+          <:crumb navigate={~p"/"}>Home</:crumb>
+          <:crumb navigate="/showcase">Components</:crumb>
+          <:crumb>DaisyUI</:crumb>
+        </.breadcrumb>
 
-      <.header>
-        DaisyUI Components
-        <:subtitle>Tailwind CSS components built for ElixirLizards</:subtitle>
-        <:actions>
-          <.button navigate="/showcase/chelekom">Mishka Chelekom</.button>
-        </:actions>
-      </.header>
+        <.header>
+          DaisyUI Components
+          <:subtitle>Tailwind CSS components built for ElixirLizards</:subtitle>
+          <:actions>
+            <.button navigate="/showcase/chelekom">Mishka Chelekom</.button>
+          </:actions>
+        </.header>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <.link
-          :for={component <- @components}
-          navigate={component.path}
-          class="d-card bg-base-100 d-card-border border-base-300 hover:border-primary transition-colors"
-        >
-          <div class="d-card-body">
-            <div class="flex items-center gap-3">
-              <div class="rounded-lg bg-primary/10 p-2">
-                <.icon name={component.icon} class="size-6 text-primary" />
+        <p id="daisyui-component-count" class="mb-6 text-sm text-base-content/70">
+          {component_count()} Components in the DaisyUI showcase catalog
+        </p>
+
+        <div id="daisyui-showcase-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <.link
+            :for={component <- @components}
+            id={component_dom_id(component.name)}
+            navigate={component.path}
+            class="d-card bg-base-100 d-card-border border-base-300 hover:border-primary transition-colors"
+          >
+            <div class="d-card-body">
+              <div class="flex items-center gap-3">
+                <div class="rounded-lg bg-primary/10 p-2">
+                  <.icon name={component.icon} class="size-6 text-primary" />
+                </div>
+                <h2 class="d-card-title text-lg">{component.name}</h2>
               </div>
-              <h2 class="d-card-title text-lg">{component.name}</h2>
+              <p class="text-base-content/70 text-sm mt-2">{component.description}</p>
             </div>
-            <p class="text-base-content/70 text-sm mt-2">{component.description}</p>
-          </div>
-        </.link>
+          </.link>
+        </div>
       </div>
     </Layouts.app>
     """

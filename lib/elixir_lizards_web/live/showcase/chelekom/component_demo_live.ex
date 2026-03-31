@@ -23,16 +23,24 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.ComponentDemoLive do
     %{name: "forms", label: "Forms", module: Forms}
   ]
 
+  def categories, do: @categories
+
+  def component_count do
+    categories()
+    |> Enum.flat_map(& &1.module.components())
+    |> length()
+  end
+
   @impl true
   def mount(_params, _session, socket) do
     all_components =
-      @categories
+      categories()
       |> Enum.flat_map(fn cat -> cat.module.components() end)
 
     {:ok,
      socket
      |> assign(:page_title, "Mishka Chelekom Components")
-     |> assign(:categories, @categories)
+     |> assign(:categories, categories())
      |> assign(:all_components, all_components)
      |> assign(:active_category, "all")}
   end
@@ -50,89 +58,91 @@ defmodule ElixirLizardsWeb.Showcase.Chelekom.ComponentDemoLive do
   def render(assigns) do
     ~H"""
     <Layouts.app flash={@flash}>
-      <.breadcrumb>
-        <:crumb navigate={~p"/"}>Home</:crumb>
-        <:crumb navigate="/showcase">Components</:crumb>
-        <:crumb>Chelekom</:crumb>
-      </.breadcrumb>
+      <div id="chelekom-showcase">
+        <.breadcrumb>
+          <:crumb navigate={~p"/"}>Home</:crumb>
+          <:crumb navigate="/showcase">Components</:crumb>
+          <:crumb>Chelekom</:crumb>
+        </.breadcrumb>
 
-      <.header>
-        Mishka Chelekom Components
-        <:subtitle>Modern, customizable UI components for Phoenix LiveView</:subtitle>
-        <:actions>
-          <.button navigate="/showcase/daisyui">DaisyUI Components</.button>
-        </:actions>
-      </.header>
-      
-    <!-- Category Filter -->
-      <div class="flex flex-wrap gap-2 justify-center my-8">
-        <button
-          phx-click="select_category"
-          phx-value-category="all"
-          class={[
-            "d-btn d-btn-sm",
-            @active_category == "all" && "d-btn-primary",
-            @active_category != "all" && "d-btn-ghost"
-          ]}
-        >
-          All
-        </button>
-        <button
-          :for={category <- @categories}
-          phx-click="select_category"
-          phx-value-category={category.name}
-          class={[
-            "d-btn d-btn-sm",
-            @active_category == category.name && "d-btn-primary",
-            @active_category != category.name && "d-btn-ghost"
-          ]}
-        >
-          {category.label}
-        </button>
-      </div>
+        <.header>
+          Mishka Chelekom Components
+          <:subtitle>Modern, customizable UI components for Phoenix LiveView</:subtitle>
+          <:actions>
+            <.button navigate="/showcase/daisyui">DaisyUI Components</.button>
+          </:actions>
+        </.header>
 
-      <div class="space-y-16">
-        <%= if @active_category == "all" do %>
-          <.live_component
+        <%!-- Category filter --%>
+        <div id="chelekom-category-filter" class="flex flex-wrap gap-2 justify-center my-8">
+          <button
+            id="chelekom-filter-all"
+            phx-click="select_category"
+            phx-value-category="all"
+            class={[
+              "d-btn d-btn-sm",
+              @active_category == "all" && "d-btn-primary",
+              @active_category != "all" && "d-btn-ghost"
+            ]}
+          >
+            All
+          </button>
+          <button
             :for={category <- @categories}
-            module={category.module}
-            id={"category-#{category.name}"}
-          />
-        <% else %>
-          <% category = get_category_module(@categories, @active_category) %>
-          <.live_component
-            :if={category}
-            module={category.module}
-            id={"category-#{category.name}"}
-          />
-        <% end %>
-        
-    <!-- Installation Summary -->
-        <section class="space-y-6">
-          <div class="text-center">
-            <h2 class="text-3xl font-bold mb-2">{length(@all_components)} Components Installed</h2>
-            <p class="text-base-content/70 max-w-2xl mx-auto">
-              Mishka Chelekom components are ready to use in your application
-            </p>
-          </div>
+            id={"chelekom-filter-#{category.name}"}
+            phx-click="select_category"
+            phx-value-category={category.name}
+            class={[
+              "d-btn d-btn-sm",
+              @active_category == category.name && "d-btn-primary",
+              @active_category != category.name && "d-btn-ghost"
+            ]}
+          >
+            {category.label}
+          </button>
+        </div>
 
-          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 max-w-4xl mx-auto text-sm">
-            <div
-              :for={component <- @all_components}
-              class="flex items-center gap-2 p-2 rounded bg-base-200"
-            >
-              <.icon name="hero-check" class="size-4 text-success" />
-              <span>{component.name}</span>
+        <div class="space-y-16">
+          <%= if @active_category == "all" do %>
+            <section :for={category <- @categories} id={"category-#{category.name}"}>
+              <.live_component module={category.module} id={"category-#{category.name}-component"} />
+            </section>
+          <% else %>
+            <% category = get_category_module(@categories, @active_category) %>
+            <section :if={category} id={"category-#{category.name}"}>
+              <.live_component module={category.module} id={"category-#{category.name}-component"} />
+            </section>
+          <% end %>
+
+          <%!-- Installation summary --%>
+          <section class="space-y-6">
+            <div class="text-center">
+              <h2 id="chelekom-component-count" class="text-3xl font-bold mb-2">
+                {length(@all_components)} Components Installed
+              </h2>
+              <p class="text-base-content/70 max-w-2xl mx-auto">
+                Mishka Chelekom components are ready to use in your application
+              </p>
             </div>
-          </div>
 
-          <div class="text-center mt-6">
-            <p class="text-sm text-base-content/70">
-              Access this showcase at:
-              <code class="bg-base-200 px-2 py-1 rounded">/showcase/chelekom</code>
-            </p>
-          </div>
-        </section>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 max-w-4xl mx-auto text-sm">
+              <div
+                :for={component <- @all_components}
+                class="flex items-center gap-2 p-2 rounded bg-base-200"
+              >
+                <.icon name="hero-check" class="size-4 text-success" />
+                <span>{component.name}</span>
+              </div>
+            </div>
+
+            <div class="text-center mt-6">
+              <p class="text-sm text-base-content/70">
+                Access this showcase at:
+                <code class="bg-base-200 px-2 py-1 rounded">/showcase/chelekom</code>
+              </p>
+            </div>
+          </section>
+        </div>
       </div>
     </Layouts.app>
     """

@@ -60,10 +60,11 @@ defmodule ElixirLizardsWeb.Components.Chelekom.Sidebar do
   attr :position, :string, default: "start", doc: "Determines the element position"
 
   attr :hide_position, :string,
-    values: ["left", "right"],
-    doc: "Determines what position should be hidden"
+    default: nil,
+    values: ["left", "right", nil],
+    doc: "Determines what position should be hidden, accepts \"left\" or \"right\""
 
-  attr :class, :string, default: nil, doc: "Custom CSS class for additional styling"
+  attr :class, :any, default: nil, doc: "Custom CSS class for additional styling"
   attr :hide_button_class, :string, default: nil, doc: "Custom CSS class for additional styling"
 
   attr :minimize_wrapper_class, :string,
@@ -97,7 +98,7 @@ defmodule ElixirLizardsWeb.Components.Chelekom.Sidebar do
     attr :label, :string, doc: "Text label for the menu item"
     attr :label_class, :string, doc: "CSS class for the label text"
     attr :link, :string, doc: "URL for the item link"
-    attr :class, :string, doc: "CSS class for the entire item"
+    attr :class, :any, doc: "CSS class for the entire item"
     attr :link_class, :string, doc: "CSS class for the link"
   end
 
@@ -202,8 +203,14 @@ defmodule ElixirLizardsWeb.Components.Chelekom.Sidebar do
   """
 
   def show_sidebar(js \\ %JS{}, id, position) when is_binary(id) do
-    JS.remove_class(js, hide_position(position), to: "##{id}")
-    |> JS.add_class("transform-none", to: "##{id}")
+    case hide_position(position) do
+      nil ->
+        js
+
+      classes ->
+        JS.remove_class(js, classes, to: "##{id}")
+        |> JS.add_class("transform-none", to: "##{id}")
+    end
   end
 
   @doc """
@@ -229,8 +236,14 @@ defmodule ElixirLizardsWeb.Components.Chelekom.Sidebar do
   """
 
   def hide_sidebar(js \\ %JS{}, id, position) do
-    JS.remove_class(js, "transform-none", to: "##{id}")
-    |> JS.add_class(hide_position(position), to: "##{id}")
+    case hide_position(position) do
+      nil ->
+        js
+
+      classes ->
+        JS.remove_class(js, "transform-none", to: "##{id}")
+        |> JS.add_class(classes, to: "##{id}")
+    end
   end
 
   defp hide_position("left"), do: "-translate-x-full md:translate-x-0"

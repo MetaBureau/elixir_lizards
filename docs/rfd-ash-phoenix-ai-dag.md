@@ -500,6 +500,12 @@ defmodule ElixirLizards.Pipeline.LlmCall do
 end
 ```
 
+Reference note on relationship writes:
+
+- `belongs_to` relationships in Ash should be written by accepting the foreign key directly, as shown with `content_id` and `run_id` above.
+- If you choose to manage the relationship through `manage_relationship/3`, use `:replace` or `:direct_control` semantics for `belongs_to`.
+- Do not use `type: :append` for `belongs_to`; that option is for collection relationships such as `has_many`.
+
 ---
 
 ## 4. Pipeline Topology Definition

@@ -10,12 +10,14 @@ ElixirLizards is a Phoenix 1.8 LiveView application using the Ash Framework for 
 
 ```bash
 mix setup                      # Full project setup (deps, DB, assets, seeds)
+mix deps.get                   # Fetch dependencies
 mix phx.server                 # Start dev server
 iex -S mix phx.server          # Start with IEx console
 mix test                       # Run all tests (auto-runs ash.setup)
 mix test test/path_test.exs    # Run a single test file
 mix test --failed              # Re-run failed tests
 mix precommit                  # Pre-commit checks: compile --warnings-as-errors, deps.unlock --unused, format, test
+mix hex.outdated               # Check dependency drift
 mix ash.setup                  # Create and migrate database
 mix format                     # Format code (uses Spark.Formatter + Phoenix.LiveView.HTMLFormatter)
 ```
@@ -25,11 +27,13 @@ The `precommit` alias runs in the `:test` environment. Always run `mix precommit
 ## Architecture
 
 ### Tech Stack
-- **Elixir 1.17 / OTP 27** with **Phoenix 1.8.3** and **LiveView 1.1**
-- **Ash Framework 3.0** for domain-driven resources, authentication (magic links + email/password), and admin UI
+- **Elixir 1.19.5 / OTP 28.3.1** with **Phoenix 1.8.5** and **LiveView 1.1.28**
+- **Ash Framework 3.22** for domain-driven resources, authentication, and admin UI
+- **Ash Admin 0.14**, **Ash Postgres 2.8**, **Ash Phoenix 2.3.20**
 - **PostgreSQL** via Ash Postgres (NeonDB in production with PgBouncer)
 - **Tailwind CSS v4** (config via `@import` syntax in `assets/css/app.css`, no `tailwind.config.js`)
-- **DaisyUI** + **Mishka Chelekom** component libraries
+- **DaisyUI** + **Mishka Chelekom 0.0.9-alpha.15** component libraries
+- **LiveDebugger 0.7** in development
 - Deployed on **Fly.io** (Sydney region), auto-deploy from `main` via GitHub Actions
 
 ### Ash Framework
@@ -56,11 +60,14 @@ lib/elixir_lizards/
 - Authentication: magic link strategy with `AshAuthentication`, LiveView auth via `on_mount` hooks (`LiveUserAuth`)
 - Formatter uses `Spark.Formatter` plugin with section ordering defined in `.formatter.exs`
 - Ash Admin at `/admin` (dev only), enabled via `AshAdmin.Domain` extension on the domain
+- For `belongs_to` writes, prefer accepting the foreign key directly rather than documenting `manage_relationship(..., type: :append)`
 
 ### Component Libraries
 - **DaisyUI components** (`lib/elixir_lizards_web/components/daisyui/`) - auto-imported in `html_helpers` in `elixir_lizards_web.ex`, available in all templates
 - **Chelekom components** (`lib/elixir_lizards_web/components/chelekom/`) - NOT auto-imported, must use full module name or explicit import
 - Component demos at `lib/elixir_lizards_web/live/showcase/`
+- Chelekom is a dev-only generator dependency; generated modules and vendored assets are committed
+- `mix mishka.ui.gen.components --yes` currently times out in `Owl.WidgetsRegistry` in this environment, so prefer targeted generation and committed assets
 
 ### Routing Structure
 - `/` - Main app (PageController)
@@ -81,6 +88,14 @@ lib/elixir_lizards/
 - Colocated JS hooks with `:type={Phoenix.LiveView.ColocatedHook}` and `.` prefix names
 - Module-level heredocs for code examples to avoid HEEx indentation issues
 - Use `Req` for HTTP requests (already included), not HTTPoison/Tesla/httpc
+- Stable DOM ids are expected on showcase and demo surfaces so LiveView smoke tests stay robust
+- The repo's verification standard is `mix deps.get`, `mix precommit`, and `mix hex.outdated`
+
+### Reference Docs
+- `ARCHITECTURE.md` - system map and layer boundaries
+- `docs/REFERENCE_GUIDE.md` - reference standards and verification policy
+- `CONTRIBUTING.md` - contributor workflow
+- `docs/rfd-ash-phoenix-ai-dag.md` - Ash pipeline design notes and relationship guidance
 
 ## Chelekom Component Rules
 
