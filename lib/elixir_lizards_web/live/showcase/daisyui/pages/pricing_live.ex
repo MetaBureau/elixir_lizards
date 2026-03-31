@@ -176,7 +176,10 @@ defmodule ElixirLizardsWeb.Showcase.DaisyUI.Pages.PricingLive do
       <div class="mb-16">
         <h2 class="text-2xl font-bold text-center mb-8">Frequently asked questions</h2>
         <div class="max-w-2xl mx-auto space-y-4">
-          <div :for={faq <- @faqs} class="d-collapse d-collapse-arrow bg-base-100 border border-base-300">
+          <div
+            :for={faq <- @faqs}
+            class="d-collapse d-collapse-arrow bg-base-100 border border-base-300"
+          >
             <input type="radio" name="faq-accordion" />
             <div class="d-collapse-title font-semibold">{faq.question}</div>
             <div class="d-collapse-content text-base-content/70">

@@ -50,7 +50,10 @@ defmodule ElixirLizardsWeb.Components.DaisyUI.Dropdown do
       <div tabindex="0" role="button">
         {render_slot(@trigger)}
       </div>
-      <ul tabindex="0" class="d-dropdown-content d-menu bg-base-100 d-rounded-box z-10 w-52 p-2 shadow-lg">
+      <ul
+        tabindex="0"
+        class="d-dropdown-content d-menu bg-base-100 d-rounded-box z-10 w-52 p-2 shadow-lg"
+      >
         <li :for={item <- @item}>
           <.link
             :if={item[:navigate] || item[:patch] || item[:href]}
